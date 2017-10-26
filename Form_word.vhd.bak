@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Form_word is
+port(   IN_BUFFER	: in std_logic_vector(2 downto 0);
+		STATUS		: in std_logic_vector(1 downto 0);
+        OUT_WORD 	: out std_logic); 
+end Form_word;
+
+architecture Form_word_arch of Form_word is  
+begin 
+	process(STATUSS)
+    begin
+        if(STATUS = "01") then
+        	OUT_WORD <= IN_BUFFER(0) XOR IN_BUFFER(1);  
+ 		elsif(STATUS = "10") then
+        	OUT_WORD <= IN_BUFFER(1) XOR IN_BUFFER(2); 
+       	elsif(STATUS = "11") then
+        	OUT_WORD <= IN_BUFFER(1) XOR IN_BUFFER(2);     
+        end if;
+    end process;
+end Form_word_arch;

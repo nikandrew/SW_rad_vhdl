@@ -1,0 +1,682 @@
+# Reading C:/altera/90/modelsim_ase/tcl/vsim/pref.tcl 
+# do SW_Count_Coder_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\90\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\90\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(55): near "ERROR_BUFFER": syntax error
+# ** Error: C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./SW_Count_Coder_run_msim_gate_vhdl.do line 10
+# C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}"
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(55): near "ERROR_BUFFER_2": syntax error
+# ** Error: C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./SW_Count_Coder_run_msim_gate_vhdl.do line 10
+# C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}"
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# 
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Simulation stop requested.
+# Simulation Breakpoint: Simulation stop requested.
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+run
+# Break key hit 
+# Simulation stop requested.
+# Simulation Breakpoint: Simulation stop requested.
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 422
+# Simulation Breakpoint: Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 422
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# 
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 641
+# Simulation Breakpoint: Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 641
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# 
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Simulation stop requested.
+# Simulation Breakpoint: Simulation stop requested.
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(63): near "wait": expecting ';'
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(70): near "wait": expecting ';'
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(77): near "wait": expecting ';'
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(80): near "wait": expecting ';'
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(82): VHDL Compiler exiting
+# ** Error: C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./SW_Count_Coder_run_msim_gate_vhdl.do line 10
+# C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}"
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(80): near "wait": expecting ';'
+# ** Error: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht(82): VHDL Compiler exiting
+# ** Error: C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./SW_Count_Coder_run_msim_gate_vhdl.do line 10
+# C:/altera/90/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}"
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Simulation stop requested.
+# Simulation Breakpoint: Simulation stop requested.
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Break in Process line__47 at E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht line 49
+# Simulation Breakpoint: Break in Process line__47 at E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht line 49
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# 
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 422
+# Simulation Breakpoint: Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 422
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+force -freeze sim:/sw_count_coder_vhd_tst/test(6) 0 0
+force -freeze sim:/sw_count_coder_vhd_tst/test(5) 0 0
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# 
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Simulation stop requested.
+# Simulation Breakpoint: Simulation stop requested.
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17
+do SW_Count_Coder_run_msim_gate_vhdl.do
+# transcript on
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {SW_Count_Coder.vho}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package vital_timing
+# -- Loading package vital_primitives
+# -- Loading package flex10ke_atom_pack
+# -- Loading package flex10ke_components
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture structure of sw_count_coder
+# 
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sw_count_coder_vhd_tst
+# -- Compiling architecture sw_count_coder_arch of sw_count_coder_vhd_tst
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=SW_Count_Coder_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" SW_Count_Coder_vhd_tst
+# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=SW_Count_Coder_vhd.sdo -t 1ps SW_Count_Coder_vhd_tst 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading work.sw_count_coder_vhd_tst(sw_count_coder_arch)
+# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# 
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading flex10ke.flex10ke_atom_pack(body)
+# Loading flex10ke.flex10ke_components
+# Loading work.sw_count_coder(structure)
+# Loading flex10ke.flex10ke_lcell(vital_le_atom)
+# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
+# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
+# Loading flex10ke.flex10ke_io(arch)
+# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
+# Loading flex10ke.dffe_io(behave)
+# Loading instances from SW_Count_Coder_vhd.sdo
+# Loading timing data from SW_Count_Coder_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /sw_count_coder_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj/simulation/modelsim/SW_Count_Coder.vht
+# 
+# add wave *
+# view structure
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# view signals
+# .main_pane.signals.interior.cs
+# run 200 ms
+# Break key hit 
+# Simulation stop requested.
+# Simulation Breakpoint: Simulation stop requested.
+# MACRO ./SW_Count_Coder_run_msim_gate_vhdl.do PAUSED at line 17

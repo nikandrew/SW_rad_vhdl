@@ -1,0 +1,285 @@
+Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+21
+1257
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Step_count
+# storage
+db|SW_Count_Coder.(2).cnf
+db|SW_Count_Coder.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Base_step_count.vhd
+673dd5873c2ac78db14e74328cfcddb
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(out_step)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Step_count:COUNT
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Error_buffer
+# storage
+db|SW_Count_Coder.(5).cnf
+db|SW_Count_Coder.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|ERROR_BUFFER.vhd
+f091857cb881532dbfcacc77328fc8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(error_buffer)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(in_buffer)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(out_buffer)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Form_buffer
+# storage
+db|SW_Count_Coder.(3).cnf
+db|SW_Count_Coder.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Form_buffer.vhd
+fa62b660de97ab493a5fd6a38ba5ddd3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(error_buffer)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(in_step)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(out_buffer_1)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(out_buffer_2)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Form_buffer:Form_buffer
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Form_word
+# storage
+db|SW_Count_Coder.(4).cnf
+db|SW_Count_Coder.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Form_word.vhd
+1d32b8185811462836a231c563334f7
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(in_buffer_1)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(in_buffer_2)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(status)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Form_word:Form_word
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+SW_Count_Coder
+# storage
+db|SW_Count_Coder.(0).cnf
+db|SW_Count_Coder.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|SW_Count_Coder.vhd
+52315c7a3fe878a97db6d77db4b411f2
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+..|Base_step_count.vhd
+673dd5873c2ac78db14e74328cfcddb
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+..|Form_buffer.vhd
+fa62b660de97ab493a5fd6a38ba5ddd3
+..|Form_word.vhd
+1d32b8185811462836a231c563334f7
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+DIV_F2M
+# storage
+db|SW_Count_Coder.(1).cnf
+db|SW_Count_Coder.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(status)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DIV_F2M:DIV
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

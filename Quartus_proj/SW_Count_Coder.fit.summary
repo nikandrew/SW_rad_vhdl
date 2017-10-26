@@ -1,0 +1,11 @@
+Fitter Status : Successful - Wed Oct 25 23:07:46 2017
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : SW_Count_Coder
+Top-level Entity Name : SW_Count_Coder
+Family : FLEX10KE
+Device : EPF10K30EFC256-3
+Timing Models : Final
+Total logic elements : 33 / 1,728 ( 2 % )
+Total pins : 22 / 176 ( 13 % )
+Total memory bits : 0 / 24,576 ( 0 % )
+Total PLLs : 0
