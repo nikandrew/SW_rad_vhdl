@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for SW_Count_Coder
-Wed Oct 25 23:07:50 2017
+Fri Oct 27 00:40:17 2017
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                                              ;
-+------------------------------+-------+---------------+----------------------------------+------------------------------------------+------------------------------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                     ; To                                       ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+----------------------------------+------------------------------------------+------------------------------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 0.700 ns                         ; ERROR_BUFFER[1]                          ; Form_buffer:Form_buffer|buffer_temp_1[0] ; --         ; CLK      ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 16.600 ns                        ; Form_buffer:Form_buffer|buffer_temp_1[0] ; TEST[4]                                  ; CLK        ; --       ; 0            ;
-; Worst-case th                ; N/A   ; None          ; 5.800 ns                         ; ERROR_BUFFER[0]                          ; Form_buffer:Form_buffer|buffer_temp_1[1] ; --         ; CLK      ; 0            ;
-; Clock Setup: 'CLK'           ; N/A   ; None          ; 56.82 MHz ( period = 17.600 ns ) ; DIV_F2M:DIV|counter[2]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; 0            ;
-; Total number of failed paths ;       ;               ;                                  ;                                          ;                                          ;            ;          ; 0            ;
-+------------------------------+-------+---------------+----------------------------------+------------------------------------------+------------------------------------------+------------+----------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                      ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                         ; To                           ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 8.900 ns                         ; ERROR_WORD[1]                ; Form_word:Form_word|OUT_WORD ; --         ; CLK      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 16.200 ns                        ; Form_word:Form_word|OUT_WORD ; OUT_WORD                     ; CLK        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 4.600 ns                         ; ERROR_COUNTER[0]             ; Step_count:COUNT|counter[2]  ; --         ; CLK      ; 0            ;
+; Clock Setup: 'CLK'           ; N/A   ; None          ; 40.65 MHz ( period = 24.600 ns ) ; DIV_F2M:DIV|counter[2]       ; Form_word:Form_word|OUT_WORD ; CLK        ; CLK      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                              ;                              ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------+------------------------------+------------+----------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -108,51 +108,51 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 ; Slack ; Actual fmax (period)                           ; From                                     ; To                                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
 +-------+------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
-; N/A   ; 56.82 MHz ( period = 17.600 ns )               ; DIV_F2M:DIV|counter[0]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.800 ns                ;
-; N/A   ; 56.82 MHz ( period = 17.600 ns )               ; DIV_F2M:DIV|counter[2]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.800 ns                ;
-; N/A   ; 58.14 MHz ( period = 17.200 ns )               ; DIV_F2M:DIV|counter[1]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.600 ns                ;
-; N/A   ; 72.99 MHz ( period = 13.700 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[2] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.300 ns                ;
-; N/A   ; 73.53 MHz ( period = 13.600 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[0] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.200 ns                ;
-; N/A   ; 74.07 MHz ( period = 13.500 ns )               ; Form_buffer:Form_buffer|buffer_temp_2[2] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.100 ns                ;
-; N/A   ; 74.63 MHz ( period = 13.400 ns )               ; Form_buffer:Form_buffer|buffer_temp_2[0] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.000 ns                ;
-; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[1] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 8.900 ns                ;
-; N/A   ; 76.34 MHz ( period = 13.100 ns )               ; Form_buffer:Form_buffer|buffer_temp_2[1] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 8.700 ns                ;
-; N/A   ; 81.97 MHz ( period = 12.200 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 5.000 ns                ;
-; N/A   ; 84.75 MHz ( period = 11.800 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 4.800 ns                ;
-; N/A   ; 90.91 MHz ( period = 11.000 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK        ; CLK      ; None                        ; None                      ; 4.400 ns                ;
-; N/A   ; 90.91 MHz ( period = 11.000 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK        ; CLK      ; None                        ; None                      ; 4.400 ns                ;
-; N/A   ; 96.15 MHz ( period = 10.400 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 4.100 ns                ;
-; N/A   ; 98.04 MHz ( period = 10.200 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 4.000 ns                ;
-; N/A   ; 98.04 MHz ( period = 10.200 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 4.000 ns                ;
-; N/A   ; 102.04 MHz ( period = 9.800 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.800 ns                ;
-; N/A   ; 111.11 MHz ( period = 9.000 ns )               ; DIV_F2M:DIV|number                       ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 40.65 MHz ( period = 24.600 ns )               ; DIV_F2M:DIV|counter[0]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 13.300 ns               ;
+; N/A   ; 40.65 MHz ( period = 24.600 ns )               ; DIV_F2M:DIV|counter[2]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 13.300 ns               ;
+; N/A   ; 41.32 MHz ( period = 24.200 ns )               ; DIV_F2M:DIV|counter[1]                   ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 66.67 MHz ( period = 15.000 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 6.400 ns                ;
+; N/A   ; 67.57 MHz ( period = 14.800 ns )               ; Form_buffer:Form_buffer|buffer_temp_2[1] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 11.800 ns               ;
+; N/A   ; 68.03 MHz ( period = 14.700 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[1] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 11.700 ns               ;
+; N/A   ; 68.49 MHz ( period = 14.600 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 6.200 ns                ;
+; N/A   ; 73.53 MHz ( period = 13.600 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK        ; CLK      ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 74.63 MHz ( period = 13.400 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[0] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 10.400 ns               ;
+; N/A   ; 74.63 MHz ( period = 13.400 ns )               ; Form_buffer:Form_buffer|buffer_temp_2[0] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 10.400 ns               ;
+; N/A   ; 75.76 MHz ( period = 13.200 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK        ; CLK      ; None                        ; None                      ; 5.500 ns                ;
+; N/A   ; 81.97 MHz ( period = 12.200 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[2] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 9.200 ns                ;
+; N/A   ; 83.33 MHz ( period = 12.000 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 84.75 MHz ( period = 11.800 ns )               ; Form_buffer:Form_buffer|buffer_temp_2[2] ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 8.800 ns                ;
+; N/A   ; 86.21 MHz ( period = 11.600 ns )               ; DIV_F2M:DIV|number                       ; Form_word:Form_word|OUT_WORD             ; CLK        ; CLK      ; None                        ; None                      ; 6.800 ns                ;
+; N/A   ; 96.15 MHz ( period = 10.400 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_2[2] ; CLK        ; CLK      ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 102.04 MHz ( period = 9.800 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 104.17 MHz ( period = 9.600 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 108.70 MHz ( period = 9.200 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.500 ns                ;
 ; N/A   ; 116.28 MHz ( period = 8.600 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_2[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.200 ns                ;
 ; N/A   ; 121.95 MHz ( period = 8.200 ns )               ; Step_count:COUNT|counter[0]              ; Form_buffer:Form_buffer|buffer_temp_2[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.000 ns                ;
-; N/A   ; 121.95 MHz ( period = 8.200 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_2[2] ; CLK        ; CLK      ; None                        ; None                      ; 3.000 ns                ;
-; N/A   ; 142.86 MHz ( period = 7.000 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.400 ns                ;
-; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.300 ns                ;
-; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.200 ns                ;
-; N/A   ; 192.31 MHz ( period = 5.200 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[0] ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 4.100 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[0]                   ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 3.800 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[1]                   ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 3.800 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[2]                   ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; 147.06 MHz ( period = 6.800 ns )               ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_2[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; 181.82 MHz ( period = 5.500 ns )               ; Form_buffer:Form_buffer|buffer_temp_1[1] ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 4.400 ns                ;
+; N/A   ; 196.08 MHz ( period = 5.100 ns )               ; DIV_F2M:DIV|counter[0]                   ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 196.08 MHz ( period = 5.100 ns )               ; DIV_F2M:DIV|counter[1]                   ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 200.00 MHz ( period = 5.000 ns )               ; Step_count:COUNT|counter[1]              ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK        ; CLK      ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[2]                   ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[1]              ; Step_count:COUNT|counter[1]              ; CLK        ; CLK      ; None                        ; None                      ; 3.300 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_2[1] ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[2]              ; Form_buffer:Form_buffer|buffer_temp_2[2] ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[0]                   ; DIV_F2M:DIV|F2M                          ; CLK        ; CLK      ; None                        ; None                      ; 3.200 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[1]                   ; DIV_F2M:DIV|F2M                          ; CLK        ; CLK      ; None                        ; None                      ; 3.200 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[2]                   ; DIV_F2M:DIV|F2M                          ; CLK        ; CLK      ; None                        ; None                      ; 3.200 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Form_buffer:Form_buffer|buffer_temp_1[1] ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.000 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[1]              ; Step_count:COUNT|counter[0]              ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[1]              ; Step_count:COUNT|counter[1]              ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[0]              ; Step_count:COUNT|counter[1]              ; CLK        ; CLK      ; None                        ; None                      ; 3.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Form_buffer:Form_buffer|buffer_temp_1[0] ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[0]              ; Step_count:COUNT|counter[0]              ; CLK        ; CLK      ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[1]              ; Step_count:COUNT|counter[2]              ; CLK        ; CLK      ; None                        ; None                      ; 1.400 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[2]              ; Step_count:COUNT|counter[2]              ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Form_buffer:Form_buffer|buffer_temp_1[2] ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[0]                   ; DIV_F2M:DIV|counter[1]                   ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[0]                   ; DIV_F2M:DIV|counter[2]                   ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[1]                   ; DIV_F2M:DIV|counter[2]                   ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|F2M                          ; DIV_F2M:DIV|F2M                          ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[0]              ; Step_count:COUNT|counter[0]              ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[0]              ; Step_count:COUNT|counter[1]              ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
-; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[1]              ; Step_count:COUNT|counter[2]              ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; Step_count:COUNT|counter[1]              ; Step_count:COUNT|counter[0]              ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|number                       ; DIV_F2M:DIV|number                       ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[0]                   ; DIV_F2M:DIV|counter[0]                   ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
 ; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; DIV_F2M:DIV|counter[1]                   ; DIV_F2M:DIV|counter[1]                   ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
@@ -160,21 +160,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; tsu                                                                                                       ;
-+-------+--------------+------------+-----------------+------------------------------------------+----------+
-; Slack ; Required tsu ; Actual tsu ; From            ; To                                       ; To Clock ;
-+-------+--------------+------------+-----------------+------------------------------------------+----------+
-; N/A   ; None         ; 0.700 ns   ; ERROR_BUFFER[1] ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
-; N/A   ; None         ; 0.500 ns   ; ERROR_BUFFER[0] ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
-; N/A   ; None         ; -1.100 ns  ; RES             ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK      ;
-; N/A   ; None         ; -2.100 ns  ; RES             ; Form_buffer:Form_buffer|buffer_temp_2[1] ; CLK      ;
-; N/A   ; None         ; -2.100 ns  ; RES             ; Form_buffer:Form_buffer|buffer_temp_2[2] ; CLK      ;
-; N/A   ; None         ; -2.200 ns  ; ERROR_BUFFER[0] ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
-; N/A   ; None         ; -2.400 ns  ; ERROR_BUFFER[1] ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
-; N/A   ; None         ; -3.900 ns  ; ERROR_BUFFER[1] ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
-; N/A   ; None         ; -3.900 ns  ; ERROR_BUFFER[0] ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
-+-------+--------------+------------+-----------------+------------------------------------------+----------+
++------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                        ;
++-------+--------------+------------+------------------+------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From             ; To                                       ; To Clock ;
++-------+--------------+------------+------------------+------------------------------------------+----------+
+; N/A   ; None         ; 8.900 ns   ; ERROR_WORD[1]    ; Form_word:Form_word|OUT_WORD             ; CLK      ;
+; N/A   ; None         ; 8.800 ns   ; ERROR_WORD[0]    ; Form_word:Form_word|OUT_WORD             ; CLK      ;
+; N/A   ; None         ; 5.200 ns   ; ERROR_BUFFER[0]  ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
+; N/A   ; None         ; 5.200 ns   ; ERROR_BUFFER[0]  ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
+; N/A   ; None         ; 4.600 ns   ; ERROR_BUFFER[1]  ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
+; N/A   ; None         ; 4.500 ns   ; ERROR_BUFFER[1]  ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
+; N/A   ; None         ; 2.600 ns   ; ERROR_COUNTER[1] ; Step_count:COUNT|counter[0]              ; CLK      ;
+; N/A   ; None         ; 2.600 ns   ; ERROR_COUNTER[1] ; Step_count:COUNT|counter[1]              ; CLK      ;
+; N/A   ; None         ; 2.400 ns   ; ERROR_BUFFER[0]  ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
+; N/A   ; None         ; 2.400 ns   ; ERROR_COUNTER[1] ; Step_count:COUNT|counter[2]              ; CLK      ;
+; N/A   ; None         ; 1.900 ns   ; ERROR_BUFFER[1]  ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
+; N/A   ; None         ; -2.700 ns  ; ERROR_COUNTER[0] ; Step_count:COUNT|counter[0]              ; CLK      ;
+; N/A   ; None         ; -2.700 ns  ; ERROR_COUNTER[0] ; Step_count:COUNT|counter[1]              ; CLK      ;
+; N/A   ; None         ; -2.700 ns  ; ERROR_COUNTER[0] ; Step_count:COUNT|counter[2]              ; CLK      ;
++-------+--------------+------------+------------------+------------------------------------------+----------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -182,36 +187,41 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+--------------+------------+------------------------------------------+----------+------------+
 ; Slack ; Required tco ; Actual tco ; From                                     ; To       ; From Clock ;
 +-------+--------------+------------+------------------------------------------+----------+------------+
-; N/A   ; None         ; 16.600 ns  ; Form_buffer:Form_buffer|buffer_temp_1[2] ; TEST[6]  ; CLK        ;
-; N/A   ; None         ; 16.600 ns  ; Form_buffer:Form_buffer|buffer_temp_1[0] ; TEST[4]  ; CLK        ;
-; N/A   ; None         ; 16.500 ns  ; Form_buffer:Form_buffer|buffer_temp_2[2] ; TEST[9]  ; CLK        ;
-; N/A   ; None         ; 15.800 ns  ; Step_count:COUNT|counter[2]              ; TEST[3]  ; CLK        ;
-; N/A   ; None         ; 15.800 ns  ; Step_count:COUNT|counter[1]              ; TEST[2]  ; CLK        ;
-; N/A   ; None         ; 15.800 ns  ; Step_count:COUNT|counter[0]              ; TEST[1]  ; CLK        ;
-; N/A   ; None         ; 15.500 ns  ; Form_buffer:Form_buffer|buffer_temp_2[0] ; TEST[7]  ; CLK        ;
-; N/A   ; None         ; 15.300 ns  ; Form_buffer:Form_buffer|buffer_temp_2[1] ; TEST[8]  ; CLK        ;
-; N/A   ; None         ; 15.300 ns  ; Form_buffer:Form_buffer|buffer_temp_1[1] ; TEST[5]  ; CLK        ;
-; N/A   ; None         ; 15.100 ns  ; Form_word:Form_word|OUT_WORD             ; OUT_WORD ; CLK        ;
-; N/A   ; None         ; 10.400 ns  ; DIV_F2M:DIV|number                       ; TEST[10] ; CLK        ;
-; N/A   ; None         ; 10.000 ns  ; DIV_F2M:DIV|F2M                          ; TEST[0]  ; CLK        ;
+; N/A   ; None         ; 16.200 ns  ; Form_word:Form_word|OUT_WORD             ; OUT_WORD ; CLK        ;
+; N/A   ; None         ; 15.500 ns  ; Form_buffer:Form_buffer|buffer_temp_1[0] ; TEST[4]  ; CLK        ;
+; N/A   ; None         ; 15.300 ns  ; Form_buffer:Form_buffer|buffer_temp_2[2] ; TEST[9]  ; CLK        ;
+; N/A   ; None         ; 15.300 ns  ; Form_buffer:Form_buffer|buffer_temp_2[0] ; TEST[7]  ; CLK        ;
+; N/A   ; None         ; 15.200 ns  ; Step_count:COUNT|counter[0]              ; TEST[1]  ; CLK        ;
+; N/A   ; None         ; 14.400 ns  ; Form_buffer:Form_buffer|buffer_temp_2[1] ; TEST[8]  ; CLK        ;
+; N/A   ; None         ; 14.400 ns  ; Form_buffer:Form_buffer|buffer_temp_1[2] ; TEST[6]  ; CLK        ;
+; N/A   ; None         ; 14.400 ns  ; Step_count:COUNT|counter[2]              ; TEST[3]  ; CLK        ;
+; N/A   ; None         ; 14.400 ns  ; Step_count:COUNT|counter[1]              ; TEST[2]  ; CLK        ;
+; N/A   ; None         ; 13.900 ns  ; Form_buffer:Form_buffer|buffer_temp_1[1] ; TEST[5]  ; CLK        ;
+; N/A   ; None         ; 11.400 ns  ; DIV_F2M:DIV|number                       ; TEST[10] ; CLK        ;
+; N/A   ; None         ; 11.000 ns  ; DIV_F2M:DIV|F2M                          ; TEST[0]  ; CLK        ;
 +-------+--------------+------------+------------------------------------------+----------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; th                                                                                                              ;
-+---------------+-------------+-----------+-----------------+------------------------------------------+----------+
-; Minimum Slack ; Required th ; Actual th ; From            ; To                                       ; To Clock ;
-+---------------+-------------+-----------+-----------------+------------------------------------------+----------+
-; N/A           ; None        ; 5.800 ns  ; ERROR_BUFFER[1] ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
-; N/A           ; None        ; 5.800 ns  ; ERROR_BUFFER[0] ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
-; N/A           ; None        ; 4.300 ns  ; ERROR_BUFFER[1] ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
-; N/A           ; None        ; 4.100 ns  ; ERROR_BUFFER[0] ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
-; N/A           ; None        ; 4.000 ns  ; RES             ; Form_buffer:Form_buffer|buffer_temp_2[1] ; CLK      ;
-; N/A           ; None        ; 4.000 ns  ; RES             ; Form_buffer:Form_buffer|buffer_temp_2[2] ; CLK      ;
-; N/A           ; None        ; 3.000 ns  ; RES             ; Form_buffer:Form_buffer|buffer_temp_2[0] ; CLK      ;
-; N/A           ; None        ; 2.400 ns  ; ERROR_BUFFER[0] ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
-; N/A           ; None        ; 2.200 ns  ; ERROR_BUFFER[1] ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
-+---------------+-------------+-----------+-----------------+------------------------------------------+----------+
++------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                               ;
++---------------+-------------+-----------+------------------+------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From             ; To                                       ; To Clock ;
++---------------+-------------+-----------+------------------+------------------------------------------+----------+
+; N/A           ; None        ; 4.600 ns  ; ERROR_COUNTER[0] ; Step_count:COUNT|counter[0]              ; CLK      ;
+; N/A           ; None        ; 4.600 ns  ; ERROR_COUNTER[0] ; Step_count:COUNT|counter[1]              ; CLK      ;
+; N/A           ; None        ; 4.600 ns  ; ERROR_COUNTER[0] ; Step_count:COUNT|counter[2]              ; CLK      ;
+; N/A           ; None        ; 0.600 ns  ; ERROR_WORD[0]    ; Form_word:Form_word|OUT_WORD             ; CLK      ;
+; N/A           ; None        ; 0.600 ns  ; ERROR_WORD[1]    ; Form_word:Form_word|OUT_WORD             ; CLK      ;
+; N/A           ; None        ; 0.000 ns  ; ERROR_BUFFER[1]  ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
+; N/A           ; None        ; -0.500 ns ; ERROR_BUFFER[0]  ; Form_buffer:Form_buffer|buffer_temp_1[1] ; CLK      ;
+; N/A           ; None        ; -0.500 ns ; ERROR_COUNTER[1] ; Step_count:COUNT|counter[2]              ; CLK      ;
+; N/A           ; None        ; -0.700 ns ; ERROR_COUNTER[1] ; Step_count:COUNT|counter[0]              ; CLK      ;
+; N/A           ; None        ; -0.700 ns ; ERROR_COUNTER[1] ; Step_count:COUNT|counter[1]              ; CLK      ;
+; N/A           ; None        ; -1.700 ns ; ERROR_BUFFER[1]  ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
+; N/A           ; None        ; -2.200 ns ; ERROR_BUFFER[0]  ; Form_buffer:Form_buffer|buffer_temp_1[0] ; CLK      ;
+; N/A           ; None        ; -2.600 ns ; ERROR_BUFFER[1]  ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
+; N/A           ; None        ; -3.300 ns ; ERROR_BUFFER[0]  ; Form_buffer:Form_buffer|buffer_temp_1[2] ; CLK      ;
++---------------+-------------+-----------+------------------+------------------------------------------+----------+
 
 
 +--------------------------+
@@ -220,7 +230,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 25 23:07:49 2017
+    Info: Processing started: Fri Oct 27 00:40:17 2017
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off SW_Count_Coder -c SW_Count_Coder
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
@@ -229,83 +239,89 @@ Warning: Timing Analysis is analyzing one or more combinational loops as latches
 Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "CLK" is an undefined clock
 Warning: Found 5 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
-    Info: Detected gated clock "Form_word:Form_word|OUT_WORD~18" as buffer
+    Info: Detected gated clock "Form_word:Form_word|OUT_WORD~20" as buffer
     Info: Detected ripple clock "DIV_F2M:DIV|counter[2]" as buffer
     Info: Detected ripple clock "DIV_F2M:DIV|counter[1]" as buffer
     Info: Detected ripple clock "DIV_F2M:DIV|counter[0]" as buffer
     Info: Detected ripple clock "DIV_F2M:DIV|F2M" as buffer
-Info: Clock "CLK" has Internal fmax of 56.82 MHz between source register "DIV_F2M:DIV|counter[0]" and destination register "Form_word:Form_word|OUT_WORD" (period= 17.6 ns)
-    Info: + Longest register to register delay is 9.800 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC4_D35; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
-        Info: 2: + IC(0.300 ns) + CELL(1.600 ns) = 1.900 ns; Loc. = LC7_D35; Fanout = 3; COMB Node = 'Form_word:Form_word|Equal1~0'
-        Info: 3: + IC(0.900 ns) + CELL(1.400 ns) = 4.200 ns; Loc. = LC5_D36; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~15'
-        Info: 4: + IC(0.300 ns) + CELL(1.700 ns) = 6.200 ns; Loc. = LC6_D36; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~16'
-        Info: 5: + IC(0.300 ns) + CELL(1.600 ns) = 8.100 ns; Loc. = LC8_D36; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~17'
-        Info: 6: + IC(0.300 ns) + CELL(1.400 ns) = 9.800 ns; Loc. = LC3_D36; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
-        Info: Total cell delay = 7.700 ns ( 78.57 % )
-        Info: Total interconnect delay = 2.100 ns ( 21.43 % )
+Info: Clock "CLK" has Internal fmax of 40.65 MHz between source register "DIV_F2M:DIV|counter[0]" and destination register "Form_word:Form_word|OUT_WORD" (period= 24.6 ns)
+    Info: + Longest register to register delay is 13.300 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC4_E3; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
+        Info: 2: + IC(0.300 ns) + CELL(1.600 ns) = 1.900 ns; Loc. = LC7_E3; Fanout = 5; COMB Node = 'Form_word:Form_word|Equal4~0'
+        Info: 3: + IC(0.900 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC2_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~47'
+        Info: 4: + IC(0.000 ns) + CELL(1.600 ns) = 5.200 ns; Loc. = LC3_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~32'
+        Info: 5: + IC(0.300 ns) + CELL(1.600 ns) = 7.100 ns; Loc. = LC4_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~17'
+        Info: 6: + IC(0.300 ns) + CELL(1.700 ns) = 9.100 ns; Loc. = LC6_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~18'
+        Info: 7: + IC(0.900 ns) + CELL(1.600 ns) = 11.600 ns; Loc. = LC8_E1; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~19'
+        Info: 8: + IC(0.300 ns) + CELL(1.400 ns) = 13.300 ns; Loc. = LC3_E1; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
+        Info: Total cell delay = 10.300 ns ( 77.44 % )
+        Info: Total interconnect delay = 3.000 ns ( 22.56 % )
     Info: - Smallest clock skew is 5.000 ns
         Info: + Shortest clock path from clock "CLK" to destination register is 7.400 ns
             Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_L8; Fanout = 5; CLK Node = 'CLK'
-            Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC4_D35; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
-            Info: 3: + IC(0.300 ns) + CELL(1.400 ns) = 4.600 ns; Loc. = LC3_D35; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~18'
-            Info: 4: + IC(1.200 ns) + CELL(1.600 ns) = 7.400 ns; Loc. = LC3_D36; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
+            Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC4_E3; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
+            Info: 3: + IC(0.300 ns) + CELL(1.400 ns) = 4.600 ns; Loc. = LC3_E3; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~20'
+            Info: 4: + IC(1.200 ns) + CELL(1.600 ns) = 7.400 ns; Loc. = LC3_E1; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
             Info: Total cell delay = 5.500 ns ( 74.32 % )
             Info: Total interconnect delay = 1.900 ns ( 25.68 % )
         Info: - Longest clock path from clock "CLK" to source register is 2.400 ns
             Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_L8; Fanout = 5; CLK Node = 'CLK'
-            Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC4_D35; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
+            Info: 2: + IC(0.400 ns) + CELL(0.000 ns) = 2.400 ns; Loc. = LC4_E3; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
             Info: Total cell delay = 2.000 ns ( 83.33 % )
             Info: Total interconnect delay = 0.400 ns ( 16.67 % )
     Info: + Micro clock to output delay of source is 0.500 ns
     Info: + Micro setup delay of destination is 3.500 ns
     Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
-Info: tsu for register "Form_buffer:Form_buffer|buffer_temp_1[0]" (data pin = "ERROR_BUFFER[1]", clock pin = "CLK") is 0.700 ns
-    Info: + Longest pin to register delay is 7.900 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_R8; Fanout = 3; PIN Node = 'ERROR_BUFFER[1]'
-        Info: 2: + IC(0.300 ns) + CELL(1.600 ns) = 3.900 ns; Loc. = LC7_E32; Fanout = 2; COMB Node = 'Form_buffer:Form_buffer|Equal1~1'
-        Info: 3: + IC(0.300 ns) + CELL(1.000 ns) = 5.200 ns; Loc. = LC3_E32; Fanout = 1; COMB Node = 'Form_buffer:Form_buffer|buffer_temp_1~33'
-        Info: 4: + IC(0.000 ns) + CELL(1.600 ns) = 6.800 ns; Loc. = LC4_E32; Fanout = 1; COMB Node = 'Form_buffer:Form_buffer|buffer_temp_1~26'
-        Info: 5: + IC(0.300 ns) + CELL(0.800 ns) = 7.900 ns; Loc. = LC8_E32; Fanout = 4; REG Node = 'Form_buffer:Form_buffer|buffer_temp_1[0]'
-        Info: Total cell delay = 7.000 ns ( 88.61 % )
-        Info: Total interconnect delay = 0.900 ns ( 11.39 % )
-    Info: + Micro setup delay of destination is 0.600 ns
-    Info: - Shortest clock path from clock "CLK" to destination register is 7.800 ns
+Info: tsu for register "Form_word:Form_word|OUT_WORD" (data pin = "ERROR_WORD[1]", clock pin = "CLK") is 8.900 ns
+    Info: + Longest pin to register delay is 12.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_R8; Fanout = 8; PIN Node = 'ERROR_WORD[1]'
+        Info: 2: + IC(0.000 ns) + CELL(1.100 ns) = 3.100 ns; Loc. = LC2_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~47'
+        Info: 3: + IC(0.000 ns) + CELL(1.600 ns) = 4.700 ns; Loc. = LC3_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~32'
+        Info: 4: + IC(0.300 ns) + CELL(1.600 ns) = 6.600 ns; Loc. = LC4_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~17'
+        Info: 5: + IC(0.300 ns) + CELL(1.700 ns) = 8.600 ns; Loc. = LC6_E2; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~18'
+        Info: 6: + IC(0.900 ns) + CELL(1.600 ns) = 11.100 ns; Loc. = LC8_E1; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~19'
+        Info: 7: + IC(0.300 ns) + CELL(1.400 ns) = 12.800 ns; Loc. = LC3_E1; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
+        Info: Total cell delay = 11.000 ns ( 85.94 % )
+        Info: Total interconnect delay = 1.800 ns ( 14.06 % )
+    Info: + Micro setup delay of destination is 3.500 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 7.400 ns
         Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_L8; Fanout = 5; CLK Node = 'CLK'
-        Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC1_D35; Fanout = 11; REG Node = 'DIV_F2M:DIV|F2M'
-        Info: 3: + IC(4.900 ns) + CELL(0.000 ns) = 7.800 ns; Loc. = LC8_E32; Fanout = 4; REG Node = 'Form_buffer:Form_buffer|buffer_temp_1[0]'
-        Info: Total cell delay = 2.500 ns ( 32.05 % )
-        Info: Total interconnect delay = 5.300 ns ( 67.95 % )
-Info: tco from clock "CLK" to destination pin "TEST[6]" through register "Form_buffer:Form_buffer|buffer_temp_1[2]" is 16.600 ns
-    Info: + Longest clock path from clock "CLK" to source register is 7.800 ns
+        Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC4_E3; Fanout = 7; REG Node = 'DIV_F2M:DIV|counter[0]'
+        Info: 3: + IC(0.300 ns) + CELL(1.400 ns) = 4.600 ns; Loc. = LC3_E3; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~20'
+        Info: 4: + IC(1.200 ns) + CELL(1.600 ns) = 7.400 ns; Loc. = LC3_E1; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
+        Info: Total cell delay = 5.500 ns ( 74.32 % )
+        Info: Total interconnect delay = 1.900 ns ( 25.68 % )
+Info: tco from clock "CLK" to destination pin "OUT_WORD" through register "Form_word:Form_word|OUT_WORD" is 16.200 ns
+    Info: + Longest clock path from clock "CLK" to source register is 7.600 ns
         Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_L8; Fanout = 5; CLK Node = 'CLK'
-        Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC1_D35; Fanout = 11; REG Node = 'DIV_F2M:DIV|F2M'
-        Info: 3: + IC(4.900 ns) + CELL(0.000 ns) = 7.800 ns; Loc. = LC6_E32; Fanout = 3; REG Node = 'Form_buffer:Form_buffer|buffer_temp_1[2]'
-        Info: Total cell delay = 2.500 ns ( 32.05 % )
-        Info: Total interconnect delay = 5.300 ns ( 67.95 % )
-    Info: + Micro clock to output delay of source is 0.500 ns
-    Info: + Longest register to pin delay is 8.300 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC6_E32; Fanout = 3; REG Node = 'Form_buffer:Form_buffer|buffer_temp_1[2]'
-        Info: 2: + IC(2.000 ns) + CELL(6.300 ns) = 8.300 ns; Loc. = PIN_K12; Fanout = 0; PIN Node = 'TEST[6]'
-        Info: Total cell delay = 6.300 ns ( 75.90 % )
-        Info: Total interconnect delay = 2.000 ns ( 24.10 % )
-Info: th for register "Form_buffer:Form_buffer|buffer_temp_1[1]" (data pin = "ERROR_BUFFER[1]", clock pin = "CLK") is 5.800 ns
-    Info: + Longest clock path from clock "CLK" to destination register is 7.800 ns
+        Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC5_E3; Fanout = 5; REG Node = 'DIV_F2M:DIV|counter[2]'
+        Info: 3: + IC(0.300 ns) + CELL(1.600 ns) = 4.800 ns; Loc. = LC3_E3; Fanout = 1; COMB Node = 'Form_word:Form_word|OUT_WORD~20'
+        Info: 4: + IC(1.200 ns) + CELL(1.600 ns) = 7.600 ns; Loc. = LC3_E1; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
+        Info: Total cell delay = 5.700 ns ( 75.00 % )
+        Info: Total interconnect delay = 1.900 ns ( 25.00 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 8.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC3_E1; Fanout = 1; REG Node = 'Form_word:Form_word|OUT_WORD'
+        Info: 2: + IC(2.300 ns) + CELL(6.300 ns) = 8.600 ns; Loc. = PIN_K13; Fanout = 0; PIN Node = 'OUT_WORD'
+        Info: Total cell delay = 6.300 ns ( 73.26 % )
+        Info: Total interconnect delay = 2.300 ns ( 26.74 % )
+Info: th for register "Step_count:COUNT|counter[0]" (data pin = "ERROR_COUNTER[0]", clock pin = "CLK") is 4.600 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 6.400 ns
         Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_L8; Fanout = 5; CLK Node = 'CLK'
-        Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC1_D35; Fanout = 11; REG Node = 'DIV_F2M:DIV|F2M'
-        Info: 3: + IC(4.900 ns) + CELL(0.000 ns) = 7.800 ns; Loc. = LC2_E32; Fanout = 4; REG Node = 'Form_buffer:Form_buffer|buffer_temp_1[1]'
-        Info: Total cell delay = 2.500 ns ( 32.05 % )
-        Info: Total interconnect delay = 5.300 ns ( 67.95 % )
+        Info: 2: + IC(0.400 ns) + CELL(0.500 ns) = 2.900 ns; Loc. = LC1_E3; Fanout = 11; REG Node = 'DIV_F2M:DIV|F2M'
+        Info: 3: + IC(3.500 ns) + CELL(0.000 ns) = 6.400 ns; Loc. = LC6_E4; Fanout = 5; REG Node = 'Step_count:COUNT|counter[0]'
+        Info: Total cell delay = 2.500 ns ( 39.06 % )
+        Info: Total interconnect delay = 3.900 ns ( 60.94 % )
     Info: + Micro hold delay of destination is 1.300 ns
-    Info: - Shortest pin to register delay is 3.300 ns
-        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_R8; Fanout = 3; PIN Node = 'ERROR_BUFFER[1]'
-        Info: 2: + IC(0.300 ns) + CELL(1.000 ns) = 3.300 ns; Loc. = LC2_E32; Fanout = 4; REG Node = 'Form_buffer:Form_buffer|buffer_temp_1[1]'
-        Info: Total cell delay = 3.000 ns ( 90.91 % )
-        Info: Total interconnect delay = 0.300 ns ( 9.09 % )
+    Info: - Shortest pin to register delay is 3.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_A9; Fanout = 3; PIN Node = 'ERROR_COUNTER[0]'
+        Info: 2: + IC(0.100 ns) + CELL(1.000 ns) = 3.100 ns; Loc. = LC6_E4; Fanout = 5; REG Node = 'Step_count:COUNT|counter[0]'
+        Info: Total cell delay = 3.000 ns ( 96.77 % )
+        Info: Total interconnect delay = 0.100 ns ( 3.23 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 166 megabytes
-    Info: Processing ended: Wed Oct 25 23:07:50 2017
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Fri Oct 27 00:40:17 2017
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

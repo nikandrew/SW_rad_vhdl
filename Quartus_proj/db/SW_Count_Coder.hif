@@ -19,45 +19,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-Step_count
-# storage
-db|SW_Count_Coder.(2).cnf
-db|SW_Count_Coder.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|Base_step_count.vhd
-673dd5873c2ac78db14e74328cfcddb
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(out_step)
-2 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-Step_count:COUNT
-}
-# lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 Error_buffer
 # storage
 db|SW_Count_Coder.(5).cnf
@@ -102,6 +63,131 @@ c:|altera|90sp2|quartus|lmf|maxplus2.lmf
 
 # end
 # entity
+DIV_F2M
+# storage
+db|SW_Count_Coder.(1).cnf
+db|SW_Count_Coder.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(status)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DIV_F2M:DIV
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Step_count
+# storage
+db|SW_Count_Coder.(2).cnf
+db|SW_Count_Coder.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Base_step_count.vhd
+c8e3ddf2394de9beccf1c33a18ee4be
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(error_count)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(out_step)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+Step_count:COUNT
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+SW_Count_Coder
+# storage
+db|SW_Count_Coder.(0).cnf
+db|SW_Count_Coder.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|SW_Count_Coder.vhd
+4348ea93a4a4ee153ae6785361bf89d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+..|Form_buffer.vhd
+ddf2c52d98c3775271c3e750fefa82a
+..|Base_step_count.vhd
+c8e3ddf2394de9beccf1c33a18ee4be
+..|Form_word.vhd
+32a5871f98ab97f03749a5b2a5266ee2
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
 Form_buffer
 # storage
 db|SW_Count_Coder.(3).cnf
@@ -113,7 +199,7 @@ ON
 # case_insensitive
 # source_file
 ..|Form_buffer.vhd
-fa62b660de97ab493a5fd6a38ba5ddd3
+ddf2c52d98c3775271c3e750fefa82a
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -164,7 +250,7 @@ ON
 # case_insensitive
 # source_file
 ..|Form_word.vhd
-1d32b8185811462836a231c563334f7
+32a5871f98ab97f03749a5b2a5266ee2
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -185,6 +271,10 @@ USR
 2 downto 0
 PARAMETER_STRING
 USR
+ constraint(error_word)
+1 downto 0
+PARAMETER_STRING
+USR
  constraint(status)
 2 downto 0
 PARAMETER_STRING
@@ -192,88 +282,6 @@ USR
 }
 # hierarchies {
 Form_word:Form_word
-}
-# lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-SW_Count_Coder
-# storage
-db|SW_Count_Coder.(0).cnf
-db|SW_Count_Coder.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|SW_Count_Coder.vhd
-52315c7a3fe878a97db6d77db4b411f2
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-..|Base_step_count.vhd
-673dd5873c2ac78db14e74328cfcddb
-..|Div_F2M.vhd
-e51deec763fc95c7c86e57b582cb89
-..|Form_buffer.vhd
-fa62b660de97ab493a5fd6a38ba5ddd3
-..|Form_word.vhd
-1d32b8185811462836a231c563334f7
-}
-# hierarchies {
-|
-}
-# lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-DIV_F2M
-# storage
-db|SW_Count_Coder.(1).cnf
-db|SW_Count_Coder.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|Div_F2M.vhd
-e51deec763fc95c7c86e57b582cb89
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(status)
-2 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-DIV_F2M:DIV
 }
 # lmf
 c:|altera|90sp2|quartus|lmf|maxplus2.lmf

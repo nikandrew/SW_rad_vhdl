@@ -10,29 +10,47 @@
       <name>Form_buffer/buffer_temp_1[0]</name>
     </key_point>
     <key_point id="4" type="register">
-      <name>COUNT/counter[2]</name>
+      <name>Form_buffer/buffer_temp_2[2]</name>
     </key_point>
     <key_point id="5" type="register">
+      <name>COUNT/counter[2]</name>
+    </key_point>
+    <key_point id="6" type="register">
+      <name>Form_buffer/buffer_temp_2[0]</name>
+    </key_point>
+    <key_point id="7" type="register">
       <name>COUNT/counter[1]</name>
+    </key_point>
+    <key_point id="8" type="register">
+      <name>Form_buffer/buffer_temp_2[1]</name>
     </key_point>
   </key_points_set>
   <key_points_set type="transition" hier_sep="|">
   </key_points_set>
   <key_points_set type="transformed" hier_sep="|">
-    <key_point id="6" type="register">
+    <key_point id="9" type="register">
       <name>Form_buffer:Form_buffer|buffer_temp_1[1]</name>
     </key_point>
-    <key_point id="7" type="register">
+    <key_point id="10" type="register">
       <name>Step_count:COUNT|counter[2]</name>
     </key_point>
-    <key_point id="8" type="register">
+    <key_point id="11" type="register">
+      <name>Form_buffer:Form_buffer|buffer_temp_2[1]</name>
+    </key_point>
+    <key_point id="12" type="register">
       <name>Form_buffer:Form_buffer|buffer_temp_1[2]</name>
     </key_point>
-    <key_point id="9" type="register">
+    <key_point id="13" type="register">
       <name>Form_buffer:Form_buffer|buffer_temp_1[0]</name>
     </key_point>
-    <key_point id="10" type="register">
+    <key_point id="14" type="register">
+      <name>Form_buffer:Form_buffer|buffer_temp_2[2]</name>
+    </key_point>
+    <key_point id="15" type="register">
       <name>Step_count:COUNT|counter[1]</name>
+    </key_point>
+    <key_point id="16" type="register">
+      <name>Form_buffer:Form_buffer|buffer_temp_2[0]</name>
     </key_point>
   </key_points_set>
   <transformations_set hier_sep="|">
@@ -64,7 +82,7 @@
     </kp_set>
     <kp_set type="transformed">
       <kp_state index="0">
-        <kp id="6" type="proxy"></kp>
+        <kp id="9" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">
@@ -79,12 +97,52 @@
   <transformation>
     <kp_set type="reference">
       <kp_state index="0">
-        <kp id="3" type="proxy"></kp>
+        <kp id="7" type="proxy"></kp>
       </kp_state>
     </kp_set>
     <kp_set type="transformed">
       <kp_state index="0">
-        <kp id="9" type="proxy"></kp>
+        <kp id="15" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+  <state_table type="virtual" num_cols="1">
+    <reference>
+      <column index="0">1      </column>
+    </reference>
+    <transformed>
+      <column index="0">-1      </column>
+    </transformed>
+  </state_table>
+</transformation>
+  <transformation>
+    <kp_set type="reference">
+      <kp_state index="0">
+        <kp id="8" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+    <kp_set type="transformed">
+      <kp_state index="0">
+        <kp id="11" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+  <state_table type="virtual" num_cols="1">
+    <reference>
+      <column index="0">1      </column>
+    </reference>
+    <transformed>
+      <column index="0">-1      </column>
+    </transformed>
+  </state_table>
+</transformation>
+  <transformation>
+    <kp_set type="reference">
+      <kp_state index="0">
+        <kp id="6" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+    <kp_set type="transformed">
+      <kp_state index="0">
+        <kp id="16" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">
@@ -104,7 +162,7 @@
     </kp_set>
     <kp_set type="transformed">
       <kp_state index="0">
-        <kp id="8" type="proxy"></kp>
+        <kp id="12" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">
@@ -124,7 +182,27 @@
     </kp_set>
     <kp_set type="transformed">
       <kp_state index="0">
-        <kp id="7" type="proxy"></kp>
+        <kp id="14" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+  <state_table type="virtual" num_cols="1">
+    <reference>
+      <column index="0">1      </column>
+    </reference>
+    <transformed>
+      <column index="0">-1      </column>
+    </transformed>
+  </state_table>
+</transformation>
+  <transformation>
+    <kp_set type="reference">
+      <kp_state index="0">
+        <kp id="3" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+    <kp_set type="transformed">
+      <kp_state index="0">
+        <kp id="13" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">

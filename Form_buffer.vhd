@@ -21,7 +21,8 @@ begin
     process (CLK,RES)
     begin
         if(RES = '1') then
-            buffer_temp_1 <= (others => '1'); 
+        	buffer_temp_1 <= (others => '1'); 
+        	buffer_temp_2 <= (others => '1'); 
         elsif(falling_edge(CLK)) then 
         	--Новое значение таймера записывается в оба буффера синхронно. В буфер первый записывается значение с ошибкой, а в буффер второй без нее и Form_word выводит значения поочереди из каждого буффера  
             if(ERROR_BUFFER = "01") then

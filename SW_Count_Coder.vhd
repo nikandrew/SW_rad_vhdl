@@ -9,7 +9,9 @@ port(		CLK				: in std_logic;
 			
 			ERROR_SYNC	: in std_logic;
         	ERROR_BUFFER : in std_logic_vector(1 downto 0);
-        
+        	ERROR_COUNTER : in std_logic_vector(1 downto 0);
+        	ERROR_WORD : in std_logic_vector(1 downto 0);
+        	
 			OUT_WORD		: out std_logic;
 			TEST			: out std_logic_vector(15 downto 0));
 end SW_Count_Coder;
@@ -33,6 +35,7 @@ begin
 	COUNT: entity work.Step_count
 		port map(  	CLK			=> f2m,
 					RES			=> RES,
+					ERROR_COUNT => ERROR_COUNTER,
 					OUT_STEP	=> step);
 	
 	Form_buffer: entity work.Form_buffer
@@ -50,6 +53,7 @@ begin
 			IN_BUFFER_1	=> out_buffer_1,
 			IN_BUFFER_2 => out_buffer_2, 
 			NUMBER_BUFFER => number_buffer,
+			ERROR_WORD => ERROR_WORD,
 			STATUS    => status,
 			OUT_WORD  => OUT_WORD);
 	

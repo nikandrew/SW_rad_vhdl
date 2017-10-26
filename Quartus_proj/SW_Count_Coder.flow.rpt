@@ -1,5 +1,5 @@
 Flow report for SW_Count_Coder
-Wed Oct 25 23:07:51 2017
+Fri Oct 27 00:40:19 2017
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Wed Oct 25 23:07:51 2017        ;
+; Flow Status             ; Successful - Fri Oct 27 00:40:19 2017        ;
 ; Quartus II Version      ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name           ; SW_Count_Coder                               ;
 ; Top-level Entity Name   ; SW_Count_Coder                               ;
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Device                  ; EPF10K30EFC256-3                             ;
 ; Timing Models           ; Final                                        ;
 ; Met timing requirements ; Yes                                          ;
-; Total logic elements    ; 33 / 1,728 ( 2 % )                           ;
-; Total pins              ; 22 / 176 ( 13 % )                            ;
+; Total logic elements    ; 37 / 1,728 ( 2 % )                           ;
+; Total pins              ; 26 / 176 ( 15 % )                            ;
 ; Total memory bits       ; 0 / 24,576 ( 0 % )                           ;
 ; Total PLLs              ; 0                                            ;
 +-------------------------+----------------------------------------------+
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/25/2017 23:07:41 ;
+; Start date & time ; 10/27/2017 00:40:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SW_Count_Coder      ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id               ;
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------------+
-; COMPILER_SIGNATURE_ID                ; 25143475286343.150896206103688         ; --            ; --          ; --                       ;
+; COMPILER_SIGNATURE_ID                ; 25143475286343.150905400803520         ; --            ; --          ; --                       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; i1                                     ; --            ; --          ; SW_COUNT_CODER_TESTBENCH ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; SW_COUNT_CODER_TESTBENCH               ; --            ; --          ; eda_simulation           ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --          ; eda_simulation           ;
@@ -93,10 +93,10 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 227 MB              ; 00:00:02                           ;
 ; Fitter                  ; 00:00:02     ; 1.0                     ; 181 MB              ; 00:00:02                           ;
-; Assembler               ; 00:00:00     ; 1.0                     ; 184 MB              ; 00:00:01                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 184 MB              ; 00:00:01                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 154 MB              ; 00:00:00                           ;
 ; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 151 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:04     ; --                      ; --                  ; 00:00:05                           ;
+; Total                   ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

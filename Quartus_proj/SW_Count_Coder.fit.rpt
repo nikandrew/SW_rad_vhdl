@@ -1,5 +1,5 @@
 Fitter report for SW_Count_Coder
-Wed Oct 25 23:07:46 2017
+Fri Oct 27 00:40:14 2017
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -55,15 +55,15 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+
 ; Fitter Summary                                                       ;
 +-----------------------+----------------------------------------------+
-; Fitter Status         ; Successful - Wed Oct 25 23:07:46 2017        ;
+; Fitter Status         ; Successful - Fri Oct 27 00:40:14 2017        ;
 ; Quartus II Version    ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name         ; SW_Count_Coder                               ;
 ; Top-level Entity Name ; SW_Count_Coder                               ;
 ; Family                ; FLEX10KE                                     ;
 ; Device                ; EPF10K30EFC256-3                             ;
 ; Timing Models         ; Final                                        ;
-; Total logic elements  ; 33 / 1,728 ( 2 % )                           ;
-; Total pins            ; 22 / 176 ( 13 % )                            ;
+; Total logic elements  ; 37 / 1,728 ( 2 % )                           ;
+; Total pins            ; 26 / 176 ( 15 % )                            ;
 ; Total memory bits     ; 0 / 24,576 ( 0 % )                           ;
 ; Total PLLs            ; 0                                            ;
 +-----------------------+----------------------------------------------+
@@ -130,17 +130,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+--------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                        ;
-+-----------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+--------------+
-; Name            ; Pin # ; Row ; Col. ; Fan-Out ; Global ; I/O Register ; Use Local Routing Input ; Power Up High ; PCI I/O Enabled ; Single-Pin CE ; I/O Standard ;
-+-----------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+--------------+
-; CLK             ; L8    ; --  ; --   ; 5       ; yes    ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
-; RES             ; B9    ; --  ; --   ; 14      ; yes    ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
-; ERROR_BUFFER[0] ; M9    ; --  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
-; ERROR_BUFFER[1] ; R8    ; --  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
-; ERROR_SYNC      ; N7    ; --  ; 13   ; 0       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
-+-----------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                         ;
++------------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+--------------+
+; Name             ; Pin # ; Row ; Col. ; Fan-Out ; Global ; I/O Register ; Use Local Routing Input ; Power Up High ; PCI I/O Enabled ; Single-Pin CE ; I/O Standard ;
++------------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+--------------+
+; ERROR_WORD[0]    ; M9    ; --  ; --   ; 8       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; ERROR_WORD[1]    ; R8    ; --  ; --   ; 8       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; CLK              ; L8    ; --  ; --   ; 5       ; yes    ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; RES              ; B9    ; --  ; --   ; 14      ; yes    ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; ERROR_COUNTER[0] ; A9    ; --  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; ERROR_COUNTER[1] ; L16   ;  E  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; ERROR_BUFFER[0]  ; A7    ; --  ; 14   ; 4       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; ERROR_BUFFER[1]  ; T2    ; --  ; 2    ; 4       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
+; ERROR_SYNC       ; P7    ; --  ; 14   ; 0       ; no     ; no           ; no                      ; no            ; no              ; no            ; LVTTL/LVCMOS ;
++------------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+-----------------+---------------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -148,316 +152,317 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------+-------+-----+------+--------------+--------------------------+---------------+----------------+-----------------+---------------+---------------+------------+---------------+--------------+
 ; Name     ; Pin # ; Row ; Col. ; I/O Register ; Use Local Routing Output ; Power Up High ; Slow Slew Rate ; PCI I/O Enabled ; Single-Pin OE ; Single-Pin CE ; Open Drain ; TRI Primitive ; I/O Standard ;
 +----------+-------+-----+------+--------------+--------------------------+---------------+----------------+-----------------+---------------+---------------+------------+---------------+--------------+
-; OUT_WORD ; J14   ;  D  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[0]  ; T15   ; --  ; 35   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[1]  ; K13   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[2]  ; L13   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[3]  ; L16   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[4]  ; J16   ;  D  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[5]  ; T13   ; --  ; 31   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[6]  ; K12   ;  D  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[7]  ; B10   ; --  ; 22   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[8]  ; P16   ; --  ; 36   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[9]  ; H15   ;  D  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[10] ; J13   ;  D  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[11] ; C8    ; --  ; 18   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[12] ; R9    ; --  ; 19   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[13] ; A8    ; --  ; 17   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[14] ; B4    ; --  ; 4    ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
-; TEST[15] ; R15   ; --  ; 36   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; OUT_WORD ; K13   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[0]  ; E2    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[1]  ; K4    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[2]  ; K5    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[3]  ; K2    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[4]  ; K15   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[5]  ; T1    ; --  ; 1    ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[6]  ; M2    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[7]  ; L14   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[8]  ; L3    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[9]  ; L13   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[10] ; L15   ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[11] ; A5    ; --  ; 8    ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[12] ; L1    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[13] ; B8    ; --  ; 17   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[14] ; F15   ;  B  ; --   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
+; TEST[15] ; N9    ; --  ; 20   ; no           ; no                       ; no            ; no             ; no              ; no            ; no            ; no         ; no            ; LVTTL/LVCMOS ;
 +----------+-------+-----+------+--------------+--------------------------+---------------+----------------+-----------------+---------------+---------------+------------+---------------+--------------+
 
 
-+----------------------------------------+
-; All Package Pins                       ;
-+-------+-----------------+--------------+
-; Pin # ; Usage           ; I/O Standard ;
-+-------+-----------------+--------------+
-; A1    ; ^DATA0          ;              ;
-; A2    ; GND*            ;              ;
-; A3    ; GND*            ;              ;
-; A4    ; GND*            ;              ;
-; A5    ; GND*            ;              ;
-; A6    ; GND*            ;              ;
-; A7    ; GND*            ;              ;
-; A8    ; TEST[13]        ; LVTTL/LVCMOS ;
-; A9    ; GND+            ;              ;
-; A10   ; GND*            ;              ;
-; A11   ; GND*            ;              ;
-; A12   ; GND*            ;              ;
-; A13   ; GND*            ;              ;
-; A14   ; GND*            ;              ;
-; A15   ; GND*            ;              ;
-; A16   ; GND*            ;              ;
-; B1    ; ^nCE            ;              ;
-; B2    ; ^DCLK           ;              ;
-; B3    ; GND*            ;              ;
-; B4    ; TEST[14]        ; LVTTL/LVCMOS ;
-; B5    ; GND*            ;              ;
-; B6    ; GND*            ;              ;
-; B7    ; GND*            ;              ;
-; B8    ; GND*            ;              ;
-; B9    ; RES             ; LVTTL/LVCMOS ;
-; B10   ; TEST[7]         ; LVTTL/LVCMOS ;
-; B11   ; GND*            ;              ;
-; B12   ; GND*            ;              ;
-; B13   ; GND*            ;              ;
-; B14   ; GND*            ;              ;
-; B15   ; #TCK            ;              ;
-; B16   ; ^nCEO           ;              ;
-; C1    ; GND*            ;              ;
-; C2    ; #TDI            ;              ;
-; C3    ; GND*            ;              ;
-; C4    ; GND*            ;              ;
-; C5    ; GND*            ;              ;
-; C6    ; GND*            ;              ;
-; C7    ; GND*            ;              ;
-; C8    ; TEST[11]        ; LVTTL/LVCMOS ;
-; C9    ; GND*            ;              ;
-; C10   ; GND*            ;              ;
-; C11   ; GND*            ;              ;
-; C12   ; GND*            ;              ;
-; C13   ; GND*            ;              ;
-; C14   ; GND*            ;              ;
-; C15   ; ^CONF_DONE      ;              ;
-; C16   ; #TDO            ;              ;
-; D1    ; NC              ;              ;
-; D2    ; GND*            ;              ;
-; D3    ; GND*            ;              ;
-; D4    ; GND*            ;              ;
-; D5    ; GND*            ;              ;
-; D6    ; GND*            ;              ;
-; D7    ; GND*            ;              ;
-; D8    ; GND*            ;              ;
-; D9    ; GND*            ;              ;
-; D10   ; GND*            ;              ;
-; D11   ; GND*            ;              ;
-; D12   ; VCC_IO          ;              ;
-; D13   ; GND*            ;              ;
-; D14   ; GND*            ;              ;
-; D15   ; GND*            ;              ;
-; D16   ; GND*            ;              ;
-; E1    ; GND*            ;              ;
-; E2    ; GND*            ;              ;
-; E3    ; NC              ;              ;
-; E4    ; GND*            ;              ;
-; E5    ; GND_INT         ;              ;
-; E6    ; VCC_IO          ;              ;
-; E7    ; GND*            ;              ;
-; E8    ; GND+            ;              ;
-; E9    ; GND*            ;              ;
-; E10   ; GND*            ;              ;
-; E11   ; VCC_INT         ;              ;
-; E12   ; GND_INT         ;              ;
-; E13   ; GND*            ;              ;
-; E14   ; GND*            ;              ;
-; E15   ; GND*            ;              ;
-; E16   ; NC              ;              ;
-; F1    ; GND*            ;              ;
-; F2    ; GND*            ;              ;
-; F3    ; GND*            ;              ;
-; F4    ; GND*            ;              ;
-; F5    ; VCC_INT         ;              ;
-; F6    ; GND_INT         ;              ;
-; F7    ; VCC_INT         ;              ;
-; F8    ; VCC_IO          ;              ;
-; F9    ; VCC_INT         ;              ;
-; F10   ; VCC_IO          ;              ;
-; F11   ; GND_INT         ;              ;
-; F12   ; VCC_INT         ;              ;
-; F13   ; GND*            ;              ;
-; F14   ; GND*            ;              ;
-; F15   ; GND*            ;              ;
-; F16   ; GND*            ;              ;
-; G1    ; GND*            ;              ;
-; G2    ; GND*            ;              ;
-; G3    ; NC              ;              ;
-; G4    ; GND*            ;              ;
-; G5    ; GND*            ;              ;
-; G6    ; VCC_IO          ;              ;
-; G7    ; GND_INT         ;              ;
-; G8    ; VCC_IO          ;              ;
-; G9    ; GND             ;              ;
-; G10   ; GND_INT         ;              ;
-; G11   ; VCC_IO          ;              ;
-; G12   ; GND*            ;              ;
-; G13   ; GND*            ;              ;
-; G14   ; GND*            ;              ;
-; G15   ; GND*            ;              ;
-; G16   ; GND*            ;              ;
-; H1    ; NC              ;              ;
-; H2    ; GND*            ;              ;
-; H3    ; GND*            ;              ;
-; H4    ; GND*            ;              ;
-; H5    ; GND*            ;              ;
-; H6    ; VCC_INT         ;              ;
-; H7    ; VCC_INT         ;              ;
-; H8    ; GND             ;              ;
-; H9    ; GND             ;              ;
-; H10   ; VCC_INT         ;              ;
-; H11   ; VCC_IO          ;              ;
-; H12   ; GND*            ;              ;
-; H13   ; GND*            ;              ;
-; H14   ; GND*            ;              ;
-; H15   ; TEST[9]         ; LVTTL/LVCMOS ;
-; H16   ; NC              ;              ;
-; J1    ; NC              ;              ;
-; J2    ; GND*            ;              ;
-; J3    ; GND*            ;              ;
-; J4    ; GND*            ;              ;
-; J5    ; GND*            ;              ;
-; J6    ; VCC_IO          ;              ;
-; J7    ; VCC_INT         ;              ;
-; J8    ; GND             ;              ;
-; J9    ; GND_INT         ;              ;
-; J10   ; VCC_INT         ;              ;
-; J11   ; VCC_INT         ;              ;
-; J12   ; GND*            ;              ;
-; J13   ; TEST[10]        ; LVTTL/LVCMOS ;
-; J14   ; OUT_WORD        ; LVTTL/LVCMOS ;
-; J15   ; GND*            ;              ;
-; J16   ; TEST[4]         ; LVTTL/LVCMOS ;
-; K1    ; GND*            ;              ;
-; K2    ; GND*            ;              ;
-; K3    ; NC              ;              ;
-; K4    ; GND*            ;              ;
-; K5    ; GND*            ;              ;
-; K6    ; VCC_IO          ;              ;
-; K7    ; GND_INT         ;              ;
-; K8    ; VCC_IO          ;              ;
-; K9    ; VCC_INT         ;              ;
-; K10   ; GND             ;              ;
-; K11   ; VCC_IO          ;              ;
-; K12   ; TEST[6]         ; LVTTL/LVCMOS ;
-; K13   ; TEST[1]         ; LVTTL/LVCMOS ;
-; K14   ; NC              ;              ;
-; K15   ; GND*            ;              ;
-; K16   ; NC              ;              ;
-; L1    ; GND*            ;              ;
-; L2    ; NC              ;              ;
-; L3    ; GND*            ;              ;
-; L4    ; NC              ;              ;
-; L5    ; VCC_INT         ;              ;
-; L6    ; GND_INT         ;              ;
-; L7    ; VCC_INT         ;              ;
-; L8    ; CLK             ; LVTTL/LVCMOS ;
-; L9    ; VCC_CKLK        ;              ;
-; L10   ; VCC_IO          ;              ;
-; L11   ; GND_INT         ;              ;
-; L12   ; VCC_INT         ;              ;
-; L13   ; TEST[2]         ; LVTTL/LVCMOS ;
-; L14   ; GND*            ;              ;
-; L15   ; GND*            ;              ;
-; L16   ; TEST[3]         ; LVTTL/LVCMOS ;
-; M1    ; GND*            ;              ;
-; M2    ; GND*            ;              ;
-; M3    ; GND*            ;              ;
-; M4    ; GND*            ;              ;
-; M5    ; GND             ;              ;
-; M6    ; VCC_IO          ;              ;
-; M7    ; GND*            ;              ;
-; M8    ; GND*            ;              ;
-; M9    ; ERROR_BUFFER[0] ; LVTTL/LVCMOS ;
-; M10   ; GND*            ;              ;
-; M11   ; VCC_INT         ;              ;
-; M12   ; GND_INT         ;              ;
-; M13   ; GND*            ;              ;
-; M14   ; NC              ;              ;
-; M15   ; GND*            ;              ;
-; M16   ; NC              ;              ;
-; N1    ; GND*            ;              ;
-; N2    ; GND*            ;              ;
-; N3    ; GND*            ;              ;
-; N4    ; ^nCONFIG        ;              ;
-; N5    ; GND*            ;              ;
-; N6    ; GND*            ;              ;
-; N7    ; ERROR_SYNC      ; LVTTL/LVCMOS ;
-; N8    ; GND*            ;              ;
-; N9    ; GND*            ;              ;
-; N10   ; GND*            ;              ;
-; N11   ; GND*            ;              ;
-; N12   ; VCC_IO          ;              ;
-; N13   ; GND*            ;              ;
-; N14   ; GND*            ;              ;
-; N15   ; NC              ;              ;
-; N16   ; GND*            ;              ;
-; P1    ; ^MSEL0          ;              ;
-; P2    ; GND*            ;              ;
-; P3    ; GND*            ;              ;
-; P4    ; GND*            ;              ;
-; P5    ; GND*            ;              ;
-; P6    ; GND*            ;              ;
-; P7    ; GND*            ;              ;
-; P8    ; GND*            ;              ;
-; P9    ; GND*            ;              ;
-; P10   ; GND*            ;              ;
-; P11   ; GND*            ;              ;
-; P12   ; GND*            ;              ;
-; P13   ; GND*            ;              ;
-; P14   ; GND*            ;              ;
-; P15   ; #TMS            ;              ;
-; P16   ; TEST[8]         ; LVTTL/LVCMOS ;
-; R1    ; ^MSEL1          ;              ;
-; R2    ; VCC_INT         ;              ;
-; R3    ; GND*            ;              ;
-; R4    ; GND*            ;              ;
-; R5    ; GND*            ;              ;
-; R6    ; GND*            ;              ;
-; R7    ; GND*            ;              ;
-; R8    ; ERROR_BUFFER[1] ; LVTTL/LVCMOS ;
-; R9    ; TEST[12]        ; LVTTL/LVCMOS ;
-; R10   ; GND*            ;              ;
-; R11   ; GND*            ;              ;
-; R12   ; GND*            ;              ;
-; R13   ; GND*            ;              ;
-; R14   ; GND*            ;              ;
-; R15   ; TEST[15]        ; LVTTL/LVCMOS ;
-; R16   ; #NTRST          ;              ;
-; T1    ; GND*            ;              ;
-; T2    ; GND*            ;              ;
-; T3    ; GND*            ;              ;
-; T4    ; GND*            ;              ;
-; T5    ; GND*            ;              ;
-; T6    ; GND*            ;              ;
-; T7    ; GND*            ;              ;
-; T8    ; GND_CKLK        ;              ;
-; T9    ; GND*            ;              ;
-; T10   ; GND*            ;              ;
-; T11   ; GND*            ;              ;
-; T12   ; GND*            ;              ;
-; T13   ; TEST[5]         ; LVTTL/LVCMOS ;
-; T14   ; GND*            ;              ;
-; T15   ; TEST[0]         ; LVTTL/LVCMOS ;
-; T16   ; ^nSTATUS        ;              ;
-+-------+-----------------+--------------+
++-----------------------------------------+
+; All Package Pins                        ;
++-------+------------------+--------------+
+; Pin # ; Usage            ; I/O Standard ;
++-------+------------------+--------------+
+; A1    ; ^DATA0           ;              ;
+; A2    ; GND*             ;              ;
+; A3    ; GND*             ;              ;
+; A4    ; GND*             ;              ;
+; A5    ; TEST[11]         ; LVTTL/LVCMOS ;
+; A6    ; GND*             ;              ;
+; A7    ; ERROR_BUFFER[0]  ; LVTTL/LVCMOS ;
+; A8    ; GND*             ;              ;
+; A9    ; ERROR_COUNTER[0] ; LVTTL/LVCMOS ;
+; A10   ; GND*             ;              ;
+; A11   ; GND*             ;              ;
+; A12   ; GND*             ;              ;
+; A13   ; GND*             ;              ;
+; A14   ; GND*             ;              ;
+; A15   ; GND*             ;              ;
+; A16   ; GND*             ;              ;
+; B1    ; ^nCE             ;              ;
+; B2    ; ^DCLK            ;              ;
+; B3    ; GND*             ;              ;
+; B4    ; GND*             ;              ;
+; B5    ; GND*             ;              ;
+; B6    ; GND*             ;              ;
+; B7    ; GND*             ;              ;
+; B8    ; TEST[13]         ; LVTTL/LVCMOS ;
+; B9    ; RES              ; LVTTL/LVCMOS ;
+; B10   ; GND*             ;              ;
+; B11   ; GND*             ;              ;
+; B12   ; GND*             ;              ;
+; B13   ; GND*             ;              ;
+; B14   ; GND*             ;              ;
+; B15   ; #TCK             ;              ;
+; B16   ; ^nCEO            ;              ;
+; C1    ; GND*             ;              ;
+; C2    ; #TDI             ;              ;
+; C3    ; GND*             ;              ;
+; C4    ; GND*             ;              ;
+; C5    ; GND*             ;              ;
+; C6    ; GND*             ;              ;
+; C7    ; GND*             ;              ;
+; C8    ; GND*             ;              ;
+; C9    ; GND*             ;              ;
+; C10   ; GND*             ;              ;
+; C11   ; GND*             ;              ;
+; C12   ; GND*             ;              ;
+; C13   ; GND*             ;              ;
+; C14   ; GND*             ;              ;
+; C15   ; ^CONF_DONE       ;              ;
+; C16   ; #TDO             ;              ;
+; D1    ; NC               ;              ;
+; D2    ; GND*             ;              ;
+; D3    ; GND*             ;              ;
+; D4    ; GND*             ;              ;
+; D5    ; GND*             ;              ;
+; D6    ; GND*             ;              ;
+; D7    ; GND*             ;              ;
+; D8    ; GND*             ;              ;
+; D9    ; GND*             ;              ;
+; D10   ; GND*             ;              ;
+; D11   ; GND*             ;              ;
+; D12   ; VCC_IO           ;              ;
+; D13   ; GND*             ;              ;
+; D14   ; GND*             ;              ;
+; D15   ; GND*             ;              ;
+; D16   ; GND*             ;              ;
+; E1    ; GND*             ;              ;
+; E2    ; TEST[0]          ; LVTTL/LVCMOS ;
+; E3    ; NC               ;              ;
+; E4    ; GND*             ;              ;
+; E5    ; GND_INT          ;              ;
+; E6    ; VCC_IO           ;              ;
+; E7    ; GND*             ;              ;
+; E8    ; GND+             ;              ;
+; E9    ; GND*             ;              ;
+; E10   ; GND*             ;              ;
+; E11   ; VCC_INT          ;              ;
+; E12   ; GND_INT          ;              ;
+; E13   ; GND*             ;              ;
+; E14   ; GND*             ;              ;
+; E15   ; GND*             ;              ;
+; E16   ; NC               ;              ;
+; F1    ; GND*             ;              ;
+; F2    ; GND*             ;              ;
+; F3    ; GND*             ;              ;
+; F4    ; GND*             ;              ;
+; F5    ; VCC_INT          ;              ;
+; F6    ; GND_INT          ;              ;
+; F7    ; VCC_INT          ;              ;
+; F8    ; VCC_IO           ;              ;
+; F9    ; VCC_INT          ;              ;
+; F10   ; VCC_IO           ;              ;
+; F11   ; GND_INT          ;              ;
+; F12   ; VCC_INT          ;              ;
+; F13   ; GND*             ;              ;
+; F14   ; GND*             ;              ;
+; F15   ; TEST[14]         ; LVTTL/LVCMOS ;
+; F16   ; GND*             ;              ;
+; G1    ; GND*             ;              ;
+; G2    ; GND*             ;              ;
+; G3    ; NC               ;              ;
+; G4    ; GND*             ;              ;
+; G5    ; GND*             ;              ;
+; G6    ; VCC_IO           ;              ;
+; G7    ; GND_INT          ;              ;
+; G8    ; VCC_IO           ;              ;
+; G9    ; GND              ;              ;
+; G10   ; GND_INT          ;              ;
+; G11   ; VCC_IO           ;              ;
+; G12   ; GND*             ;              ;
+; G13   ; GND*             ;              ;
+; G14   ; GND*             ;              ;
+; G15   ; GND*             ;              ;
+; G16   ; GND*             ;              ;
+; H1    ; NC               ;              ;
+; H2    ; GND*             ;              ;
+; H3    ; GND*             ;              ;
+; H4    ; GND*             ;              ;
+; H5    ; GND*             ;              ;
+; H6    ; VCC_INT          ;              ;
+; H7    ; VCC_INT          ;              ;
+; H8    ; GND              ;              ;
+; H9    ; GND              ;              ;
+; H10   ; VCC_INT          ;              ;
+; H11   ; VCC_IO           ;              ;
+; H12   ; GND*             ;              ;
+; H13   ; GND*             ;              ;
+; H14   ; GND*             ;              ;
+; H15   ; GND*             ;              ;
+; H16   ; NC               ;              ;
+; J1    ; NC               ;              ;
+; J2    ; GND*             ;              ;
+; J3    ; GND*             ;              ;
+; J4    ; GND*             ;              ;
+; J5    ; GND*             ;              ;
+; J6    ; VCC_IO           ;              ;
+; J7    ; VCC_INT          ;              ;
+; J8    ; GND              ;              ;
+; J9    ; GND_INT          ;              ;
+; J10   ; VCC_INT          ;              ;
+; J11   ; VCC_INT          ;              ;
+; J12   ; GND*             ;              ;
+; J13   ; GND*             ;              ;
+; J14   ; GND*             ;              ;
+; J15   ; GND*             ;              ;
+; J16   ; GND*             ;              ;
+; K1    ; GND*             ;              ;
+; K2    ; TEST[3]          ; LVTTL/LVCMOS ;
+; K3    ; NC               ;              ;
+; K4    ; TEST[1]          ; LVTTL/LVCMOS ;
+; K5    ; TEST[2]          ; LVTTL/LVCMOS ;
+; K6    ; VCC_IO           ;              ;
+; K7    ; GND_INT          ;              ;
+; K8    ; VCC_IO           ;              ;
+; K9    ; VCC_INT          ;              ;
+; K10   ; GND              ;              ;
+; K11   ; VCC_IO           ;              ;
+; K12   ; GND*             ;              ;
+; K13   ; OUT_WORD         ; LVTTL/LVCMOS ;
+; K14   ; NC               ;              ;
+; K15   ; TEST[4]          ; LVTTL/LVCMOS ;
+; K16   ; NC               ;              ;
+; L1    ; TEST[12]         ; LVTTL/LVCMOS ;
+; L2    ; NC               ;              ;
+; L3    ; TEST[8]          ; LVTTL/LVCMOS ;
+; L4    ; NC               ;              ;
+; L5    ; VCC_INT          ;              ;
+; L6    ; GND_INT          ;              ;
+; L7    ; VCC_INT          ;              ;
+; L8    ; CLK              ; LVTTL/LVCMOS ;
+; L9    ; VCC_CKLK         ;              ;
+; L10   ; VCC_IO           ;              ;
+; L11   ; GND_INT          ;              ;
+; L12   ; VCC_INT          ;              ;
+; L13   ; TEST[9]          ; LVTTL/LVCMOS ;
+; L14   ; TEST[7]          ; LVTTL/LVCMOS ;
+; L15   ; TEST[10]         ; LVTTL/LVCMOS ;
+; L16   ; ERROR_COUNTER[1] ; LVTTL/LVCMOS ;
+; M1    ; GND*             ;              ;
+; M2    ; TEST[6]          ; LVTTL/LVCMOS ;
+; M3    ; GND*             ;              ;
+; M4    ; GND*             ;              ;
+; M5    ; GND              ;              ;
+; M6    ; VCC_IO           ;              ;
+; M7    ; GND*             ;              ;
+; M8    ; GND*             ;              ;
+; M9    ; ERROR_WORD[0]    ; LVTTL/LVCMOS ;
+; M10   ; GND*             ;              ;
+; M11   ; VCC_INT          ;              ;
+; M12   ; GND_INT          ;              ;
+; M13   ; GND*             ;              ;
+; M14   ; NC               ;              ;
+; M15   ; GND*             ;              ;
+; M16   ; NC               ;              ;
+; N1    ; GND*             ;              ;
+; N2    ; GND*             ;              ;
+; N3    ; GND*             ;              ;
+; N4    ; ^nCONFIG         ;              ;
+; N5    ; GND*             ;              ;
+; N6    ; GND*             ;              ;
+; N7    ; GND*             ;              ;
+; N8    ; GND*             ;              ;
+; N9    ; TEST[15]         ; LVTTL/LVCMOS ;
+; N10   ; GND*             ;              ;
+; N11   ; GND*             ;              ;
+; N12   ; VCC_IO           ;              ;
+; N13   ; GND*             ;              ;
+; N14   ; GND*             ;              ;
+; N15   ; NC               ;              ;
+; N16   ; GND*             ;              ;
+; P1    ; ^MSEL0           ;              ;
+; P2    ; GND*             ;              ;
+; P3    ; GND*             ;              ;
+; P4    ; GND*             ;              ;
+; P5    ; GND*             ;              ;
+; P6    ; GND*             ;              ;
+; P7    ; ERROR_SYNC       ; LVTTL/LVCMOS ;
+; P8    ; GND*             ;              ;
+; P9    ; GND*             ;              ;
+; P10   ; GND*             ;              ;
+; P11   ; GND*             ;              ;
+; P12   ; GND*             ;              ;
+; P13   ; GND*             ;              ;
+; P14   ; GND*             ;              ;
+; P15   ; #TMS             ;              ;
+; P16   ; GND*             ;              ;
+; R1    ; ^MSEL1           ;              ;
+; R2    ; VCC_INT          ;              ;
+; R3    ; GND*             ;              ;
+; R4    ; GND*             ;              ;
+; R5    ; GND*             ;              ;
+; R6    ; GND*             ;              ;
+; R7    ; GND*             ;              ;
+; R8    ; ERROR_WORD[1]    ; LVTTL/LVCMOS ;
+; R9    ; GND*             ;              ;
+; R10   ; GND*             ;              ;
+; R11   ; GND*             ;              ;
+; R12   ; GND*             ;              ;
+; R13   ; GND*             ;              ;
+; R14   ; GND*             ;              ;
+; R15   ; GND*             ;              ;
+; R16   ; #NTRST           ;              ;
+; T1    ; TEST[5]          ; LVTTL/LVCMOS ;
+; T2    ; ERROR_BUFFER[1]  ; LVTTL/LVCMOS ;
+; T3    ; GND*             ;              ;
+; T4    ; GND*             ;              ;
+; T5    ; GND*             ;              ;
+; T6    ; GND*             ;              ;
+; T7    ; GND*             ;              ;
+; T8    ; GND_CKLK         ;              ;
+; T9    ; GND*             ;              ;
+; T10   ; GND*             ;              ;
+; T11   ; GND*             ;              ;
+; T12   ; GND*             ;              ;
+; T13   ; GND*             ;              ;
+; T14   ; GND*             ;              ;
+; T15   ; GND*             ;              ;
+; T16   ; ^nSTATUS         ;              ;
++-------+------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------+
-; Control Signals                                                                              ;
-+--------------------------------------------+---------+---------+--------------+--------------+
-; Name                                       ; Pin #   ; Fan-Out ; Usage        ; Global Usage ;
-+--------------------------------------------+---------+---------+--------------+--------------+
-; DIV_F2M:DIV|F2M                            ; LC1_D35 ; 11      ; Clock        ; Internal     ;
-; CLK                                        ; L8      ; 5       ; Clock        ; Pin          ;
-; RES                                        ; B9      ; 14      ; Async. clear ; Pin          ;
-; Form_buffer:Form_buffer|buffer_temp_2[0]~6 ; LC2_E35 ; 1       ; Clock enable ; Non-global   ;
-; Form_buffer:Form_buffer|buffer_temp_2[1]~7 ; LC4_E35 ; 1       ; Clock enable ; Non-global   ;
-; Form_buffer:Form_buffer|buffer_temp_2[2]~8 ; LC5_E35 ; 1       ; Clock enable ; Non-global   ;
-; DIV_F2M:DIV|Equal0~0                       ; LC5_D35 ; 2       ; Clock enable ; Non-global   ;
-+--------------------------------------------+---------+---------+--------------+--------------+
++---------------------------------------------------------------------------------------------+
+; Control Signals                                                                             ;
++--------------------------------------------+--------+---------+--------------+--------------+
+; Name                                       ; Pin #  ; Fan-Out ; Usage        ; Global Usage ;
++--------------------------------------------+--------+---------+--------------+--------------+
+; DIV_F2M:DIV|F2M                            ; LC1_E3 ; 11      ; Clock        ; Internal     ;
+; Form_buffer:Form_buffer|buffer_temp_2[2]~6 ; LC2_E7 ; 1       ; Clock enable ; Non-global   ;
+; CLK                                        ; L8     ; 5       ; Clock        ; Pin          ;
+; RES                                        ; B9     ; 14      ; Async. clear ; Pin          ;
+; DIV_F2M:DIV|Equal0~0                       ; LC2_E3 ; 2       ; Clock enable ; Non-global   ;
+; Form_buffer:Form_buffer|buffer_temp_2[0]~5 ; LC1_E7 ; 1       ; Clock enable ; Non-global   ;
+; Form_buffer:Form_buffer|Equal3~0           ; LC8_E4 ; 2       ; Clock enable ; Non-global   ;
++--------------------------------------------+--------+---------+--------------+--------------+
 
 
 +----------------------------------------------+
 ; Global & Other Fast Signals                  ;
-+-----------------+---------+---------+--------+
-; Name            ; Pin #   ; Fan-Out ; Global ;
-+-----------------+---------+---------+--------+
-; DIV_F2M:DIV|F2M ; LC1_D35 ; 11      ; yes    ;
-; CLK             ; L8      ; 5       ; yes    ;
-; RES             ; B9      ; 14      ; yes    ;
-; ERROR_BUFFER[0] ; M9      ; 3       ; no     ;
-; ERROR_BUFFER[1] ; R8      ; 3       ; no     ;
-+-----------------+---------+---------+--------+
++------------------+--------+---------+--------+
+; Name             ; Pin #  ; Fan-Out ; Global ;
++------------------+--------+---------+--------+
+; DIV_F2M:DIV|F2M  ; LC1_E3 ; 11      ; yes    ;
+; ERROR_WORD[0]    ; M9     ; 8       ; no     ;
+; ERROR_WORD[1]    ; R8     ; 8       ; no     ;
+; CLK              ; L8     ; 5       ; yes    ;
+; RES              ; B9     ; 14      ; yes    ;
+; ERROR_COUNTER[0] ; A9     ; 3       ; no     ;
++------------------+--------+---------+--------+
 
 
 +----------------+
@@ -465,7 +470,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------+-------+
 ; Length ; Count ;
 +--------+-------+
-; 2      ; 1     ;
+; 2      ; 3     ;
 +--------+-------+
 
 
@@ -474,50 +479,58 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------+
 ; Name                                        ; Fan-Out ;
 +---------------------------------------------+---------+
-; Step_count:COUNT|counter[1]~6               ; 11      ;
-; Step_count:COUNT|counter[0]~5               ; 8       ;
-; Step_count:COUNT|counter[2]~7               ; 8       ;
+; Step_count:COUNT|counter[1]~19              ; 8       ;
+; ERROR_WORD[1]                               ; 8       ;
+; Step_count:COUNT|counter[2]~20              ; 8       ;
+; ERROR_WORD[0]                               ; 8       ;
 ; DIV_F2M:DIV|counter[0]~4                    ; 7       ;
 ; DIV_F2M:DIV|counter[1]~6                    ; 6       ;
+; Step_count:COUNT|counter[0]~18              ; 5       ;
 ; DIV_F2M:DIV|counter[2]~5                    ; 5       ;
+; Form_word:Form_word|Equal4~1                ; 5       ;
+; ERROR_BUFFER[0]                             ; 4       ;
 ; Form_buffer:Form_buffer|buffer_temp_1[0]~28 ; 4       ;
+; Form_buffer:Form_buffer|Equal3~3            ; 4       ;
 ; Form_buffer:Form_buffer|buffer_temp_1[1]~29 ; 4       ;
-; ERROR_BUFFER[1]                             ; 3       ;
-; ERROR_BUFFER[0]                             ; 3       ;
-; Form_buffer:Form_buffer|buffer_temp_2[1]~14 ; 3       ;
-; Form_buffer:Form_buffer|buffer_temp_2[0]~13 ; 3       ;
+; ERROR_BUFFER[1]                             ; 4       ;
+; ERROR_COUNTER[1]                            ; 3       ;
+; ERROR_COUNTER[0]                            ; 3       ;
+; Form_buffer:Form_buffer|buffer_temp_2[1]~8  ; 3       ;
 ; Form_buffer:Form_buffer|buffer_temp_1[2]~30 ; 3       ;
 ; DIV_F2M:DIV|number~1                        ; 3       ;
-; Form_word:Form_word|Equal1~1                ; 3       ;
-; Form_word:Form_word|Equal0~1                ; 2       ;
-; Form_buffer:Form_buffer|Equal1~3            ; 2       ;
-; Form_buffer:Form_buffer|buffer_temp_2[2]~15 ; 2       ;
+; Form_buffer:Form_buffer|buffer_temp_2[0]~7  ; 3       ;
+; Form_buffer:Form_buffer|Equal3~2            ; 2       ;
+; Form_word:Form_word|Equal3~1                ; 2       ;
+; Form_buffer:Form_buffer|buffer_temp_2[2]~9  ; 2       ;
 ; DIV_F2M:DIV|Equal0~1                        ; 2       ;
-; Form_word:Form_word|OUT_WORD~26             ; 2       ;
-; Form_word:Form_word|OUT_WORD~21             ; 1       ;
+; Form_word:Form_word|OUT_WORD~42             ; 2       ;
+; Form_buffer:Form_buffer|buffer_temp_2[0]~10 ; 1       ;
 ; Form_buffer:Form_buffer|buffer_temp_1~34    ; 1       ;
-; Form_word:Form_word|OUT_WORD~19             ; 1       ;
-; Form_word:Form_word|OUT_WORD~22             ; 1       ;
-; Form_buffer:Form_buffer|buffer_temp_2[2]~18 ; 1       ;
-; Form_word:Form_word|OUT_WORD~24             ; 1       ;
-; Form_buffer:Form_buffer|buffer_temp_2[0]~16 ; 1       ;
-; Form_word:Form_word|OUT_WORD~20             ; 1       ;
-; Form_word:Form_word|OUT_WORD~23             ; 1       ;
-; Form_buffer:Form_buffer|Equal1~2            ; 1       ;
-; Form_buffer:Form_buffer|buffer_temp_1~33    ; 1       ;
-; Form_buffer:Form_buffer|buffer_temp_2[1]~17 ; 1       ;
 ; Form_buffer:Form_buffer|buffer_temp_1~31    ; 1       ;
-; Form_word:Form_word|OUT_WORD~25             ; 1       ;
+; Form_word:Form_word|OUT_WORD~45             ; 1       ;
+; Form_word:Form_word|OUT_WORD~35             ; 1       ;
+; Form_word:Form_word|OUT_WORD~40             ; 1       ;
+; Form_word:Form_word|OUT_WORD~37             ; 1       ;
+; Form_word:Form_word|OUT_WORD~48             ; 1       ;
+; Form_buffer:Form_buffer|buffer_temp_1~33    ; 1       ;
+; Form_word:Form_word|OUT_WORD~36             ; 1       ;
+; Form_word:Form_word|OUT_WORD~47             ; 1       ;
+; Form_word:Form_word|OUT_WORD~41             ; 1       ;
+; Form_word:Form_word|OUT_WORD~44             ; 1       ;
+; Form_buffer:Form_buffer|Equal1~1            ; 1       ;
+; Form_word:Form_word|OUT_WORD~38             ; 1       ;
+; Form_buffer:Form_buffer|buffer_temp_2[2]~11 ; 1       ;
+; Form_word:Form_word|OUT_WORD~39             ; 1       ;
 +---------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------+
-; Peripheral Signals                                                                           ;
-+-------------------+---------+-------+-----------------+---------------------------+----------+
-; Peripheral Signal ; Source  ; Usage ; Dedicated Clock ; Peripheral Control Signal ; Polarity ;
-+-------------------+---------+-------+-----------------+---------------------------+----------+
-; DIV_F2M:DIV|F2M   ; LC1_D35 ; Clock ; no              ; yes                       ; +ve      ;
-+-------------------+---------+-------+-----------------+---------------------------+----------+
++---------------------------------------------------------------------------------------------+
+; Peripheral Signals                                                                          ;
++-------------------+--------+-------+-----------------+---------------------------+----------+
+; Peripheral Signal ; Source ; Usage ; Dedicated Clock ; Peripheral Control Signal ; Polarity ;
++-------------------+--------+-------+-----------------+---------------------------+----------+
+; DIV_F2M:DIV|F2M   ; LC1_E3 ; Clock ; no              ; yes                       ; +ve      ;
++-------------------+--------+-------+-----------------+---------------------------+----------+
 
 
 +-------------------------------------------+
@@ -525,11 +538,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------+----------------+
 ; Number of Logic Elements ; Number of LABs ;
 +--------------------------+----------------+
-; 0                        ; 211            ;
+; 0                        ; 210            ;
 ; 1                        ; 1              ;
 ; 2                        ; 0              ;
 ; 3                        ; 0              ;
-; 4                        ; 0              ;
+; 4                        ; 1              ;
 ; 5                        ; 0              ;
 ; 6                        ; 0              ;
 ; 7                        ; 0              ;
@@ -542,15 +555,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------+----------------+
 ; Local Routing Interconnects ; Number of LABs ;
 +-----------------------------+----------------+
-; 0                           ; 212            ;
-; 1                           ; 0              ;
-; 2                           ; 0              ;
+; 0                           ; 210            ;
+; 1                           ; 1              ;
+; 2                           ; 1              ;
 ; 3                           ; 0              ;
-; 4                           ; 0              ;
-; 5                           ; 1              ;
-; 6                           ; 1              ;
-; 7                           ; 1              ;
-; 8                           ; 1              ;
+; 4                           ; 1              ;
+; 5                           ; 0              ;
+; 6                           ; 3              ;
 +-----------------------------+----------------+
 
 
@@ -559,17 +570,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+----------------+
 ; LAB External Interconnects ; Number of LABs ;
 +----------------------------+----------------+
-; 0                          ; 212            ;
+; 0                          ; 211            ;
 ; 1                          ; 1              ;
-; 2                          ; 1              ;
-; 3                          ; 0              ;
-; 4                          ; 0              ;
-; 5                          ; 1              ;
+; 2                          ; 0              ;
+; 3                          ; 1              ;
+; 4                          ; 1              ;
+; 5                          ; 0              ;
 ; 6                          ; 0              ;
 ; 7                          ; 0              ;
 ; 8                          ; 0              ;
 ; 9                          ; 0              ;
-; 10                         ; 1              ;
+; 10                         ; 0              ;
+; 11                         ; 2              ;
 +----------------------------+----------------+
 
 
@@ -581,10 +593,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;  A    ;  0 / 144 ( 0 % )   ;  0 / 72 ( 0 % )             ;  0 / 72 ( 0 % )              ;
 ;  B    ;  1 / 144 ( < 1 % ) ;  0 / 72 ( 0 % )             ;  0 / 72 ( 0 % )              ;
 ;  C    ;  0 / 144 ( 0 % )   ;  0 / 72 ( 0 % )             ;  0 / 72 ( 0 % )              ;
-;  D    ;  6 / 144 ( 4 % )   ;  0 / 72 ( 0 % )             ;  6 / 72 ( 8 % )              ;
-;  E    ;  1 / 144 ( < 1 % ) ;  0 / 72 ( 0 % )             ;  3 / 72 ( 4 % )              ;
+;  D    ;  0 / 144 ( 0 % )   ;  1 / 72 ( 1 % )             ;  0 / 72 ( 0 % )              ;
+;  E    ;  15 / 144 ( 10 % ) ;  7 / 72 ( 10 % )            ;  0 / 72 ( 0 % )              ;
 ;  F    ;  0 / 144 ( 0 % )   ;  0 / 72 ( 0 % )             ;  0 / 72 ( 0 % )              ;
-; Total ;  8 / 864 ( < 1 % ) ;  0 / 432 ( 0 % )            ;  9 / 432 ( 2 % )             ;
+; Total ;  16 / 864 ( 2 % )  ;  8 / 432 ( 2 % )            ;  0 / 432 ( 0 % )             ;
 +-------+--------------------+-----------------------------+------------------------------+
 
 
@@ -593,10 +605,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------+--------------------+
 ; Col.  ; Interconnect Used  ;
 +-------+--------------------+
-; 1     ;  0 / 24 ( 0 % )    ;
-; 2     ;  0 / 24 ( 0 % )    ;
-; 3     ;  0 / 24 ( 0 % )    ;
-; 4     ;  0 / 24 ( 0 % )    ;
+; 1     ;  1 / 24 ( 4 % )    ;
+; 2     ;  1 / 24 ( 4 % )    ;
+; 3     ;  1 / 24 ( 4 % )    ;
+; 4     ;  1 / 24 ( 4 % )    ;
 ; 5     ;  0 / 24 ( 0 % )    ;
 ; 6     ;  0 / 24 ( 0 % )    ;
 ; 7     ;  0 / 24 ( 0 % )    ;
@@ -606,7 +618,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 11    ;  0 / 24 ( 0 % )    ;
 ; 12    ;  0 / 24 ( 0 % )    ;
 ; 13    ;  0 / 24 ( 0 % )    ;
-; 14    ;  0 / 24 ( 0 % )    ;
+; 14    ;  1 / 24 ( 4 % )    ;
 ; 15    ;  0 / 24 ( 0 % )    ;
 ; 16    ;  0 / 24 ( 0 % )    ;
 ; 17    ;  0 / 24 ( 0 % )    ;
@@ -614,7 +626,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 19    ;  0 / 24 ( 0 % )    ;
 ; 20    ;  0 / 24 ( 0 % )    ;
 ; 21    ;  0 / 24 ( 0 % )    ;
-; 22    ;  1 / 24 ( 4 % )    ;
+; 22    ;  0 / 24 ( 0 % )    ;
 ; 23    ;  0 / 24 ( 0 % )    ;
 ; 24    ;  0 / 24 ( 0 % )    ;
 ; 25    ;  0 / 24 ( 0 % )    ;
@@ -623,13 +635,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; 28    ;  0 / 24 ( 0 % )    ;
 ; 29    ;  0 / 24 ( 0 % )    ;
 ; 30    ;  0 / 24 ( 0 % )    ;
-; 31    ;  3 / 24 ( 13 % )   ;
+; 31    ;  0 / 24 ( 0 % )    ;
 ; 32    ;  0 / 24 ( 0 % )    ;
 ; 33    ;  0 / 24 ( 0 % )    ;
 ; 34    ;  0 / 24 ( 0 % )    ;
-; 35    ;  2 / 24 ( 8 % )    ;
-; 36    ;  2 / 24 ( 8 % )    ;
-; Total ;  8 / 864 ( < 1 % ) ;
+; 35    ;  0 / 24 ( 0 % )    ;
+; 36    ;  0 / 24 ( 0 % )    ;
+; Total ;  5 / 864 ( < 1 % ) ;
 +-------+--------------------+
 
 
@@ -648,13 +660,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------+-----------------------------+
 ; Resource                          ; Usage                       ;
 +-----------------------------------+-----------------------------+
-; Total logic elements              ; 33 / 1,728 ( 2 % )          ;
+; Total logic elements              ; 37 / 1,728 ( 2 % )          ;
 ; Registers                         ; 14 / 1,728 ( < 1 % )        ;
 ; Logic elements in carry chains    ; 0                           ;
 ; User inserted logic elements      ; 0                           ;
-; I/O pins                          ; 22 / 176 ( 13 % )           ;
-;     -- Clock pins                 ; 1 / 2 ( 50 % )              ;
-;     -- Dedicated input pins       ; 3 / 4 ( 75 % )              ;
+; I/O pins                          ; 26 / 176 ( 15 % )           ;
+;     -- Clock pins                 ; 2 / 2 ( 100 % )             ;
+;     -- Dedicated input pins       ; 4 / 4 ( 100 % )             ;
 ; Global signals                    ; 3                           ;
 ; EABs                              ; 0 / 6 ( 0 % )               ;
 ; Total memory bits                 ; 0 / 24,576 ( 0 % )          ;
@@ -662,9 +674,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Maximum fan-out node              ; RES                         ;
 ; Maximum fan-out                   ; 14                          ;
 ; Highest non-global fan-out signal ; Step_count:COUNT|counter[1] ;
-; Highest non-global fan-out        ; 11                          ;
-; Total fan-out                     ; 128                         ;
-; Average fan-out                   ; 2.33                        ;
+; Highest non-global fan-out        ; 8                           ;
+; Total fan-out                     ; 155                         ;
+; Average fan-out                   ; 2.46                        ;
 +-----------------------------------+-----------------------------+
 
 
@@ -673,49 +685,53 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                     ; Library Name ;
 +------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+--------------+
-; |SW_Count_Coder              ; 33 (0)      ; 14           ; 0           ; 22   ; 19 (0)       ; 1 (0)             ; 13 (0)           ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder                         ; work         ;
+; |SW_Count_Coder              ; 37 (0)      ; 14           ; 0           ; 26   ; 23 (0)       ; 4 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder                         ; work         ;
 ;    |DIV_F2M:DIV|             ; 6 (6)       ; 5            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder|DIV_F2M:DIV             ; work         ;
-;    |Form_buffer:Form_buffer| ; 14 (14)     ; 6            ; 0           ; 0    ; 8 (8)        ; 1 (1)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder|Form_buffer:Form_buffer ; work         ;
-;    |Form_word:Form_word|     ; 10 (10)     ; 0            ; 0           ; 0    ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder|Form_word:Form_word     ; work         ;
+;    |Form_buffer:Form_buffer| ; 14 (14)     ; 6            ; 0           ; 0    ; 8 (8)        ; 4 (4)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder|Form_buffer:Form_buffer ; work         ;
+;    |Form_word:Form_word|     ; 14 (14)     ; 0            ; 0           ; 0    ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder|Form_word:Form_word     ; work         ;
 ;    |Step_count:COUNT|        ; 3 (3)       ; 3            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |SW_Count_Coder|Step_count:COUNT        ; work         ;
 +------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------+
-; Delay Chain Summary                      ;
-+-----------------+----------+-------------+
-; Name            ; Pin Type ; Pad to Core ;
-+-----------------+----------+-------------+
-; ERROR_SYNC      ; Input    ; OFF         ;
-; CLK             ; Input    ; OFF         ;
-; RES             ; Input    ; OFF         ;
-; ERROR_BUFFER[0] ; Input    ; OFF         ;
-; ERROR_BUFFER[1] ; Input    ; OFF         ;
-; OUT_WORD        ; Output   ; OFF         ;
-; TEST[0]         ; Output   ; OFF         ;
-; TEST[1]         ; Output   ; OFF         ;
-; TEST[2]         ; Output   ; OFF         ;
-; TEST[3]         ; Output   ; OFF         ;
-; TEST[4]         ; Output   ; OFF         ;
-; TEST[5]         ; Output   ; OFF         ;
-; TEST[6]         ; Output   ; OFF         ;
-; TEST[7]         ; Output   ; OFF         ;
-; TEST[8]         ; Output   ; OFF         ;
-; TEST[9]         ; Output   ; OFF         ;
-; TEST[10]        ; Output   ; OFF         ;
-; TEST[11]        ; Output   ; OFF         ;
-; TEST[12]        ; Output   ; OFF         ;
-; TEST[13]        ; Output   ; OFF         ;
-; TEST[14]        ; Output   ; OFF         ;
-; TEST[15]        ; Output   ; OFF         ;
-+-----------------+----------+-------------+
++-------------------------------------------+
+; Delay Chain Summary                       ;
++------------------+----------+-------------+
+; Name             ; Pin Type ; Pad to Core ;
++------------------+----------+-------------+
+; ERROR_SYNC       ; Input    ; OFF         ;
+; ERROR_WORD[0]    ; Input    ; OFF         ;
+; ERROR_WORD[1]    ; Input    ; OFF         ;
+; CLK              ; Input    ; OFF         ;
+; RES              ; Input    ; OFF         ;
+; ERROR_COUNTER[0] ; Input    ; ON          ;
+; ERROR_COUNTER[1] ; Input    ; ON          ;
+; ERROR_BUFFER[0]  ; Input    ; ON          ;
+; ERROR_BUFFER[1]  ; Input    ; ON          ;
+; OUT_WORD         ; Output   ; OFF         ;
+; TEST[0]          ; Output   ; OFF         ;
+; TEST[1]          ; Output   ; OFF         ;
+; TEST[2]          ; Output   ; OFF         ;
+; TEST[3]          ; Output   ; OFF         ;
+; TEST[4]          ; Output   ; OFF         ;
+; TEST[5]          ; Output   ; OFF         ;
+; TEST[6]          ; Output   ; OFF         ;
+; TEST[7]          ; Output   ; OFF         ;
+; TEST[8]          ; Output   ; OFF         ;
+; TEST[9]          ; Output   ; OFF         ;
+; TEST[10]         ; Output   ; OFF         ;
+; TEST[11]         ; Output   ; OFF         ;
+; TEST[12]         ; Output   ; OFF         ;
+; TEST[13]         ; Output   ; OFF         ;
+; TEST[14]         ; Output   ; OFF         ;
+; TEST[15]         ; Output   ; OFF         ;
++------------------+----------+-------------+
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in E:/Project/SWork/SW_rad_vhdl/Quartus_proj/SW_Count_Coder.pin.
+The pin-out file can be found in E:/Project/SWork/SW_rad_git/Quartus_proj/SW_Count_Coder.pin.
 
 
 +-----------------+
@@ -724,7 +740,7 @@ The pin-out file can be found in E:/Project/SWork/SW_rad_vhdl/Quartus_proj/SW_Co
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 25 23:07:44 2017
+    Info: Processing started: Fri Oct 27 00:40:12 2017
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off SW_Count_Coder -c SW_Count_Coder
 Info: Selected device EPF10K30EFC256-3 for design "SW_Count_Coder"
 Warning: Feature SignalProbe is not available with your current license
@@ -735,7 +751,7 @@ Info: Timing requirements not specified -- optimizing circuit to achieve the fol
     Info: Not setting a global tco requirement
     Info: Not setting a global tpd requirement
 Info: Inserted 0 logic cells in first fitting attempt
-Info: Started fitting attempt 1 on Wed Oct 25 2017 at 23:07:44
+Info: Started fitting attempt 1 on Fri Oct 27 2017 at 00:40:12
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -744,7 +760,7 @@ Info: Fitter routing operations beginning
 Info: Fitter routing operations ending: elapsed time is 00:00:00
 Info: Quartus II Fitter was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 203 megabytes
-    Info: Processing ended: Wed Oct 25 23:07:46 2017
+    Info: Processing ended: Fri Oct 27 00:40:14 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

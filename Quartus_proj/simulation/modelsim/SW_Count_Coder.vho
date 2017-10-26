@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II"
 -- VERSION "Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition"
 
--- DATE "10/25/2017 23:07:51"
+-- DATE "10/27/2017 00:40:19"
 
 -- 
 -- Device: Altera EPF10K30EFC256-3 Package FBGA256
@@ -36,6 +36,8 @@ ENTITY 	SW_Count_Coder IS
 	RES : IN std_logic;
 	ERROR_SYNC : IN std_logic;
 	ERROR_BUFFER : IN std_logic_vector(1 DOWNTO 0);
+	ERROR_COUNTER : IN std_logic_vector(1 DOWNTO 0);
+	ERROR_WORD : IN std_logic_vector(1 DOWNTO 0);
 	OUT_WORD : OUT std_logic;
 	TEST : OUT std_logic_vector(15 DOWNTO 0)
 	);
@@ -54,40 +56,51 @@ SIGNAL ww_CLK : std_logic;
 SIGNAL ww_RES : std_logic;
 SIGNAL ww_ERROR_SYNC : std_logic;
 SIGNAL ww_ERROR_BUFFER : std_logic_vector(1 DOWNTO 0);
+SIGNAL ww_ERROR_COUNTER : std_logic_vector(1 DOWNTO 0);
+SIGNAL ww_ERROR_WORD : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_OUT_WORD : std_logic;
 SIGNAL ww_TEST : std_logic_vector(15 DOWNTO 0);
-SIGNAL \Form_word|OUT_WORD~15_combout\ : std_logic;
-SIGNAL \Form_word|OUT_WORD~9_combout\ : std_logic;
-SIGNAL \Form_buffer|buffer_temp_2[0]~6_combout\ : std_logic;
-SIGNAL \Form_buffer|buffer_temp_2[1]~7_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~17_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~10_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~27_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~47\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~29_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~32_combout\ : std_logic;
 SIGNAL \Form_buffer|buffer_temp_1~23_combout\ : std_logic;
+SIGNAL \Form_buffer|buffer_temp_2[0]~5_combout\ : std_logic;
 SIGNAL \RES~dataout\ : std_logic;
 SIGNAL \CLK~dataout\ : std_logic;
-SIGNAL \Form_word|OUT_WORD~18_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~20_combout\ : std_logic;
 SIGNAL \DIV|number~regout\ : std_logic;
 SIGNAL \DIV|Equal0~0_combout\ : std_logic;
-SIGNAL \Form_word|Equal1~0_combout\ : std_logic;
+SIGNAL \Form_word|Equal4~0_combout\ : std_logic;
 SIGNAL \DIV|F2M~regout\ : std_logic;
-SIGNAL \Form_word|OUT_WORD~14_combout\ : std_logic;
-SIGNAL \Form_word|Equal0~0_combout\ : std_logic;
-SIGNAL \Form_word|OUT_WORD~16_combout\ : std_logic;
-SIGNAL \Form_buffer|buffer_temp_1~17_combout\ : std_logic;
-SIGNAL \Form_buffer|Equal1~1_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~44\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~31_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~15_combout\ : std_logic;
+SIGNAL \Form_word|Equal3~0_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~18_combout\ : std_logic;
+SIGNAL \Form_buffer|Equal3~0_combout\ : std_logic;
+SIGNAL \Form_buffer|Equal3~1_combout\ : std_logic;
 SIGNAL \Form_buffer|buffer_temp_1~33\ : std_logic;
 SIGNAL \Form_buffer|buffer_temp_1~26_combout\ : std_logic;
-SIGNAL \Form_word|OUT_WORD~2_combout\ : std_logic;
-SIGNAL \Form_word|OUT_WORD~17_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~3_combout\ : std_logic;
+SIGNAL \Form_word|OUT_WORD~19_combout\ : std_logic;
 SIGNAL \Form_word|OUT_WORD~combout\ : std_logic;
+SIGNAL \Form_buffer|buffer_temp_1~17_combout\ : std_logic;
 SIGNAL \Form_buffer|Equal1~0_combout\ : std_logic;
-SIGNAL \Form_buffer|buffer_temp_2[2]~8_combout\ : std_logic;
+SIGNAL \Form_buffer|buffer_temp_2[2]~6_combout\ : std_logic;
 SIGNAL \Form_buffer|buffer_temp_1\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \Form_buffer|buffer_temp_2\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \COUNT|counter\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \DIV|counter\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \ERROR_BUFFER~dataout\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \ERROR_COUNTER~dataout\ : std_logic_vector(1 DOWNTO 0);
+SIGNAL \ERROR_WORD~dataout\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \DIV|ALT_INV_F2M~regout\ : std_logic;
 SIGNAL \COUNT|ALT_INV_counter\ : std_logic_vector(2 DOWNTO 1);
 SIGNAL \Form_buffer|ALT_INV_buffer_temp_1\ : std_logic_vector(2 DOWNTO 0);
+SIGNAL \Form_buffer|ALT_INV_buffer_temp_2\ : std_logic_vector(2 DOWNTO 0);
 
 BEGIN
 
@@ -95,6 +108,8 @@ ww_CLK <= CLK;
 ww_RES <= RES;
 ww_ERROR_SYNC <= ERROR_SYNC;
 ww_ERROR_BUFFER <= ERROR_BUFFER;
+ww_ERROR_COUNTER <= ERROR_COUNTER;
+ww_ERROR_WORD <= ERROR_WORD;
 OUT_WORD <= ww_OUT_WORD;
 TEST <= ww_TEST;
 ww_devoe <= devoe;
@@ -106,86 +121,113 @@ ww_devpor <= devpor;
 \Form_buffer|ALT_INV_buffer_temp_1\(0) <= NOT \Form_buffer|buffer_temp_1\(0);
 \Form_buffer|ALT_INV_buffer_temp_1\(1) <= NOT \Form_buffer|buffer_temp_1\(1);
 \Form_buffer|ALT_INV_buffer_temp_1\(2) <= NOT \Form_buffer|buffer_temp_1\(2);
+\Form_buffer|ALT_INV_buffer_temp_2\(0) <= NOT \Form_buffer|buffer_temp_2\(0);
+\Form_buffer|ALT_INV_buffer_temp_2\(1) <= NOT \Form_buffer|buffer_temp_2\(1);
+\Form_buffer|ALT_INV_buffer_temp_2\(2) <= NOT \Form_buffer|buffer_temp_2\(2);
 
-\Form_word|OUT_WORD~15\ : flex10ke_lcell
+\Form_word|OUT_WORD~17\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|OUT_WORD~15_combout\ = \Form_buffer|buffer_temp_1\(2) $ (\Form_word|Equal1~0_combout\ & \Form_buffer|buffer_temp_1\(0) # !\Form_word|Equal1~0_combout\ & (\Form_buffer|buffer_temp_1\(1)))
+-- \Form_word|OUT_WORD~17_combout\ = \Form_buffer|buffer_temp_1\(2) $ \Form_word|OUT_WORD~32_combout\ $ (\ERROR_WORD~dataout\(0) & \ERROR_WORD~dataout\(1))
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "false",
-	lut_mask => "665a",
+	lut_mask => "9666",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
 	dataa => \Form_buffer|buffer_temp_1\(2),
-	datab => \Form_buffer|buffer_temp_1\(0),
+	datab => \Form_word|OUT_WORD~32_combout\,
+	datac => \ERROR_WORD~dataout\(0),
+	datad => \ERROR_WORD~dataout\(1),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~17_combout\);
+
+\Form_word|OUT_WORD~10\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~10_combout\ = \Form_buffer|buffer_temp_2\(0) $ \ERROR_WORD~dataout\(1) $ \ERROR_WORD~dataout\(0) $ \Form_buffer|buffer_temp_2\(1)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "6996",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Form_buffer|buffer_temp_2\(0),
+	datab => \ERROR_WORD~dataout\(1),
+	datac => \ERROR_WORD~dataout\(0),
+	datad => \Form_buffer|buffer_temp_2\(1),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~10_combout\);
+
+\Form_word|OUT_WORD~29\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~47\ = \Form_word|Equal4~0_combout\ # \Form_buffer|buffer_temp_1\(1) $ (\ERROR_WORD~dataout\(1) & !\ERROR_WORD~dataout\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "ffd2",
+	operation_mode => "normal",
+	output_mode => "none",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ERROR_WORD~dataout\(1),
+	datab => \ERROR_WORD~dataout\(0),
 	datac => \Form_buffer|buffer_temp_1\(1),
-	datad => \Form_word|Equal1~0_combout\,
+	datad => \Form_word|Equal4~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~15_combout\);
+	combout => \Form_word|OUT_WORD~29_combout\,
+	cascout => \Form_word|OUT_WORD~47\);
 
-\Form_word|OUT_WORD~9\ : flex10ke_lcell
+\Form_word|OUT_WORD~32\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|OUT_WORD~9_combout\ = \Form_buffer|buffer_temp_2\(1) $ \Form_buffer|buffer_temp_2\(0)
+-- \Form_word|OUT_WORD~32_combout\ = (\Form_buffer|buffer_temp_1\(0) $ (\ERROR_WORD~dataout\(0) & !\ERROR_WORD~dataout\(1)) # !\Form_word|Equal4~0_combout\) & CASCADE(\Form_word|OUT_WORD~47\)
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "false",
-	lut_mask => "0ff0",
+	lut_mask => "f75d",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	datac => \Form_buffer|buffer_temp_2\(1),
-	datad => \Form_buffer|buffer_temp_2\(0),
+	dataa => \Form_word|Equal4~0_combout\,
+	datab => \ERROR_WORD~dataout\(0),
+	datac => \ERROR_WORD~dataout\(1),
+	datad => \Form_buffer|buffer_temp_1\(0),
+	cascin => \Form_word|OUT_WORD~47\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~9_combout\);
+	combout => \Form_word|OUT_WORD~32_combout\);
 
-\Form_buffer|buffer_temp_2[0]~6\ : flex10ke_lcell
+\Form_buffer|buffer_temp_2[0]~5\ : flex10ke_lcell
 -- Equation(s):
--- \Form_buffer|buffer_temp_2[0]~6_combout\ = \COUNT|counter\(1) & !\COUNT|counter\(0) & !\RES~dataout\
+-- \Form_buffer|buffer_temp_2[0]~5_combout\ = !\Form_buffer|Equal3~1_combout\
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "false",
-	lut_mask => "000c",
+	lut_mask => "00ff",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	datab => \COUNT|counter\(1),
-	datac => \COUNT|counter\(0),
-	datad => \RES~dataout\,
+	datad => \Form_buffer|Equal3~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_buffer|buffer_temp_2[0]~6_combout\);
-
-\Form_buffer|buffer_temp_2[1]~7\ : flex10ke_lcell
--- Equation(s):
--- \Form_buffer|buffer_temp_2[1]~7_combout\ = !\RES~dataout\ & \COUNT|counter\(1) & \COUNT|counter\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "3000",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datab => \RES~dataout\,
-	datac => \COUNT|counter\(1),
-	datad => \COUNT|counter\(0),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_buffer|buffer_temp_2[1]~7_combout\);
+	combout => \Form_buffer|buffer_temp_2[0]~5_combout\);
 
 \RES~I\ : flex10ke_io
 -- pragma translate_off
@@ -282,9 +324,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \DIV|counter\(2));
 
-\Form_word|OUT_WORD~18\ : flex10ke_lcell
+\Form_word|OUT_WORD~20\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|OUT_WORD~18_combout\ = \DIV|counter\(0) & (!\DIV|counter\(2) # !\DIV|counter\(1))
+-- \Form_word|OUT_WORD~20_combout\ = \DIV|counter\(0) & (!\DIV|counter\(2) # !\DIV|counter\(1))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -300,7 +342,7 @@ PORT MAP (
 	datad => \DIV|counter\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~18_combout\);
+	combout => \Form_word|OUT_WORD~20_combout\);
 
 \DIV|number\ : flex10ke_lcell
 -- Equation(s):
@@ -323,6 +365,70 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \DIV|number~regout\);
 
+\ERROR_WORD[0]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "from_pin",
+	operation_mode => "input",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	ena => VCC,
+	padio => ww_ERROR_WORD(0),
+	dataout => \ERROR_WORD~dataout\(0));
+
+\ERROR_WORD[1]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "from_pin",
+	operation_mode => "input",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	ena => VCC,
+	padio => ww_ERROR_WORD(1),
+	dataout => \ERROR_WORD~dataout\(1));
+
+\ERROR_COUNTER[0]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "from_pin",
+	operation_mode => "input",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	ena => VCC,
+	padio => ww_ERROR_COUNTER(0),
+	dataout => \ERROR_COUNTER~dataout\(0));
+
+\ERROR_COUNTER[1]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "from_pin",
+	operation_mode => "input",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	ena => VCC,
+	padio => ww_ERROR_COUNTER(1),
+	dataout => \ERROR_COUNTER~dataout\(1));
+
 \DIV|Equal0~0\ : flex10ke_lcell
 -- Equation(s):
 -- \DIV|Equal0~0_combout\ = \DIV|counter\(0) & \DIV|counter\(1) & \DIV|counter\(2)
@@ -343,9 +449,9 @@ PORT MAP (
 	devpor => ww_devpor,
 	combout => \DIV|Equal0~0_combout\);
 
-\Form_word|Equal1~0\ : flex10ke_lcell
+\Form_word|Equal4~0\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|Equal1~0_combout\ = !\DIV|counter\(2) & \DIV|counter\(0) & \DIV|counter\(1)
+-- \Form_word|Equal4~0_combout\ = !\DIV|counter\(2) & \DIV|counter\(0) & \DIV|counter\(1)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -361,11 +467,11 @@ PORT MAP (
 	datad => \DIV|counter\(1),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|Equal1~0_combout\);
+	combout => \Form_word|Equal4~0_combout\);
 
 \DIV|F2M\ : flex10ke_lcell
 -- Equation(s):
--- \DIV|F2M~regout\ = DFFEA(!\DIV|Equal0~0_combout\ & (\Form_word|Equal1~0_combout\ # \DIV|F2M~regout\), GLOBAL(\CLK~dataout\), !GLOBAL(\RES~dataout\), , , , )
+-- \DIV|F2M~regout\ = DFFEA(!\DIV|Equal0~0_combout\ & (\Form_word|Equal4~0_combout\ # \DIV|F2M~regout\), GLOBAL(\CLK~dataout\), !GLOBAL(\RES~dataout\), , , , )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -377,7 +483,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \DIV|Equal0~0_combout\,
-	datac => \Form_word|Equal1~0_combout\,
+	datac => \Form_word|Equal4~0_combout\,
 	datad => \DIV|F2M~regout\,
 	aclr => \RES~dataout\,
 	clk => \CLK~dataout\,
@@ -385,63 +491,23 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \DIV|F2M~regout\);
 
-\COUNT|counter[0]\ : flex10ke_lcell
--- Equation(s):
--- \COUNT|counter\(0) = DFFEA(\COUNT|counter\(1) & !\COUNT|counter\(0), GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "00f0",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datac => \COUNT|counter\(1),
-	datad => \COUNT|counter\(0),
-	aclr => \RES~dataout\,
-	clk => \DIV|F2M~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \COUNT|counter\(0));
-
-\COUNT|counter[1]\ : flex10ke_lcell
--- Equation(s):
--- \COUNT|counter\(1) = DFFEA(!\COUNT|counter\(0) # !\COUNT|counter\(1), GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "0fff",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datac => \COUNT|counter\(1),
-	datad => \COUNT|counter\(0),
-	aclr => \RES~dataout\,
-	clk => \DIV|F2M~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \COUNT|counter\(1));
-
 \COUNT|counter[2]\ : flex10ke_lcell
 -- Equation(s):
--- \COUNT|counter\(2) = DFFEA(\COUNT|counter\(2) $ !\COUNT|counter\(1), GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
+-- \COUNT|counter\(2) = DFFEA(\COUNT|counter\(1) $ \COUNT|counter\(2) $ (\ERROR_COUNTER~dataout\(0) # !\ERROR_COUNTER~dataout\(1)), GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "false",
-	lut_mask => "f00f",
+	lut_mask => "9699",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	datac => \COUNT|counter\(2),
-	datad => \COUNT|counter\(1),
+	dataa => \COUNT|counter\(1),
+	datab => \COUNT|counter\(2),
+	datac => \ERROR_COUNTER~dataout\(0),
+	datad => \ERROR_COUNTER~dataout\(1),
 	aclr => \RES~dataout\,
 	clk => \DIV|F2M~regout\,
 	devclrn => ww_devclrn,
@@ -450,19 +516,20 @@ PORT MAP (
 
 \Form_buffer|buffer_temp_2[0]\ : flex10ke_lcell
 -- Equation(s):
--- \Form_buffer|buffer_temp_2\(0) = DFFEA(!\COUNT|counter\(2), !GLOBAL(\DIV|F2M~regout\), , , \Form_buffer|buffer_temp_2[0]~6_combout\, , )
+-- \Form_buffer|buffer_temp_2\(0) = DFFEA(\COUNT|counter\(2), !GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , \Form_buffer|buffer_temp_2[0]~5_combout\, , )
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "true",
-	lut_mask => "00ff",
+	lut_mask => "ff00",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Form_buffer|buffer_temp_2[0]~6_combout\,
+	dataa => \Form_buffer|buffer_temp_2[0]~5_combout\,
 	datad => \COUNT|counter\(2),
+	aclr => \RES~dataout\,
 	clk => \DIV|ALT_INV_F2M~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -470,48 +537,93 @@ PORT MAP (
 
 \Form_buffer|buffer_temp_2[1]\ : flex10ke_lcell
 -- Equation(s):
--- \Form_buffer|buffer_temp_2\(1) = DFFEA(!\COUNT|counter\(2), !GLOBAL(\DIV|F2M~regout\), , , \Form_buffer|buffer_temp_2[1]~7_combout\, , )
+-- \Form_buffer|buffer_temp_2\(1) = DFFEA(\COUNT|counter\(2), !GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , \Form_buffer|Equal3~0_combout\, , )
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "true",
-	lut_mask => "00ff",
+	lut_mask => "ff00",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Form_buffer|buffer_temp_2[1]~7_combout\,
+	dataa => \Form_buffer|Equal3~0_combout\,
 	datad => \COUNT|counter\(2),
+	aclr => \RES~dataout\,
 	clk => \DIV|ALT_INV_F2M~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \Form_buffer|buffer_temp_2\(1));
 
-\Form_word|OUT_WORD~14\ : flex10ke_lcell
+\Form_word|OUT_WORD~27\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|OUT_WORD~14_combout\ = \Form_buffer|buffer_temp_2\(2) $ (\Form_word|Equal1~0_combout\ & \Form_buffer|buffer_temp_2\(0) # !\Form_word|Equal1~0_combout\ & (\Form_buffer|buffer_temp_2\(1)))
+-- \Form_word|OUT_WORD~44\ = \Form_word|Equal4~0_combout\ # \Form_buffer|buffer_temp_2\(1) $ (\ERROR_WORD~dataout\(1) & !\ERROR_WORD~dataout\(0))
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "false",
-	lut_mask => "665a",
+	lut_mask => "ffd2",
+	operation_mode => "normal",
+	output_mode => "none",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ERROR_WORD~dataout\(1),
+	datab => \ERROR_WORD~dataout\(0),
+	datac => \Form_buffer|buffer_temp_2\(1),
+	datad => \Form_word|Equal4~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~27_combout\,
+	cascout => \Form_word|OUT_WORD~44\);
+
+\Form_word|OUT_WORD~31\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~31_combout\ = (\Form_buffer|buffer_temp_2\(0) $ (\ERROR_WORD~dataout\(0) & !\ERROR_WORD~dataout\(1)) # !\Form_word|Equal4~0_combout\) & CASCADE(\Form_word|OUT_WORD~44\)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "f75d",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Form_word|Equal4~0_combout\,
+	datab => \ERROR_WORD~dataout\(0),
+	datac => \ERROR_WORD~dataout\(1),
+	datad => \Form_buffer|buffer_temp_2\(0),
+	cascin => \Form_word|OUT_WORD~44\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~31_combout\);
+
+\Form_word|OUT_WORD~15\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~15_combout\ = \Form_buffer|buffer_temp_2\(2) $ \Form_word|OUT_WORD~31_combout\ $ (\ERROR_WORD~dataout\(0) & \ERROR_WORD~dataout\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "9666",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
 	dataa => \Form_buffer|buffer_temp_2\(2),
-	datab => \Form_buffer|buffer_temp_2\(0),
-	datac => \Form_buffer|buffer_temp_2\(1),
-	datad => \Form_word|Equal1~0_combout\,
+	datab => \Form_word|OUT_WORD~31_combout\,
+	datac => \ERROR_WORD~dataout\(0),
+	datad => \ERROR_WORD~dataout\(1),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~14_combout\);
+	combout => \Form_word|OUT_WORD~15_combout\);
 
-\Form_word|Equal0~0\ : flex10ke_lcell
+\Form_word|Equal3~0\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|Equal0~0_combout\ = !\DIV|counter\(1) & !\DIV|counter\(2) & \DIV|counter\(0)
+-- \Form_word|Equal3~0_combout\ = !\DIV|counter\(1) & !\DIV|counter\(2) & \DIV|counter\(0)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -527,11 +639,11 @@ PORT MAP (
 	datad => \DIV|counter\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|Equal0~0_combout\);
+	combout => \Form_word|Equal3~0_combout\);
 
-\Form_word|OUT_WORD~16\ : flex10ke_lcell
+\Form_word|OUT_WORD~18\ : flex10ke_lcell
 -- Equation(s):
--- \Form_word|OUT_WORD~16_combout\ = \DIV|number~regout\ & (\Form_word|OUT_WORD~14_combout\ # \Form_word|Equal0~0_combout\) # !\DIV|number~regout\ & \Form_word|OUT_WORD~15_combout\ & (!\Form_word|Equal0~0_combout\)
+-- \Form_word|OUT_WORD~18_combout\ = \DIV|number~regout\ & (\Form_word|OUT_WORD~15_combout\ # \Form_word|Equal3~0_combout\) # !\DIV|number~regout\ & \Form_word|OUT_WORD~17_combout\ & (!\Form_word|Equal3~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -542,13 +654,29 @@ GENERIC MAP (
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Form_word|OUT_WORD~15_combout\,
+	dataa => \Form_word|OUT_WORD~17_combout\,
 	datab => \DIV|number~regout\,
-	datac => \Form_word|OUT_WORD~14_combout\,
-	datad => \Form_word|Equal0~0_combout\,
+	datac => \Form_word|OUT_WORD~15_combout\,
+	datad => \Form_word|Equal3~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~16_combout\);
+	combout => \Form_word|OUT_WORD~18_combout\);
+
+\ERROR_BUFFER[0]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "from_pin",
+	operation_mode => "input",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	ena => VCC,
+	padio => ww_ERROR_BUFFER(0),
+	dataout => \ERROR_BUFFER~dataout\(0));
 
 \ERROR_BUFFER[1]~I\ : flex10ke_io
 -- pragma translate_off
@@ -566,21 +694,217 @@ PORT MAP (
 	padio => ww_ERROR_BUFFER(1),
 	dataout => \ERROR_BUFFER~dataout\(1));
 
-\ERROR_BUFFER[0]~I\ : flex10ke_io
+\COUNT|counter[0]\ : flex10ke_lcell
+-- Equation(s):
+-- \COUNT|counter\(0) = DFFEA(\ERROR_COUNTER~dataout\(1) & (\ERROR_COUNTER~dataout\(0) & !\COUNT|counter\(0) & \COUNT|counter\(1) # !\ERROR_COUNTER~dataout\(0) & (!\COUNT|counter\(1))) # !\ERROR_COUNTER~dataout\(1) & \COUNT|counter\(1) & (\COUNT|counter\(0) 
+-- $ !\ERROR_COUNTER~dataout\(0)), GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
+
 -- pragma translate_off
 GENERIC MAP (
-	feedback_mode => "from_pin",
-	operation_mode => "input",
-	reg_source_mode => "none")
+	clock_enable_mode => "false",
+	lut_mask => "610c",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
+	dataa => \COUNT|counter\(0),
+	datab => \ERROR_COUNTER~dataout\(1),
+	datac => \ERROR_COUNTER~dataout\(0),
+	datad => \COUNT|counter\(1),
+	aclr => \RES~dataout\,
+	clk => \DIV|F2M~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	devoe => ww_devoe,
-	oe => GND,
-	ena => VCC,
-	padio => ww_ERROR_BUFFER(0),
-	dataout => \ERROR_BUFFER~dataout\(0));
+	regout => \COUNT|counter\(0));
+
+\Form_buffer|Equal3~0\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_buffer|Equal3~0_combout\ = \COUNT|counter\(1) & \COUNT|counter\(0)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "f000",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	datac => \COUNT|counter\(1),
+	datad => \COUNT|counter\(0),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_buffer|Equal3~0_combout\);
+
+\COUNT|counter[1]\ : flex10ke_lcell
+-- Equation(s):
+-- \COUNT|counter\(1) = DFFEA(\ERROR_COUNTER~dataout\(1) & (!\Form_buffer|Equal3~0_combout\ # !\ERROR_COUNTER~dataout\(0)) # !\ERROR_COUNTER~dataout\(1) & (\ERROR_COUNTER~dataout\(0) & \Form_buffer|Equal3~1_combout\ # !\ERROR_COUNTER~dataout\(0) & 
+-- (!\Form_buffer|Equal3~0_combout\)), GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "2cef",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Form_buffer|Equal3~1_combout\,
+	datab => \ERROR_COUNTER~dataout\(1),
+	datac => \ERROR_COUNTER~dataout\(0),
+	datad => \Form_buffer|Equal3~0_combout\,
+	aclr => \RES~dataout\,
+	clk => \DIV|F2M~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \COUNT|counter\(1));
+
+\Form_buffer|Equal3~1\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_buffer|Equal3~1_combout\ = \COUNT|counter\(0) # !\COUNT|counter\(1)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "ff0f",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	datac => \COUNT|counter\(1),
+	datad => \COUNT|counter\(0),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_buffer|Equal3~1_combout\);
+
+\Form_buffer|buffer_temp_1~23\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_buffer|buffer_temp_1~33\ = \Form_buffer|Equal3~1_combout\ # \COUNT|counter\(2) $ (\ERROR_BUFFER~dataout\(0) & !\ERROR_BUFFER~dataout\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "ffd2",
+	operation_mode => "normal",
+	output_mode => "none",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ERROR_BUFFER~dataout\(0),
+	datab => \ERROR_BUFFER~dataout\(1),
+	datac => \COUNT|counter\(2),
+	datad => \Form_buffer|Equal3~1_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_buffer|buffer_temp_1~23_combout\,
+	cascout => \Form_buffer|buffer_temp_1~33\);
+
+\Form_buffer|buffer_temp_1~26\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_buffer|buffer_temp_1~26_combout\ = (\Form_buffer|buffer_temp_1\(0) $ (\ERROR_BUFFER~dataout\(0) & !\ERROR_BUFFER~dataout\(1)) # !\Form_buffer|Equal3~1_combout\) & CASCADE(\Form_buffer|buffer_temp_1~33\)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "f75d",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Form_buffer|Equal3~1_combout\,
+	datab => \ERROR_BUFFER~dataout\(0),
+	datac => \ERROR_BUFFER~dataout\(1),
+	datad => \Form_buffer|buffer_temp_1\(0),
+	cascin => \Form_buffer|buffer_temp_1~33\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_buffer|buffer_temp_1~26_combout\);
+
+\Form_buffer|buffer_temp_1[0]\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_buffer|buffer_temp_1\(0) = DFFEA(\Form_buffer|buffer_temp_1~26_combout\, !GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "ff00",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	datad => \Form_buffer|buffer_temp_1~26_combout\,
+	aclr => \RES~dataout\,
+	clk => \DIV|ALT_INV_F2M~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \Form_buffer|buffer_temp_1\(0));
+
+\Form_word|OUT_WORD~3\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~3_combout\ = \Form_buffer|buffer_temp_1\(1) $ \ERROR_WORD~dataout\(1) $ \ERROR_WORD~dataout\(0) $ \Form_buffer|buffer_temp_1\(0)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "6996",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Form_buffer|buffer_temp_1\(1),
+	datab => \ERROR_WORD~dataout\(1),
+	datac => \ERROR_WORD~dataout\(0),
+	datad => \Form_buffer|buffer_temp_1\(0),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~3_combout\);
+
+\Form_word|OUT_WORD~19\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~19_combout\ = \Form_word|OUT_WORD~18_combout\ & (\Form_word|OUT_WORD~10_combout\ # !\Form_word|Equal3~0_combout\) # !\Form_word|OUT_WORD~18_combout\ & (\Form_word|Equal3~0_combout\ & \Form_word|OUT_WORD~3_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "bc8c",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \Form_word|OUT_WORD~10_combout\,
+	datab => \Form_word|OUT_WORD~18_combout\,
+	datac => \Form_word|Equal3~0_combout\,
+	datad => \Form_word|OUT_WORD~3_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~19_combout\);
+
+\Form_word|OUT_WORD\ : flex10ke_lcell
+-- Equation(s):
+-- \Form_word|OUT_WORD~combout\ = \Form_word|OUT_WORD~20_combout\ & (\Form_word|OUT_WORD~19_combout\) # !\Form_word|OUT_WORD~20_combout\ & \Form_word|OUT_WORD~combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "false",
+	lut_mask => "fc30",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	datab => \Form_word|OUT_WORD~20_combout\,
+	datac => \Form_word|OUT_WORD~combout\,
+	datad => \Form_word|OUT_WORD~19_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \Form_word|OUT_WORD~combout\);
 
 \Form_buffer|buffer_temp_1~17\ : flex10ke_lcell
 -- Equation(s):
@@ -625,149 +949,6 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \Form_buffer|buffer_temp_1\(1));
 
-\Form_buffer|Equal1~1\ : flex10ke_lcell
--- Equation(s):
--- \Form_buffer|Equal1~1_combout\ = !\ERROR_BUFFER~dataout\(1) & \ERROR_BUFFER~dataout\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "0f00",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datac => \ERROR_BUFFER~dataout\(1),
-	datad => \ERROR_BUFFER~dataout\(0),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_buffer|Equal1~1_combout\);
-
-\Form_buffer|buffer_temp_1~23\ : flex10ke_lcell
--- Equation(s):
--- \Form_buffer|buffer_temp_1~33\ = \COUNT|counter\(0) & (\Form_buffer|buffer_temp_1\(0) $ \Form_buffer|Equal1~1_combout\) # !\COUNT|counter\(0) & (\COUNT|counter\(1) # \Form_buffer|buffer_temp_1\(0) $ \Form_buffer|Equal1~1_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "6f66",
-	operation_mode => "normal",
-	output_mode => "none",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	dataa => \Form_buffer|buffer_temp_1\(0),
-	datab => \Form_buffer|Equal1~1_combout\,
-	datac => \COUNT|counter\(0),
-	datad => \COUNT|counter\(1),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_buffer|buffer_temp_1~23_combout\,
-	cascout => \Form_buffer|buffer_temp_1~33\);
-
-\Form_buffer|buffer_temp_1~26\ : flex10ke_lcell
--- Equation(s):
--- \Form_buffer|buffer_temp_1~26_combout\ = (\COUNT|counter\(0) # \COUNT|counter\(2) $ \Form_buffer|Equal1~1_combout\ # !\COUNT|counter\(1)) & CASCADE(\Form_buffer|buffer_temp_1~33\)
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "ff7d",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	dataa => \COUNT|counter\(1),
-	datab => \COUNT|counter\(2),
-	datac => \Form_buffer|Equal1~1_combout\,
-	datad => \COUNT|counter\(0),
-	cascin => \Form_buffer|buffer_temp_1~33\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_buffer|buffer_temp_1~26_combout\);
-
-\Form_buffer|buffer_temp_1[0]\ : flex10ke_lcell
--- Equation(s):
--- \Form_buffer|buffer_temp_1\(0) = DFFEA(\Form_buffer|buffer_temp_1~26_combout\, !GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "ff00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datad => \Form_buffer|buffer_temp_1~26_combout\,
-	aclr => \RES~dataout\,
-	clk => \DIV|ALT_INV_F2M~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \Form_buffer|buffer_temp_1\(0));
-
-\Form_word|OUT_WORD~2\ : flex10ke_lcell
--- Equation(s):
--- \Form_word|OUT_WORD~2_combout\ = \Form_buffer|buffer_temp_1\(1) $ \Form_buffer|buffer_temp_1\(0)
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "0ff0",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datac => \Form_buffer|buffer_temp_1\(1),
-	datad => \Form_buffer|buffer_temp_1\(0),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~2_combout\);
-
-\Form_word|OUT_WORD~17\ : flex10ke_lcell
--- Equation(s):
--- \Form_word|OUT_WORD~17_combout\ = \Form_word|OUT_WORD~16_combout\ & (\Form_word|OUT_WORD~9_combout\ # !\Form_word|Equal0~0_combout\) # !\Form_word|OUT_WORD~16_combout\ & (\Form_word|Equal0~0_combout\ & \Form_word|OUT_WORD~2_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "bc8c",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	dataa => \Form_word|OUT_WORD~9_combout\,
-	datab => \Form_word|OUT_WORD~16_combout\,
-	datac => \Form_word|Equal0~0_combout\,
-	datad => \Form_word|OUT_WORD~2_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~17_combout\);
-
-\Form_word|OUT_WORD\ : flex10ke_lcell
--- Equation(s):
--- \Form_word|OUT_WORD~combout\ = \Form_word|OUT_WORD~18_combout\ & (\Form_word|OUT_WORD~17_combout\) # !\Form_word|OUT_WORD~18_combout\ & \Form_word|OUT_WORD~combout\
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "false",
-	lut_mask => "fc30",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	datab => \Form_word|OUT_WORD~18_combout\,
-	datac => \Form_word|OUT_WORD~combout\,
-	datad => \Form_word|OUT_WORD~17_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \Form_word|OUT_WORD~combout\);
-
 \Form_buffer|Equal1~0\ : flex10ke_lcell
 -- Equation(s):
 -- \Form_buffer|Equal1~0_combout\ = \ERROR_BUFFER~dataout\(0) & \ERROR_BUFFER~dataout\(1)
@@ -810,40 +991,40 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \Form_buffer|buffer_temp_1\(2));
 
-\Form_buffer|buffer_temp_2[2]~8\ : flex10ke_lcell
+\Form_buffer|buffer_temp_2[2]~6\ : flex10ke_lcell
 -- Equation(s):
--- \Form_buffer|buffer_temp_2[2]~8_combout\ = !\RES~dataout\ & !\COUNT|counter\(1)
+-- \Form_buffer|buffer_temp_2[2]~6_combout\ = !\COUNT|counter\(1)
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "false",
-	lut_mask => "000f",
+	lut_mask => "00ff",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	datac => \RES~dataout\,
 	datad => \COUNT|counter\(1),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \Form_buffer|buffer_temp_2[2]~8_combout\);
+	combout => \Form_buffer|buffer_temp_2[2]~6_combout\);
 
 \Form_buffer|buffer_temp_2[2]\ : flex10ke_lcell
 -- Equation(s):
--- \Form_buffer|buffer_temp_2\(2) = DFFEA(!\COUNT|counter\(2), !GLOBAL(\DIV|F2M~regout\), , , \Form_buffer|buffer_temp_2[2]~8_combout\, , )
+-- \Form_buffer|buffer_temp_2\(2) = DFFEA(\COUNT|counter\(2), !GLOBAL(\DIV|F2M~regout\), !GLOBAL(\RES~dataout\), , \Form_buffer|buffer_temp_2[2]~6_combout\, , )
 
 -- pragma translate_off
 GENERIC MAP (
 	clock_enable_mode => "true",
-	lut_mask => "00ff",
+	lut_mask => "ff00",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	packed_mode => "false")
 -- pragma translate_on
 PORT MAP (
-	dataa => \Form_buffer|buffer_temp_2[2]~8_combout\,
+	dataa => \Form_buffer|buffer_temp_2[2]~6_combout\,
 	datad => \COUNT|counter\(2),
+	aclr => \RES~dataout\,
 	clk => \DIV|ALT_INV_F2M~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1000,7 +1181,7 @@ GENERIC MAP (
 	reg_source_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \Form_buffer|buffer_temp_2\(0),
+	datain => \Form_buffer|ALT_INV_buffer_temp_2\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -1016,7 +1197,7 @@ GENERIC MAP (
 	reg_source_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \Form_buffer|buffer_temp_2\(1),
+	datain => \Form_buffer|ALT_INV_buffer_temp_2\(1),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -1032,7 +1213,7 @@ GENERIC MAP (
 	reg_source_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \Form_buffer|buffer_temp_2\(2),
+	datain => \Form_buffer|ALT_INV_buffer_temp_2\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
