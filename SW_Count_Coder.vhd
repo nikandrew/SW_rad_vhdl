@@ -9,6 +9,7 @@ port(		CLK				: in std_logic;
 			
 			ERROR_SYNC	: in std_logic;
         	ERROR_BUFFER : in std_logic_vector(1 downto 0);
+        	
         
 			OUT_WORD		: out std_logic;
 			TEST			: out std_logic_vector(15 downto 0));
