@@ -6,8 +6,7 @@ use IEEE.std_logic_arith.all;
 entity SW_Count_Coder is
 port(		CLK				: in std_logic;
 			RES 		    : in std_logic;
-			
-			ERROR_SYNC	: in std_logic;
+						
         	ERROR_BUFFER : in std_logic_vector(1 downto 0);
         	ERROR_COUNTER : in std_logic_vector(1 downto 0);
         	ERROR_WORD : in std_logic_vector(1 downto 0);
@@ -17,7 +16,7 @@ port(		CLK				: in std_logic;
 end SW_Count_Coder;
 
 architecture Main_ARCH_COUNT_CODER of SW_Count_Coder is 
-signal f2m, number_buffer	: std_logic;
+signal f2m, number_buffer, output	: std_logic;
 signal step, out_buffer_1, out_buffer_2, status : std_logic_vector(2 downto 0);
 begin
 	TEST(0) <= f2m;
@@ -25,6 +24,9 @@ begin
 	TEST(6 downto 4) <= out_buffer_1;
 	TEST(9 downto 7) <= out_buffer_2;
 	TEST(10) <= number_buffer;
+	TEST(11) <= output;
+	
+	OUT_WORD <= output;
 	DIV: entity work.DIV_F2M
 		port map(  	RES			=> RES,
 					CLK			=> CLK,
@@ -55,7 +57,7 @@ begin
 			NUMBER_BUFFER => number_buffer,
 			ERROR_WORD => ERROR_WORD,
 			STATUS    => status,
-			OUT_WORD  => OUT_WORD);
+			OUT_WORD  => output);
 	
 						
 end Main_ARCH_COUNT_CODER; 

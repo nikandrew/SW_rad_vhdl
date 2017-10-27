@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY FLEX10KE
 set_global_assignment -name DEVICE "EPF10K30EFC256-3"
-set_global_assignment -name TOP_LEVEL_ENTITY SW_Count_Coder
+set_global_assignment -name TOP_LEVEL_ENTITY Base_SW_Rad
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:33:01  OCTOBER 23, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION "9.0 SP2"
@@ -55,6 +55,8 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id SW_COUNT_COD
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ms" -section_id SW_COUNT_CODER_TESTBENCH
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME SW_Count_Coder_vhd_tst -section_id SW_COUNT_CODER_TESTBENCH
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/SW_Count_Coder.vht -section_id SW_COUNT_CODER_TESTBENCH
+set_global_assignment -name VHDL_FILE ../Base_SW_Rad.vhd
+set_global_assignment -name VHDL_FILE ../SW_Count_Decoder.vhd
 set_global_assignment -name VHDL_FILE ../ERROR_BUFFER.vhd
 set_global_assignment -name VHDL_FILE ../Form_word.vhd
 set_global_assignment -name VHDL_FILE ../Form_buffer.vhd

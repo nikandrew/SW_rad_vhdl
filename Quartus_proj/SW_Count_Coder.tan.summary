@@ -7,7 +7,7 @@ Slack          : N/A
 Required Time  : None
 Actual Time    : 8.900 ns
 From           : ERROR_WORD[1]
-To             : Form_word:Form_word|OUT_WORD
+To             : SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD
 From Clock     : --
 To Clock       : CLK
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 16.200 ns
-From           : Form_word:Form_word|OUT_WORD
-To             : OUT_WORD
+Actual Time    : 15.300 ns
+From           : SW_Count_Coder:Coder|Step_count:COUNT|counter[1]
+To             : TEST_CODER[2]
 From Clock     : CLK
 To Clock       : --
 Failed Paths   : 0
@@ -27,7 +27,7 @@ Slack          : N/A
 Required Time  : None
 Actual Time    : 4.600 ns
 From           : ERROR_COUNTER[0]
-To             : Step_count:COUNT|counter[2]
+To             : SW_Count_Coder:Coder|Step_count:COUNT|counter[2]
 From Clock     : --
 To Clock       : CLK
 Failed Paths   : 0
@@ -36,8 +36,8 @@ Type           : Clock Setup: 'CLK'
 Slack          : N/A
 Required Time  : None
 Actual Time    : 40.65 MHz ( period = 24.600 ns )
-From           : DIV_F2M:DIV|counter[2]
-To             : Form_word:Form_word|OUT_WORD
+From           : SW_Count_Coder:Coder|DIV_F2M:DIV|counter[2]
+To             : SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD
 From Clock     : CLK
 To Clock       : CLK
 Failed Paths   : 0

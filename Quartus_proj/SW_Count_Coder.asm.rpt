@@ -1,5 +1,5 @@
 Assembler report for SW_Count_Coder
-Fri Oct 27 00:40:16 2017
+Fri Oct 27 22:46:04 2017
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Oct 27 00:40:16 2017 ;
+; Assembler Status      ; Successful - Fri Oct 27 22:46:04 2017 ;
 ; Revision Name         ; SW_Count_Coder                        ;
-; Top-level Entity Name ; SW_Count_Coder                        ;
+; Top-level Entity Name ; Base_SW_Rad                           ;
 ; Family                ; FLEX10KE                              ;
 ; Device                ; EPF10K30EFC256-3                      ;
 +-----------------------+---------------------------------------+
@@ -94,7 +94,7 @@ applicable agreement for further details.
 +----------------+----------------------------------------------------------------------+
 ; Device         ; EPF10K30EFC256-3                                                     ;
 ; JTAG usercode  ; 0x0000007F                                                           ;
-; Checksum       ; 0x00011A2D                                                           ;
+; Checksum       ; 0x000114AB                                                           ;
 +----------------+----------------------------------------------------------------------+
 
 
@@ -105,7 +105,7 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------------+
 ; Device             ; EPC2                                                             ;
 ; JTAG usercode      ; 0x00000000                                                       ;
-; Checksum           ; 0x02586278                                                       ;
+; Checksum           ; 0x02587313                                                       ;
 ; Compression Ratio  ; 1                                                                ;
 +--------------------+------------------------------------------------------------------+
 
@@ -116,12 +116,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Oct 27 00:40:15 2017
+    Info: Processing started: Fri Oct 27 22:46:03 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SW_Count_Coder -c SW_Count_Coder
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 184 megabytes
-    Info: Processing ended: Fri Oct 27 00:40:16 2017
+    Info: Processing ended: Fri Oct 27 22:46:04 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
