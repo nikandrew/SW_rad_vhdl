@@ -1,22 +1,13 @@
 Info: Start Nativelink Simulation process
+Error: ERROR: Can't open project: SW_Count_Coder
+ERROR: Can't open project: SW_Count_Coder
+Error: NativeLink simulation flow was NOT successful
 
-========= EDA Simulation Settings =====================
 
-Sim Mode              :  Gate
-Family                :  flex10ke
-Quartus root          :  c:/altera/90sp2/quartus/bin/
-Quartus sim root      :  c:/altera/90sp2/quartus/eda/sim_lib
-Simulation Tool       :  modelsim-altera
-Simulation Language   :  vhdl
-Version               :  93
-Simulation Mode       :  GUI
-Sim Output File       :  SW_Count_Coder.vho
-Sim SDF File       :  SW_Count_Coder_vhd.sdo
-Sim dir               :  simulation\modelsim
 
-=======================================================
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  NONE
+Nativelink TCL script failed with errorInfo:  ERROR: Can't open project: SW_Count_Coder
 
-Info: Starting NativeLink simulation with ModelSim-Altera software
-Sourced NativeLink script c:/altera/90sp2/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File SW_Count_Coder_run_msim_gate_vhdl.do already exists - backing up current file as SW_Count_Coder_run_msim_gate_vhdl.do.bak11
-Info: Spawning ModelSim-Altera Simulation software 
+    while executing
+"project_open $project -force -cmp $action_pt"
