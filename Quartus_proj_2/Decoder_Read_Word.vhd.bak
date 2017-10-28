@@ -1,0 +1,35 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Decoder_Reader is
+port(   RES     	: in std_logic;
+		CLK			: in std_logic;
+        IN_WORD		: in std_logic;
+        STATUS		: in std_logic_vector(2 downto 0);
+        SYNC		: out std_logic;
+        OUT_BUFFER 	: out std_logic_vector(1 downto 0)); 
+end Decoder_Reader;
+
+architecture Decoder_Reader_arch of Decoder_Reader is 
+signal count : std_logic_vector(2 downto 0); 
+begin 
+	process (RES, CLK, STATUS )
+    begin
+        if(RES = '1') then
+            OUT_BUFFER <= "000";
+            SYNC <= '0';
+            count <= "000"; 
+        elsif(rising_edge(CLK)) then
+        	if(IN_WORD = '0') then
+        		if(count = "111") then
+        			SYNC <= '1';
+        		else
+        			count <= count + '1';	        				
+        		end if;
+        	else
+        		count <= "000";        			
+        	end if;	
+        end if;
+    end process;
+end Decoder_Reader_arch;

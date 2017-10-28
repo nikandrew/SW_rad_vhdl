@@ -11,7 +11,7 @@ port(		CLK				: in std_logic;
         	ERROR_COUNTER : in std_logic_vector(1 downto 0);
         	ERROR_WORD : in std_logic_vector(1 downto 0);
         				
-			OUT_COUNT		: out std_logic_vector(1 downto 0);
+			OUT_COUNT		: out std_logic_vector(2 downto 0);
 			TEST_CODER		: out std_logic_vector(15 downto 0);
 			TEST_DECODER		: out std_logic_vector(15 downto 0));
 end Base_SW_Rad;

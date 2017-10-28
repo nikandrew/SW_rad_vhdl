@@ -1,0 +1,71 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Project\SWork\SW_rad_git\Quartus_proj_2\simulation\modelsim
+Ebase_sw_rad
+Z1 !s101 -O0 -O0 -O0 -O0 -O0 -O0 -O0 -O0 -O0 -O0 -O0 -O0
+Z2 w1509223358
+Z3 DPx4 ieee 16 vital_primitives 0 22 E9g6AWKAc2T]enMfl94If3
+Z4 DPx8 flex10ke 18 flex10ke_atom_pack 0 22 VWc^P@e6XIAgG=^CGLco52
+Z5 DPx4 ieee 12 vital_timing 0 22 OBWK>;kUYmkG<OChK2lhV1
+Z6 DPx8 flex10ke 19 flex10ke_components 0 22 b5OQ9dP>RJSnd5>FX6jFa3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z8 8Rad_Base.vho
+Z9 FRad_Base.vho
+l0
+L33
+VXUEW9EdFN@L^fgMjSFP`?3
+Z10 OV;C;6.4a;39
+R1
+31
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 59ITFl1<kWA8=9nMHb9IX1
+Astructure
+R3
+R4
+R5
+R6
+R7
+DEx4 work 11 base_sw_rad 0 22 XUEW9EdFN@L^fgMjSFP`?3
+l118
+L46
+VS1PSM`9j4djJj5mlJ5N6B1
+R10
+31
+Mx5 4 ieee 14 std_logic_1164
+Mx4 8 flex10ke 19 flex10ke_components
+Mx3 4 ieee 12 vital_timing
+Mx2 8 flex10ke 18 flex10ke_atom_pack
+Mx1 4 ieee 16 vital_primitives
+R11
+R12
+!s100 ZX44eJa:]`B@B78LnPBzR2
+Ebase_sw_rad_vhd_tst
+Z13 !s101 -O0 -O0 -O0 -O0
+Z14 w1509222486
+R7
+Z15 8E:/Project/SWork/SW_rad_git/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vht
+Z16 FE:/Project/SWork/SW_rad_git/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vht
+l0
+L6
+V00Nmm;SjgX0_nfSIeU@5G1
+!s100 PYEEIFeV97IW`]l2>JJkb3
+R10
+R13
+31
+R11
+R12
+Abase_sw_rad_arch
+R7
+DEx4 work 19 base_sw_rad_vhd_tst 0 22 00Nmm;SjgX0_nfSIeU@5G1
+l31
+L8
+V[B:ZZoUYa_Vel3`8jJ^kl0
+!s100 memS<mX<j3e><J^MlFHkf0
+R10
+31
+Z17 Mx1 4 ieee 14 std_logic_1164
+R11
+R12

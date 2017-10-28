@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.000 ns
+From           : ERROR_WORD[1]
+To             : SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD
+From Clock     : --
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.700 ns
+From           : SW_Count_Coder:Coder|Step_count:COUNT|counter[1]
+To             : TEST_CODER[2]
+From Clock     : CLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.900 ns
+From           : ERROR_BUFFER[0]
+To             : SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_1[1]
+From Clock     : --
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 40.65 MHz ( period = 24.600 ns )
+From           : SW_Count_Coder:Coder|DIV_F2M:DIV|counter[2]
+To             : SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
