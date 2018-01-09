@@ -19,6 +19,55 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
+Base_SW_Rad
+# storage
+db|Rad_Base.(0).cnf
+db|Rad_Base.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Base_SW_Rad.vhd
+b94c6d7d3fee4c87cbf8363a519fbe5f
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+..|SW_Count_Decoder.vhd
+a863605fae49ae19629ac69d1c975e4
+..|SW_Count_Coder.vhd
+51d954a5747394b6b8b915f4a899321e
+..|Form_buffer.vhd
+ddf2c52d98c3775271c3e750fefa82a
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+..|Base_step_count.vhd
+c8e3ddf2394de9beccf1c33a18ee4be
+Decoder_Read_Word.vhd
+6434755e561da66b876b56ddc9e8850
+..|Form_word.vhd
+32a5871f98ab97f03749a5b2a5266ee2
+}
+# hierarchies {
+|
+}
+# lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
 SW_Count_Coder
 # storage
 db|Rad_Base.(1).cnf
@@ -61,10 +110,10 @@ PARAMETER_STRING
 USR
 }
 # include_file {
-..|Div_F2M.vhd
-e51deec763fc95c7c86e57b582cb89
 ..|Form_buffer.vhd
 ddf2c52d98c3775271c3e750fefa82a
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
 ..|Base_step_count.vhd
 c8e3ddf2394de9beccf1c33a18ee4be
 ..|Form_word.vhd
@@ -74,7 +123,7 @@ c8e3ddf2394de9beccf1c33a18ee4be
 SW_Count_Coder:Coder
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
@@ -114,7 +163,7 @@ SW_Count_Coder:Coder|DIV_F2M:DIV
 SW_Count_Decoder:DEecoder|DIV_F2M:DIV
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
@@ -157,7 +206,7 @@ USR
 SW_Count_Coder:Coder|Step_count:COUNT
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
@@ -208,7 +257,7 @@ USR
 SW_Count_Coder:Coder|Form_buffer:Form_buffer
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
@@ -259,56 +308,7 @@ USR
 SW_Count_Coder:Coder|Form_word:Form_word
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-Base_SW_Rad
-# storage
-db|Rad_Base.(0).cnf
-db|Rad_Base.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|Base_SW_Rad.vhd
-b94c6d7d3fee4c87cbf8363a519fbe5f
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-..|Base_step_count.vhd
-c8e3ddf2394de9beccf1c33a18ee4be
-Decoder_Read_Word.vhd
-6434755e561da66b876b56ddc9e8850
-..|Form_word.vhd
-32a5871f98ab97f03749a5b2a5266ee2
-..|SW_Count_Decoder.vhd
-a863605fae49ae19629ac69d1c975e4
-..|SW_Count_Coder.vhd
-51d954a5747394b6b8b915f4a899321e
-..|Form_buffer.vhd
-ddf2c52d98c3775271c3e750fefa82a
-..|Div_F2M.vhd
-e51deec763fc95c7c86e57b582cb89
-}
-# hierarchies {
-|
-}
-# lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
@@ -348,16 +348,16 @@ PARAMETER_STRING
 USR
 }
 # include_file {
-Decoder_Read_Word.vhd
-6434755e561da66b876b56ddc9e8850
 ..|Div_F2M.vhd
 e51deec763fc95c7c86e57b582cb89
+Decoder_Read_Word.vhd
+6434755e561da66b876b56ddc9e8850
 }
 # hierarchies {
 SW_Count_Decoder:DEecoder
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
@@ -396,7 +396,7 @@ USR
 SW_Count_Decoder:DEecoder|Decoder_Reader:READ_WORD
 }
 # lmf
-c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
 9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 

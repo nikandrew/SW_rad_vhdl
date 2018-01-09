@@ -1,5 +1,5 @@
 Assembler report for Rad_Base
-Sat Oct 28 23:42:35 2017
+Tue Jan 09 08:53:40 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: E:/Project/SWork/SW_rad_git/Quartus_proj_2/Rad_Base.sof
-  6. Assembler Device Options: E:/Project/SWork/SW_rad_git/Quartus_proj_2/Rad_Base.pof
+  5. Assembler Device Options: E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Rad_Base.sof
+  6. Assembler Device Options: E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Rad_Base.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Oct 28 23:42:35 2017 ;
+; Assembler Status      ; Successful - Tue Jan 09 08:53:40 2018 ;
 ; Revision Name         ; Rad_Base                              ;
 ; Top-level Entity Name ; Base_SW_Rad                           ;
 ; Family                ; FLEX10KE                              ;
@@ -77,37 +77,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------------+
-; Assembler Generated Files                               ;
-+---------------------------------------------------------+
-; File Name                                               ;
-+---------------------------------------------------------+
-; E:/Project/SWork/SW_rad_git/Quartus_proj_2/Rad_Base.sof ;
-; E:/Project/SWork/SW_rad_git/Quartus_proj_2/Rad_Base.pof ;
-+---------------------------------------------------------+
++----------------------------------------------------------+
+; Assembler Generated Files                                ;
++----------------------------------------------------------+
+; File Name                                                ;
++----------------------------------------------------------+
+; E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Rad_Base.sof ;
+; E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Rad_Base.pof ;
++----------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Assembler Device Options: E:/Project/SWork/SW_rad_git/Quartus_proj_2/Rad_Base.sof ;
-+----------------+------------------------------------------------------------------+
-; Option         ; Setting                                                          ;
-+----------------+------------------------------------------------------------------+
-; Device         ; EPF10K30EFC256-3                                                 ;
-; JTAG usercode  ; 0x0000007F                                                       ;
-; Checksum       ; 0x0001495D                                                       ;
-+----------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Assembler Device Options: E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Rad_Base.sof ;
++----------------+-------------------------------------------------------------------+
+; Option         ; Setting                                                           ;
++----------------+-------------------------------------------------------------------+
+; Device         ; EPF10K30EFC256-3                                                  ;
+; JTAG usercode  ; 0x0000007F                                                        ;
+; Checksum       ; 0x0001495D                                                        ;
++----------------+-------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Assembler Device Options: E:/Project/SWork/SW_rad_git/Quartus_proj_2/Rad_Base.pof ;
-+--------------------+--------------------------------------------------------------+
-; Option             ; Setting                                                      ;
-+--------------------+--------------------------------------------------------------+
-; Device             ; EPC2                                                         ;
-; JTAG usercode      ; 0x00000000                                                   ;
-; Checksum           ; 0x02587E56                                                   ;
-; Compression Ratio  ; 1                                                            ;
-+--------------------+--------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Assembler Device Options: E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Rad_Base.pof ;
++--------------------+---------------------------------------------------------------+
+; Option             ; Setting                                                       ;
++--------------------+---------------------------------------------------------------+
+; Device             ; EPC2                                                          ;
+; JTAG usercode      ; 0x00000000                                                    ;
+; Checksum           ; 0x02587E56                                                    ;
+; Compression Ratio  ; 1                                                             ;
++--------------------+---------------------------------------------------------------+
 
 
 +--------------------+
@@ -116,13 +116,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat Oct 28 23:42:34 2017
+    Info: Processing started: Tue Jan 09 08:53:39 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Rad_Base -c Rad_Base
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 184 megabytes
-    Info: Processing ended: Sat Oct 28 23:42:35 2017
+    Info: Peak virtual memory: 202 megabytes
+    Info: Processing ended: Tue Jan 09 08:53:40 2018
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

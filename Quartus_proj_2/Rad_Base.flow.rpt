@@ -1,5 +1,5 @@
 Flow report for Rad_Base
-Sat Oct 28 23:42:38 2017
+Tue Jan 09 08:53:42 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Sat Oct 28 23:42:38 2017        ;
+; Flow Status             ; Successful - Tue Jan 09 08:53:42 2018        ;
 ; Quartus II Version      ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name           ; Rad_Base                                     ;
 ; Top-level Entity Name   ; Base_SW_Rad                                  ;
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/28/2017 23:42:27 ;
+; Start date & time ; 01/09/2018 08:53:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Rad_Base            ;
 +-------------------+---------------------+
@@ -69,7 +69,7 @@ applicable agreement for further details.
 +--------------------------------------+-------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                               ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+-------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 25143475286343.150922334604232      ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 128454780033929.151547721609680     ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; i1                                  ; --            ; --          ; Base_test      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Base_test                           ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                ; --            ; --          ; eda_simulation ;
@@ -92,12 +92,12 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 227 MB              ; 00:00:03                           ;
-; Fitter                  ; 00:00:02     ; 1.0                     ; 181 MB              ; 00:00:03                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 184 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 154 MB              ; 00:00:00                           ;
-; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 151 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:07     ; --                      ; --                  ; 00:00:07                           ;
+; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:01     ; 1.0                     ; 207 MB              ; 00:00:01                           ;
+; Assembler               ; 00:00:01     ; 1.0                     ; 202 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 172 MB              ; 00:00:00                           ;
+; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 162 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:03     ; --                      ; --                  ; 00:00:02                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

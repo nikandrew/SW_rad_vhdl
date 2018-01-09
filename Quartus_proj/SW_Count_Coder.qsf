@@ -50,6 +50,12 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH BASE_SW_TESTBEN
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name EDA_TEST_BENCH_NAME BASE_SW_TESTBENCH -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id BASE_SW_TESTBENCH
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ms" -section_id BASE_SW_TESTBENCH
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Base_SW_Rad_vhd_tst -section_id BASE_SW_TESTBENCH
+set_global_assignment -name EDA_TEST_BENCH_FILE ../Base_SW_Rad.vhd -section_id BASE_SW_TESTBENCH
+set_global_assignment -name VHDL_FILE ../Quartus_proj_2/Decoder_Read_Word.vhd
 set_global_assignment -name VHDL_FILE ../Base_SW_Rad.vhd
 set_global_assignment -name VHDL_FILE ../SW_Count_Decoder.vhd
 set_global_assignment -name VHDL_FILE ../ERROR_BUFFER.vhd
@@ -58,8 +64,3 @@ set_global_assignment -name VHDL_FILE ../Form_buffer.vhd
 set_global_assignment -name VHDL_FILE ../Base_step_count.vhd
 set_global_assignment -name VHDL_FILE ../Div_F2M.vhd
 set_global_assignment -name VHDL_FILE ../SW_Count_Coder.vhd
-set_global_assignment -name EDA_TEST_BENCH_NAME BASE_SW_TESTBENCH -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id BASE_SW_TESTBENCH
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ms" -section_id BASE_SW_TESTBENCH
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Base_SW_Rad_vhd_tst -section_id BASE_SW_TESTBENCH
-set_global_assignment -name EDA_TEST_BENCH_FILE ../Base_SW_Rad.vhd -section_id BASE_SW_TESTBENCH
