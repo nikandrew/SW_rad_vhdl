@@ -153,135 +153,49 @@ d:|program files|altera|quartus|lmf|maxplus2.lmf
 
 # end
 # entity
-SW_Count_Decoder
+Form_word
 # storage
-db|Rad_Base.(6).cnf
-db|Rad_Base.(6).cnf
+db|Rad_Base.(5).cnf
+db|Rad_Base.(5).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-..|SW_Count_Decoder.vhd
-a863605fae49ae19629ac69d1c975e4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(out_count)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(test)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-..|Div_F2M.vhd
-e51deec763fc95c7c86e57b582cb89
-Decoder_Read_Word.vhd
-6434755e561da66b876b56ddc9e8850
-}
-# hierarchies {
-SW_Count_Decoder:DEecoder
-}
-# lmf
-d:|program files|altera|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-Decoder_Reader
-# storage
-db|Rad_Base.(7).cnf
-db|Rad_Base.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-Decoder_Read_Word.vhd
-6434755e561da66b876b56ddc9e8850
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(out_word)
-2 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-SW_Count_Decoder:DEecoder|Decoder_Reader:READ_WORD
-}
-# lmf
-d:|program files|altera|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-Base_SW_Rad
-# storage
-db|Rad_Base.(0).cnf
-db|Rad_Base.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-..|Base_SW_Rad.vhd
-89e599be68819846eed523d73f43ff9
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-..|SW_Count_Decoder.vhd
-a863605fae49ae19629ac69d1c975e4
 ..|Form_word.vhd
-4765725f26d65bc3e5ac4ed51253a
-..|Form_buffer.vhd
-ddf2c52d98c3775271c3e750fefa82a
-Decoder_Read_Word.vhd
-6434755e561da66b876b56ddc9e8850
-..|Div_F2M.vhd
-e51deec763fc95c7c86e57b582cb89
-..|SW_Count_Coder.vhd
-2b277c6ed6ab58ce1f83b3e9a84f73a8
-..|Base_step_count.vhd
-c8e3ddf2394de9beccf1c33a18ee4be
+79b1a5b488f8bd42d57775bed7f6429
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(in_buffer_1)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(in_buffer_2)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(error_word)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(status)
+2 downto 0
+PARAMETER_STRING
+USR
 }
 # hierarchies {
-|
+SW_Count_Coder:Coder|Form_word:Form_word
 }
 # lmf
 d:|program files|altera|quartus|lmf|maxplus2.lmf
@@ -301,7 +215,7 @@ ON
 # case_insensitive
 # source_file
 ..|SW_Count_Coder.vhd
-2b277c6ed6ab58ce1f83b3e9a84f73a8
+4f529534758f26a73bb9249fc54ad238
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -338,6 +252,10 @@ USR
 2 downto 0
 PARAMETER_STRING
 USR
+ constraint(test_word)
+2 downto 0
+PARAMETER_STRING
+USR
  constraint(test)
 15 downto 0
 PARAMETER_STRING
@@ -345,13 +263,15 @@ USR
 }
 # include_file {
 ..|Form_word.vhd
-4765725f26d65bc3e5ac4ed51253a
-..|Form_buffer.vhd
-ddf2c52d98c3775271c3e750fefa82a
+79b1a5b488f8bd42d57775bed7f6429
 ..|Div_F2M.vhd
 e51deec763fc95c7c86e57b582cb89
+..|Word_test.vhd
+ced59c7f4becbaa2d52f7e4b8ee3a73
 ..|Base_step_count.vhd
 c8e3ddf2394de9beccf1c33a18ee4be
+..|Form_buffer.vhd
+ddf2c52d98c3775271c3e750fefa82a
 }
 # hierarchies {
 SW_Count_Coder:Coder
@@ -363,18 +283,18 @@ d:|program files|altera|quartus|lmf|maxplus2.lmf
 
 # end
 # entity
-Form_word
+Word_test
 # storage
-db|Rad_Base.(5).cnf
-db|Rad_Base.(5).cnf
+db|Rad_Base.(8).cnf
+db|Rad_Base.(8).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-..|Form_word.vhd
-4765725f26d65bc3e5ac4ed51253a
+..|Word_test.vhd
+ced59c7f4becbaa2d52f7e4b8ee3a73
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -399,13 +319,152 @@ USR
 1 downto 0
 PARAMETER_STRING
 USR
- constraint(status)
+ constraint(out_word)
 2 downto 0
 PARAMETER_STRING
 USR
 }
 # hierarchies {
-SW_Count_Coder:Coder|Form_word:Form_word
+SW_Count_Coder:Coder|Word_test:Word_test
+}
+# lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Base_SW_Rad
+# storage
+db|Rad_Base.(0).cnf
+db|Rad_Base.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|Base_SW_Rad.vhd
+36813e5ed5eec122358036e747faa11d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+..|SW_Count_Decoder.vhd
+a863605fae49ae19629ac69d1c975e4
+..|Base_step_count.vhd
+c8e3ddf2394de9beccf1c33a18ee4be
+..|Form_buffer.vhd
+ddf2c52d98c3775271c3e750fefa82a
+..|Form_word.vhd
+79b1a5b488f8bd42d57775bed7f6429
+..|SW_Count_Coder.vhd
+4f529534758f26a73bb9249fc54ad238
+Decoder_Read_Word.vhd
+8dbf844c59ffd53b11dc42e9bc8ca07d
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+..|Word_test.vhd
+ced59c7f4becbaa2d52f7e4b8ee3a73
+}
+# hierarchies {
+|
+}
+# lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+SW_Count_Decoder
+# storage
+db|Rad_Base.(6).cnf
+db|Rad_Base.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+..|SW_Count_Decoder.vhd
+a863605fae49ae19629ac69d1c975e4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(out_count)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(test)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+Decoder_Read_Word.vhd
+8dbf844c59ffd53b11dc42e9bc8ca07d
+..|Div_F2M.vhd
+e51deec763fc95c7c86e57b582cb89
+}
+# hierarchies {
+SW_Count_Decoder:DEecoder
+}
+# lmf
+d:|program files|altera|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Decoder_Reader
+# storage
+db|Rad_Base.(7).cnf
+db|Rad_Base.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+Decoder_Read_Word.vhd
+8dbf844c59ffd53b11dc42e9bc8ca07d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(out_word)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+SW_Count_Decoder:DEecoder|Decoder_Reader:READ_WORD
 }
 # lmf
 d:|program files|altera|quartus|lmf|maxplus2.lmf

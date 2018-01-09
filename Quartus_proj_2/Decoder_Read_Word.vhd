@@ -47,19 +47,25 @@ begin
         			count_status <= "000";
         			OUT_WORD <= word_inner;
         			SYNC <= '1';
-        		else
+        		elsif(count_status = "010") then
         			count_status <= count_status + '1';	
+        			word_inner(0) <= IN_WORD;
         			SYNC <= '0';
-        			if(count_status = "010")  then
-        				word_inner(0) <= IN_WORD;
-        			elsif (count_status = "100") then
-        			 	word_inner(1) <= IN_WORD;
-        			elsif(count_status = "110") then
-        				word_inner(2) <= IN_WORD;        				
-        			end if;
+        		elsif(count_status = "100") then
+        			count_status <= count_status + '1';	
+        			word_inner(1) <= IN_WORD;
+        			SYNC <= '0';
+        		elsif(count_status = "110") then
+        			count_status <= count_status + '1';	
+        			word_inner(2) <= IN_WORD;
+        			SYNC <= '0';
+        		else
+        			count_status <= count_status + '1';
+        			SYNC <= '0';	
         		end if;        	
         	else
-        		status  <= "000";  			
+        		status  <= "000";  	
+        		OUT_WORD <= "000";		
         	end if;	
         end if;
     end process;

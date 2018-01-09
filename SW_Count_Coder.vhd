@@ -19,6 +19,7 @@ port(		CLK				: in std_logic;
 			TEST_BUFFER_2 	: out std_logic_vector(2 downto 0);
 			TEST_NUMBER_BUFFER : out std_logic;
 			TEST_OUTPUT		: out std_logic;
+			TEST_WORD		: out std_logic_vector(2 downto 0);
 			TEST			: out std_logic_vector(15 downto 0));
 end SW_Count_Coder;
 
@@ -65,6 +66,18 @@ begin
 			ERROR_WORD => ERROR_WORD,
 			STATUS    => status,
 			OUT_WORD  => output);
+			
+	Word_test: entity work.Word_test
+		port map(
+			IN_BUFFER_1	=> out_buffer_1,
+			IN_BUFFER_2 => out_buffer_2, 
+			CLK			=> CLK,
+			F2M			=> f2m,
+			RES			=> RES,
+			NUMBER_BUFFER => number_buffer,
+			ERROR_WORD => ERROR_WORD,
+			OUT_WORD  => TEST_WORD,
+			TEST => TEST(0));
 	
 						
 end Main_ARCH_COUNT_CODER; 

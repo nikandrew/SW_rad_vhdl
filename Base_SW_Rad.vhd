@@ -5,7 +5,8 @@ use IEEE.std_logic_arith.all;
 
 entity Base_SW_Rad is
 port(		CLK				: in std_logic;
-			RES 		    : in std_logic;
+			RES_COD		    : in std_logic;
+			RES_DEC		    : in std_logic;
 			
 			ERROR_BUFFER 	: in std_logic_vector(1 downto 0);
         	ERROR_COUNTER 	: in std_logic_vector(1 downto 0);
@@ -18,7 +19,8 @@ port(		CLK				: in std_logic;
 			TEST_CODER_BUFFER_1 		: out std_logic_vector(2 downto 0);
 			TEST_CODER_BUFFER_2 		: out std_logic_vector(2 downto 0);
 			TEST_CODER_NUMBER_BUFFER 	: out std_logic;
-			TEST_CODER_OUTPUT			: out std_logic;			
+			TEST_CODER_OUTPUT			: out std_logic;	
+			TEST_CODER_WORD				: out std_logic_vector(2 downto 0);		
 			TEST_CODER		: out std_logic_vector(15 downto 0);
 			
 			TEST_DECODER	: out std_logic_vector(15 downto 0));
@@ -33,7 +35,7 @@ begin
 	Coder: entity work.SW_Count_Coder
 		port map(
 			CLK           => CLK,
-			RES           => RES,
+			RES           => RES_COD,
 			ERROR_BUFFER  => ERROR_BUFFER,
 			ERROR_COUNTER => ERROR_COUNTER,
 			ERROR_WORD    => ERROR_WORD,
@@ -45,12 +47,13 @@ begin
 			TEST_BUFFER_2 	=> TEST_CODER_BUFFER_2,
 			TEST_NUMBER_BUFFER => TEST_CODER_NUMBER_BUFFER,
 			TEST_OUTPUT		=> TEST_CODER_OUTPUT,
+			TEST_WORD		=> TEST_CODER_WORD,
 			TEST          => TEST_CODER);
 		
 	DEecoder: entity work.SW_Count_Decoder
 		port map(
 			CLK       => CLK,
-			RES       => RES,
+			RES       => RES_DEC,
 			IN_WORD   => out_word,
 			OUT_COUNT => OUT_COUNT,
 			TEST      => TEST_DECODER);		

@@ -1,8 +1,8 @@
 |Base_SW_Rad
 CLK => sw_count_decoder:DEecoder.CLK
 CLK => sw_count_coder:Coder.CLK
-RES => sw_count_decoder:DEecoder.RES
-RES => sw_count_coder:Coder.RES
+RES_COD => sw_count_coder:Coder.RES
+RES_DEC => sw_count_decoder:DEecoder.RES
 ERROR_BUFFER[0] => sw_count_coder:Coder.ERROR_BUFFER[0]
 ERROR_BUFFER[1] => sw_count_coder:Coder.ERROR_BUFFER[1]
 ERROR_COUNTER[0] => sw_count_coder:Coder.ERROR_COUNTER[0]
@@ -24,6 +24,9 @@ TEST_CODER_BUFFER_2[1] <= sw_count_coder:Coder.TEST_BUFFER_2[1]
 TEST_CODER_BUFFER_2[2] <= sw_count_coder:Coder.TEST_BUFFER_2[2]
 TEST_CODER_NUMBER_BUFFER <= sw_count_coder:Coder.TEST_NUMBER_BUFFER
 TEST_CODER_OUTPUT <= sw_count_coder:Coder.TEST_OUTPUT
+TEST_CODER_WORD[0] <= sw_count_coder:Coder.TEST_WORD[0]
+TEST_CODER_WORD[1] <= sw_count_coder:Coder.TEST_WORD[1]
+TEST_CODER_WORD[2] <= sw_count_coder:Coder.TEST_WORD[2]
 TEST_CODER[0] <= sw_count_coder:Coder.TEST[0]
 TEST_CODER[1] <= sw_count_coder:Coder.TEST[1]
 TEST_CODER[2] <= sw_count_coder:Coder.TEST[2]
@@ -59,7 +62,9 @@ TEST_DECODER[15] <= sw_count_decoder:DEecoder.TEST[15]
 
 
 |Base_SW_Rad|SW_Count_Coder:Coder
+CLK => word_test:Word_test.CLK
 CLK => div_f2m:DIV.CLK
+RES => word_test:Word_test.RES
 RES => form_buffer:Form_buffer.RES
 RES => step_count:COUNT.RES
 RES => div_f2m:DIV.RES
@@ -67,7 +72,9 @@ ERROR_BUFFER[0] => form_buffer:Form_buffer.ERROR_BUFFER[0]
 ERROR_BUFFER[1] => form_buffer:Form_buffer.ERROR_BUFFER[1]
 ERROR_COUNTER[0] => step_count:COUNT.ERROR_COUNT[0]
 ERROR_COUNTER[1] => step_count:COUNT.ERROR_COUNT[1]
+ERROR_WORD[0] => word_test:Word_test.ERROR_WORD[0]
 ERROR_WORD[0] => form_word:Form_word.ERROR_WORD[0]
+ERROR_WORD[1] => word_test:Word_test.ERROR_WORD[1]
 ERROR_WORD[1] => form_word:Form_word.ERROR_WORD[1]
 OUT_WORD <= form_word:Form_word.OUT_WORD
 TEST_STEP[0] <= step_count:COUNT.OUT_STEP[0]
@@ -82,7 +89,25 @@ TEST_BUFFER_2[1] <= form_buffer:Form_buffer.OUT_BUFFER_2[1]
 TEST_BUFFER_2[2] <= form_buffer:Form_buffer.OUT_BUFFER_2[2]
 TEST_NUMBER_BUFFER <= div_f2m:DIV.NUMBER_BUFFER
 TEST_OUTPUT <= form_word:Form_word.OUT_WORD
-TEST[0] <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+TEST_WORD[0] <= word_test:Word_test.OUT_WORD[0]
+TEST_WORD[1] <= word_test:Word_test.OUT_WORD[1]
+TEST_WORD[2] <= word_test:Word_test.OUT_WORD[2]
+TEST[0] <= word_test:Word_test.TEST
+TEST[1] <= <GND>
+TEST[2] <= <GND>
+TEST[3] <= <GND>
+TEST[4] <= <GND>
+TEST[5] <= <GND>
+TEST[6] <= <GND>
+TEST[7] <= <GND>
+TEST[8] <= <GND>
+TEST[9] <= <GND>
+TEST[10] <= <GND>
+TEST[11] <= <GND>
+TEST[12] <= <GND>
+TEST[13] <= <GND>
+TEST[14] <= <GND>
+TEST[15] <= <GND>
 
 
 |Base_SW_Rad|SW_Count_Coder:Coder|DIV_F2M:DIV
@@ -160,35 +185,79 @@ OUT_BUFFER_2[2] <= buffer_temp_2[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Base_SW_Rad|SW_Count_Coder:Coder|Form_word:Form_word
-IN_BUFFER_1[0] => OUT_WORD~5.IN1
-IN_BUFFER_1[0] => OUT_WORD~1.IN1
-IN_BUFFER_1[1] => OUT_WORD~11.IN1
-IN_BUFFER_1[1] => OUT_WORD~1.IN0
-IN_BUFFER_1[2] => OUT_WORD~11.IN0
-IN_BUFFER_1[2] => OUT_WORD~5.IN0
-IN_BUFFER_2[0] => OUT_WORD~14.IN1
+IN_BUFFER_1[0] => OUT_WORD~3.IN1
+IN_BUFFER_1[0] => OUT_WORD~0.IN1
+IN_BUFFER_1[1] => OUT_WORD~12.IN0
+IN_BUFFER_1[1] => OUT_WORD~8.IN1
+IN_BUFFER_1[1] => OUT_WORD~0.IN0
+IN_BUFFER_1[2] => OUT_WORD~19.IN0
+IN_BUFFER_1[2] => OUT_WORD~16.IN0
+IN_BUFFER_1[2] => OUT_WORD~8.IN0
+IN_BUFFER_1[2] => OUT_WORD~3.IN0
+IN_BUFFER_2[0] => OUT_WORD~17.IN1
+IN_BUFFER_2[0] => OUT_WORD~16.IN1
 IN_BUFFER_2[0] => OUT_WORD~13.IN1
-IN_BUFFER_2[1] => OUT_WORD~15.IN1
+IN_BUFFER_2[0] => OUT_WORD~12.IN1
+IN_BUFFER_2[1] => OUT_WORD~20.IN1
+IN_BUFFER_2[1] => OUT_WORD~19.IN1
 IN_BUFFER_2[1] => OUT_WORD~13.IN0
-IN_BUFFER_2[2] => OUT_WORD~15.IN0
-IN_BUFFER_2[2] => OUT_WORD~14.IN0
-NUMBER_BUFFER => OUT_WORD~4.OUTPUTSELECT
+IN_BUFFER_2[2] => OUT_WORD~20.IN0
+IN_BUFFER_2[2] => OUT_WORD~17.IN0
+NUMBER_BUFFER => OUT_WORD~6.OUTPUTSELECT
+ERROR_WORD[0] => Equal5.IN3
+ERROR_WORD[0] => Equal1.IN3
+ERROR_WORD[0] => Equal0.IN3
+ERROR_WORD[1] => Equal5.IN2
+ERROR_WORD[1] => Equal1.IN2
+ERROR_WORD[1] => Equal0.IN2
+STATUS[0] => Equal4.IN5
+STATUS[0] => Equal3.IN5
+STATUS[0] => Equal2.IN5
+STATUS[1] => Equal4.IN4
+STATUS[1] => Equal3.IN4
+STATUS[1] => Equal2.IN4
+STATUS[2] => Equal4.IN3
+STATUS[2] => Equal3.IN3
+STATUS[2] => Equal2.IN3
+OUT_WORD <= OUT_WORD$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Base_SW_Rad|SW_Count_Coder:Coder|Word_test:Word_test
+IN_BUFFER_1[0] => OUT_WORD~1.IN0
+IN_BUFFER_1[0] => OUT_WORD~0.IN1
+IN_BUFFER_1[1] => OUT_WORD~2.IN0
+IN_BUFFER_1[1] => OUT_WORD~0.IN0
+IN_BUFFER_1[2] => OUT_WORD~2.IN1
+IN_BUFFER_1[2] => OUT_WORD~1.IN1
+IN_BUFFER_2[0] => OUT_WORD~10.IN0
+IN_BUFFER_2[0] => OUT_WORD~9.IN1
+IN_BUFFER_2[1] => OUT_WORD~11.IN0
+IN_BUFFER_2[1] => OUT_WORD~9.IN0
+IN_BUFFER_2[2] => OUT_WORD~11.IN1
+IN_BUFFER_2[2] => OUT_WORD~10.IN1
+CLK => inner_f2m.CLK
+CLK => temp_buffer[1].CLK
+CLK => temp_buffer[0].CLK
+F2M => temp_buffer[1].DATAIN
+RES => inner_f2m.ACLR
+RES => OUT_WORD[2]~reg0.PRESET
+RES => OUT_WORD[1]~reg0.ACLR
+RES => OUT_WORD[0]~reg0.PRESET
+RES => temp_buffer[1].ENA
+RES => temp_buffer[0].ENA
+NUMBER_BUFFER => OUT_WORD~20.OUTPUTSELECT
+NUMBER_BUFFER => OUT_WORD~19.OUTPUTSELECT
+NUMBER_BUFFER => OUT_WORD~18.OUTPUTSELECT
 ERROR_WORD[0] => Equal2.IN3
 ERROR_WORD[0] => Equal1.IN3
 ERROR_WORD[0] => Equal0.IN3
 ERROR_WORD[1] => Equal2.IN2
 ERROR_WORD[1] => Equal1.IN2
 ERROR_WORD[1] => Equal0.IN2
-STATUS[0] => Equal5.IN5
-STATUS[0] => Equal4.IN5
-STATUS[0] => Equal3.IN5
-STATUS[1] => Equal5.IN4
-STATUS[1] => Equal4.IN4
-STATUS[1] => Equal3.IN4
-STATUS[2] => Equal5.IN3
-STATUS[2] => Equal4.IN3
-STATUS[2] => Equal3.IN3
-OUT_WORD <= OUT_WORD$latch.DB_MAX_OUTPUT_PORT_TYPE
+OUT_WORD[0] <= OUT_WORD[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT_WORD[1] <= OUT_WORD[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT_WORD[2] <= OUT_WORD[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+TEST <= inner_f2m.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Base_SW_Rad|SW_Count_Decoder:DEecoder

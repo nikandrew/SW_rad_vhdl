@@ -13,13 +13,15 @@ SIGNAL ERROR_BUFFER : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL ERROR_COUNTER : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL ERROR_WORD : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL OUT_COUNT : STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL RES : STD_LOGIC;
+SIGNAL RES_COD : STD_LOGIC;
+SIGNAL RES_DEC : STD_LOGIC;
 SIGNAL TEST_CODER_STEP				: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_F2M				: std_logic;
 SIGNAL TEST_CODER_BUFFER_1 			: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_BUFFER_2 			: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_NUMBER_BUFFER 	: std_logic;
-SIGNAL TEST_CODER_OUTPUT			: std_logic;		
+SIGNAL TEST_CODER_OUTPUT			: std_logic;
+SIGNAL TEST_CODER_WORD 			: std_logic_vector(2 downto 0);		
 SIGNAL TEST_CODER : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL TEST_DECODER : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
@@ -30,7 +32,8 @@ COMPONENT Base_SW_Rad
 	ERROR_COUNTER : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 	ERROR_WORD : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 	OUT_COUNT : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	RES : IN STD_LOGIC;
+	RES_COD : IN STD_LOGIC;
+	RES_DEC : IN STD_LOGIC;
 	
 	TEST_CODER_STEP				: out std_logic_vector(2 downto 0);
 	TEST_CODER_F2M				: out std_logic;
@@ -38,6 +41,7 @@ COMPONENT Base_SW_Rad
 	TEST_CODER_BUFFER_2 		: out std_logic_vector(2 downto 0);
 	TEST_CODER_NUMBER_BUFFER 	: out std_logic;
 	TEST_CODER_OUTPUT			: out std_logic;		
+	TEST_CODER_WORD 			: out std_logic_vector(2 downto 0);
 	TEST_CODER 					: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	
 	TEST_DECODER : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
@@ -53,7 +57,8 @@ BEGIN
 	ERROR_COUNTER => ERROR_COUNTER,
 	ERROR_WORD => ERROR_WORD,
 	OUT_COUNT => OUT_COUNT,
-	RES => RES,
+	RES_COD => RES_COD,	
+	RES_DEC => RES_DEC,
 	
 	TEST_CODER_STEP		=> TEST_CODER_STEP,
 	TEST_CODER_F2M		=> TEST_CODER_F2M,
@@ -61,19 +66,30 @@ BEGIN
 	TEST_CODER_BUFFER_2 	=> TEST_CODER_BUFFER_2,
 	TEST_CODER_NUMBER_BUFFER => TEST_CODER_NUMBER_BUFFER,
 	TEST_CODER_OUTPUT		=> TEST_CODER_OUTPUT,
+	TEST_CODER_WORD			=> TEST_CODER_WORD,
 			
 	TEST_CODER => TEST_CODER,
 	TEST_DECODER => TEST_DECODER
 	);
-init : PROCESS                                 
+init_DEC : PROCESS                                 
 BEGIN                                                        
-   	RES <= '0';
-    wait for 1 us;
-    RES <= '1';
-    wait for 1 us;
-    RES <= '0';
+   	RES_DEC <= '0';
+    wait for 0.5 us;
+    RES_DEC <= '1';
+    wait for 0.5 us;
+    RES_DEC <= '0';
     wait for 500 ms;                                                       
-END PROCESS init;                                           
+END PROCESS init_DEC;                                           
+	
+init_COD : PROCESS                                 
+BEGIN                                                        
+   	RES_COD <= '0';
+    wait for 1 us;
+    RES_COD <= '1';
+    wait for 1 us;
+    RES_COD <= '0';
+    wait for 500 ms;                                                       
+END PROCESS init_COD;	
 	
 PROCESS                                              
 BEGIN                                                         
