@@ -4,8 +4,8 @@ Info: Start Nativelink Simulation process
 
 Sim Mode              :  Gate
 Family                :  flex10ke
-Quartus root          :  c:/altera/90sp2/quartus/bin/
-Quartus sim root      :  c:/altera/90sp2/quartus/eda/sim_lib
+Quartus root          :  d:/program files/altera/quartus/bin/
+Quartus sim root      :  d:/program files/altera/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
 Simulation Language   :  vhdl
 Version               :  93
@@ -17,6 +17,6 @@ Sim dir               :  simulation\modelsim
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
-Sourced NativeLink script c:/altera/90sp2/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File Rad_Base_run_msim_gate_vhdl.do already exists - backing up current file as Rad_Base_run_msim_gate_vhdl.do.bak5
+Sourced NativeLink script d:/program files/altera/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File Rad_Base_run_msim_gate_vhdl.do already exists - backing up current file as Rad_Base_run_msim_gate_vhdl.do.bak11
 Info: Spawning ModelSim-Altera Simulation software 

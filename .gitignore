@@ -88,3 +88,6 @@ Quartus_proj/db/SW_Count_Coder.cmp.hdb
 Quartus_proj/db/*.qmsg
 Quartus_proj/db/prev_cmp_SW_Count_Coder.asm.qmsg
 Quartus_proj/db/prev_cmp_SW_Count_Coder.tan.qmsg
+Quartus_proj_2/db/*
+*.sdo
+Quartus_proj_2/db/Rad_Base.(5).cnf.hdb

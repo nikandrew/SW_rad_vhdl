@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Rad_Base
-Tue Jan 09 08:53:37 2018
+Tue Jan 09 11:04:47 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -43,13 +43,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Jan 09 08:53:37 2018        ;
+; Analysis & Synthesis Status ; Successful - Tue Jan 09 11:04:47 2018        ;
 ; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name               ; Rad_Base                                     ;
 ; Top-level Entity Name       ; Base_SW_Rad                                  ;
 ; Family                      ; FLEX10KE                                     ;
-; Total logic elements        ; 57                                           ;
-; Total pins                  ; 43                                           ;
+; Total logic elements        ; 55                                           ;
+; Total pins                  ; 55                                           ;
 ; Total memory bits           ; 0                                            ;
 ; Total PLLs                  ; 0                                            ;
 +-----------------------------+----------------------------------------------+
@@ -141,19 +141,19 @@ applicable agreement for further details.
 +--------------------------------+------------+
 ; Resource                       ; Usage      ;
 +--------------------------------+------------+
-; Total logic elements           ; 57         ;
-; Total combinational functions  ; 47         ;
-;     -- Total 4-input functions ; 21         ;
-;     -- Total 3-input functions ; 15         ;
-;     -- Total 2-input functions ; 5          ;
+; Total logic elements           ; 55         ;
+; Total combinational functions  ; 45         ;
+;     -- Total 4-input functions ; 17         ;
+;     -- Total 3-input functions ; 16         ;
+;     -- Total 2-input functions ; 6          ;
 ;     -- Total 1-input functions ; 5          ;
 ;     -- Total 0-input functions ; 1          ;
 ; Total registers                ; 28         ;
-; I/O pins                       ; 43         ;
+; I/O pins                       ; 55         ;
 ; Maximum fan-out node           ; RES        ;
 ; Maximum fan-out                ; 26         ;
-; Total fan-out                  ; 242        ;
-; Average fan-out                ; 2.42       ;
+; Total fan-out                  ; 229        ;
+; Average fan-out                ; 2.08       ;
 +--------------------------------+------------+
 
 
@@ -162,11 +162,11 @@ applicable agreement for further details.
 +----------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                             ; Library Name ;
 +----------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------+--------------+
-; |Base_SW_Rad                     ; 57 (0)      ; 28           ; 0           ; 43   ; 29 (0)       ; 10 (0)            ; 18 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad                                                    ; work         ;
-;    |SW_Count_Coder:Coder|        ; 37 (0)      ; 14           ; 0           ; 0    ; 23 (0)       ; 4 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder                               ; work         ;
+; |Base_SW_Rad                     ; 55 (0)      ; 28           ; 0           ; 55   ; 27 (0)       ; 10 (0)            ; 18 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad                                                    ; work         ;
+;    |SW_Count_Coder:Coder|        ; 35 (0)      ; 14           ; 0           ; 0    ; 21 (0)       ; 4 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder                               ; work         ;
 ;       |DIV_F2M:DIV|              ; 7 (7)       ; 5            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|DIV_F2M:DIV                   ; work         ;
 ;       |Form_buffer:Form_buffer|  ; 12 (12)     ; 6            ; 0           ; 0    ; 6 (6)        ; 4 (4)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|Form_buffer:Form_buffer       ; work         ;
-;       |Form_word:Form_word|      ; 13 (13)     ; 0            ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|Form_word:Form_word           ; work         ;
+;       |Form_word:Form_word|      ; 11 (11)     ; 0            ; 0           ; 0    ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|Form_word:Form_word           ; work         ;
 ;       |Step_count:COUNT|         ; 5 (5)       ; 3            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|Step_count:COUNT              ; work         ;
 ;    |SW_Count_Decoder:DEecoder|   ; 20 (0)      ; 14           ; 0           ; 0    ; 6 (0)        ; 6 (0)             ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Decoder:DEecoder                          ; work         ;
 ;       |Decoder_Reader:READ_WORD| ; 20 (20)     ; 14           ; 0           ; 0    ; 6 (6)        ; 6 (6)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Decoder:DEecoder|Decoder_Reader:READ_WORD ; work         ;
@@ -179,7 +179,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+-----------------------------------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal                                 ; Free of Timing Hazards ;
 +----------------------------------------------------+-----------------------------------------------------+------------------------+
-; SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD  ; SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD~4 ; yes                    ;
+; SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD  ; SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD~7 ; yes                    ;
 ; Number of user-specified and inferred latches = 1  ;                                                     ;                        ;
 +----------------------------------------------------+-----------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -222,7 +222,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; SW_Count_Coder:Coder|Step_count:COUNT|counter[2]              ; 8       ;
 ; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_1[0] ; 4       ;
 ; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_1[1] ; 4       ;
-; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_1[2] ; 3       ;
+; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_1[2] ; 4       ;
 ; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_2[0] ; 3       ;
 ; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_2[1] ; 3       ;
 ; SW_Count_Coder:Coder|Form_buffer:Form_buffer|buffer_temp_2[2] ; 2       ;
@@ -246,7 +246,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jan 09 08:53:36 2018
+    Info: Processing started: Tue Jan 09 11:04:46 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Rad_Base -c Rad_Base
 Info: Found 2 design units, including 1 entities, in source file Decoder_Read_Word.vhd
     Info: Found design unit 1: Decoder_Reader-Decoder_Reader_arch
@@ -277,10 +277,7 @@ Info: Found 2 design units, including 1 entities, in source file ../SW_Count_Dec
     Info: Found entity 1: SW_Count_Decoder
 Info: Elaborating entity "Base_SW_Rad" for the top level hierarchy
 Info: Elaborating entity "SW_Count_Coder" for hierarchy "SW_Count_Coder:Coder"
-Warning (10873): Using initial value X (don't care) for net "TEST[15]" at SW_Count_Coder.vhd(15)
-Warning (10873): Using initial value X (don't care) for net "TEST[14]" at SW_Count_Coder.vhd(15)
-Warning (10873): Using initial value X (don't care) for net "TEST[13]" at SW_Count_Coder.vhd(15)
-Warning (10873): Using initial value X (don't care) for net "TEST[12]" at SW_Count_Coder.vhd(15)
+Warning (10541): VHDL Signal Declaration warning at SW_Count_Coder.vhd(22): used implicit default value for signal "TEST" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info: Elaborating entity "DIV_F2M" for hierarchy "SW_Count_Coder:Coder|DIV_F2M:DIV"
 Info: Elaborating entity "Step_count" for hierarchy "SW_Count_Coder:Coder|Step_count:COUNT"
 Info: Elaborating entity "Form_buffer" for hierarchy "SW_Count_Coder:Coder|Form_buffer:Form_buffer"
@@ -308,6 +305,18 @@ Warning (10036): Verilog HDL or VHDL warning at Decoder_Read_Word.vhd(15): objec
 Warning: Latch SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal SW_Count_Coder:Coder|DIV_F2M:DIV|counter[2]
 Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "TEST_CODER[0]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[1]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[2]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[3]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[4]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[5]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[6]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[7]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[8]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[9]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[10]" is stuck at GND
+    Warning (13410): Pin "TEST_CODER[11]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[12]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[13]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[14]" is stuck at GND
@@ -327,13 +336,13 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "TEST_DECODER[14]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[15]" is stuck at GND
 Info: Registers with preset signals will power-up high
-Info: Implemented 100 device resources after synthesis - the final resource count might be different
+Info: Implemented 110 device resources after synthesis - the final resource count might be different
     Info: Implemented 8 input pins
-    Info: Implemented 35 output pins
-    Info: Implemented 57 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Implemented 47 output pins
+    Info: Implemented 55 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 240 megabytes
-    Info: Processing ended: Tue Jan 09 08:53:37 2018
+    Info: Processing ended: Tue Jan 09 11:04:47 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

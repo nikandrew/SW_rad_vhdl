@@ -1,5 +1,5 @@
 Flow report for Rad_Base
-Tue Jan 09 08:53:42 2018
+Tue Jan 09 11:04:51 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Tue Jan 09 08:53:42 2018        ;
+; Flow Status             ; Successful - Tue Jan 09 11:04:51 2018        ;
 ; Quartus II Version      ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name           ; Rad_Base                                     ;
 ; Top-level Entity Name   ; Base_SW_Rad                                  ;
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Device                  ; EPF10K30EFC256-3                             ;
 ; Timing Models           ; Final                                        ;
 ; Met timing requirements ; Yes                                          ;
-; Total logic elements    ; 58 / 1,728 ( 3 % )                           ;
-; Total pins              ; 43 / 176 ( 24 % )                            ;
+; Total logic elements    ; 56 / 1,728 ( 3 % )                           ;
+; Total pins              ; 55 / 176 ( 31 % )                            ;
 ; Total memory bits       ; 0 / 24,576 ( 0 % )                           ;
 ; Total PLLs              ; 0                                            ;
 +-------------------------+----------------------------------------------+
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/09/2018 08:53:36 ;
+; Start date & time ; 01/09/2018 11:04:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Rad_Base            ;
 +-------------------+---------------------+
@@ -69,13 +69,13 @@ applicable agreement for further details.
 +--------------------------------------+-------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                               ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+-------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 128454780033929.151547721609680     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 128454780033929.151548508601740     ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; i1                                  ; --            ; --          ; Base_test      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Base_test                           ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)              ; <None>        ; --          ; --             ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                     ; --            ; --          ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Base_SW_Rad.vht ; --            ; --          ; Base_test      ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Base_SW_Rad.vhd ; --            ; --          ; Base_test      ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; Base_SW_Rad_vhd_tst                 ; --            ; --          ; Base_test      ;
 ; EDA_TEST_BENCH_NAME                  ; Base_test                           ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ms                              ; --            ; --          ; Base_test      ;
@@ -94,10 +94,10 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 240 MB              ; 00:00:01                           ;
 ; Fitter                  ; 00:00:01     ; 1.0                     ; 207 MB              ; 00:00:01                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 202 MB              ; 00:00:00                           ;
+; Assembler               ; 00:00:00     ; 1.0                     ; 202 MB              ; 00:00:00                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 172 MB              ; 00:00:00                           ;
 ; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 162 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:03     ; --                      ; --                  ; 00:00:02                           ;
+; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

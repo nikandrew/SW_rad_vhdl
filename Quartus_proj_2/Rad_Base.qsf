@@ -54,7 +54,6 @@ set_global_assignment -name EDA_TEST_BENCH_NAME Base_test -section_id eda_simula
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id Base_test
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "100 ms" -section_id Base_test
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Base_SW_Rad_vhd_tst -section_id Base_test
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Base_SW_Rad.vht -section_id Base_test
 set_global_assignment -name VHDL_FILE Decoder_Read_Word.vhd
 set_global_assignment -name VHDL_FILE ../Base_step_count.vhd
 set_global_assignment -name VHDL_FILE ../Base_SW_Rad.vhd
@@ -64,3 +63,4 @@ set_global_assignment -name VHDL_FILE ../Form_buffer.vhd
 set_global_assignment -name VHDL_FILE ../Form_word.vhd
 set_global_assignment -name VHDL_FILE ../SW_Count_Coder.vhd
 set_global_assignment -name VHDL_FILE ../SW_Count_Decoder.vhd
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Base_SW_Rad.vhd -section_id Base_test

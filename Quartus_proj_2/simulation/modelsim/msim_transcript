@@ -21,7 +21,7 @@
 # -- Compiling entity base_sw_rad
 # -- Compiling architecture structure of base_sw_rad
 # 
-# vcom -93 -work work {E:/Project/SWork/SW_rad_git/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vht}
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vhd}
 # Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -33,8 +33,6 @@
 # Loading std.standard
 # Loading ieee.std_logic_1164(body)
 # Loading work.base_sw_rad_vhd_tst(base_sw_rad_arch)
-# SDF 6.4a Compiler 2008.08 Oct 22 2008
-# 
 # Loading std.textio(body)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
@@ -49,8 +47,15 @@
 # Loading flex10ke.dffe_io(behave)
 # Loading instances from Rad_Base_vhd.sdo
 # Loading timing data from Rad_Base_vhd.sdo
-# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Region: /base_sw_rad_vhd_tst  File: E:/Project/SWork/SW_rad_git/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vht
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Andrew  Hostname: ANDREW-PC  ProcessID: 8144
+#           Attempting to use alternate WLF file "./wlftwm4nx2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwm4nx2
+# ** Note: ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwm4nx2
+# SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Region: /base_sw_rad_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vhd
 # 
 # add wave *
 # view structure
@@ -59,6 +64,6 @@
 # .main_pane.signals.interior.cs
 # run 100 ms
 # Break key hit 
-# Simulation stop requested.
-# Simulation Breakpoint: Simulation stop requested.
+# Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 641
+# Simulation Breakpoint: Break in Process vitaltiming at C:/altera/90/modelsim_ase/win32aloem/../altera/vhdl/src/flex10ke/flex10ke_atoms.vhd line 641
 # MACRO ./Rad_Base_run_msim_gate_vhdl.do PAUSED at line 17
