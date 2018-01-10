@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 15.200 ns
+Actual Time    : 15.900 ns
 From           : SW_Count_Coder:Coder|Step_count:COUNT|counter[0]
 To             : TEST_CODER_STEP[0]
 From Clock     : CLK
@@ -25,7 +25,7 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 3.400 ns
+Actual Time    : 3.800 ns
 From           : ERROR_WORD[0]
 To             : SW_Count_Coder:Coder|Word_test:Word_test|OUT_WORD[2]
 From Clock     : --
@@ -50,7 +50,7 @@ From           : SW_Count_Coder:Coder|DIV_F2M:DIV|number
 To             : SW_Count_Coder:Coder|Word_test:Word_test|OUT_WORD[0]
 From Clock     : CLK
 To Clock       : CLK
-Failed Paths   : 1
+Failed Paths   : 7
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 1
+Failed Paths   : 7
 
 --------------------------------------------------------------------------------------
 

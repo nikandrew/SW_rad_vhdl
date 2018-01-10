@@ -20,8 +20,33 @@ signal word_old,	word_2_0, 	word_3_0,	word_temp_1, word_temp_2, word_temp_3, wor
 signal buffer_old, 	buffer_2_0,	buffer_3_0, buffer_temp_1, buffer_temp_2, buffer_temp_3, buffer_temp41: std_logic_vector(2 downto 0);
 signal number_old, 	number_2_0, number_3_0	: integer range 0 to 2; -- 0 -> 1 -> 2
 signal value_old, 	value_2_0,	value_3_0	: std_logic;  -- 0 or 1
+signal hemming_out_0, hemming_out_1 : std_logic;
+begin
 
-begin	 
+	process(buffer_temp_1, buffer_temp_2, WORD, word_temp_2, word_temp_1)
+	begin
+		word_temp_1(0) <= buffer_temp_1(0) xor buffer_temp_1(1);
+        word_temp_1(1) <= buffer_temp_1(0) xor buffer_temp_1(2);
+        word_temp_1(2) <= buffer_temp_1(1) xor buffer_temp_1(2);
+        
+        if(word_temp_1 = WORD) then
+        	hemming_out_1 <='0';
+        else
+        	hemming_out_1 <= '1';
+        end if;  
+		
+		word_temp_2(0) <= buffer_temp_2(0) xor buffer_temp_2(1);
+        word_temp_2(1) <= buffer_temp_2(0) xor buffer_temp_2(2);
+        word_temp_2(2) <= buffer_temp_2(1) xor buffer_temp_2(2);
+        
+        if(word_temp_2 = WORD) then
+        	hemming_out_0 <='0';
+        else
+        	hemming_out_0 <= '1';
+        end if; 
+	end process;
+		
+	 
 	process (RES, SYNC )
 		variable hemming_0, hemming_1 : integer;
     begin
@@ -29,17 +54,21 @@ begin
 			error <= 0;
 			OUT_COUNT <= "00";
 			TEST_VALUE <= '1';
-			TEST_NUMBER_PART <= "000";
+			TEST_NUMBER_PART <= "111";
 			
 			value_old <= '1';
-			number_old <= 2;
-			buffer_old <= "011";
-			word_old <= "110";
+			number_old <= 0;
+			buffer_old <= "111";
+			word_old <= "000";
 			hemming_1 := 0;
 			hemming_0 := 0;
+			
+			
+			
         elsif(rising_edge(SYNC)) then
         	if(error = 0) then
         		if(word_old = WORD) then
+        			TEST_NUMBER_PART <= "001";
         			error <= 3;
         				--решение по доп.2
         			buffer_2_0 <= buffer_old;
@@ -56,31 +85,15 @@ begin
         			value_3_0 <= value_old;
         			buffer_3_0 <= buffer_old;
         		else
+        			TEST_NUMBER_PART <= "000";
         			buffer_temp_1 <= buffer_old;
-        			buffer_temp_1(number_old) <= '1';
-        			word_temp_1(0) <= buffer_temp_1(0) xor buffer_temp_1(1);
-        			word_temp_1(1) <= buffer_temp_1(0) xor buffer_temp_1(2);
-        			word_temp_1(2) <= buffer_temp_1(1) xor buffer_temp_1(2);
-        			for i in 0 to 2 loop
-        				if(word_temp_1(i) = WORD(i)) then
-        					hemming_1 := hemming_1;
-        				else
-        					hemming_1 := hemming_1 + 1;
-        				end if;
-        			end loop;
+        			buffer_temp_1(number_old) <= '1';        			       			       				
+        			-- комбинаторика      			
         			
         			buffer_temp_2 <= buffer_old;        			
         			buffer_temp_2(number_old) <= '0';
-        			word_temp_2(0) <= buffer_temp_2(0) xor buffer_temp_2(1);
-        			word_temp_2(1) <= buffer_temp_2(0) xor buffer_temp_2(2);
-        			word_temp_2(2) <= buffer_temp_2(1) xor buffer_temp_2(2);
-        			for i in 0 to 2 loop
-        				if(word_temp_2(i) = WORD(i)) then
-        					hemming_0 := hemming_0;
-        				else
-        					hemming_0 := hemming_0 + 1;
-        				end if;
-        			end loop;
+        			-- комбинаторика
+        			       			
         		end if;
         	elsif(error = 1) then
         		

@@ -36,7 +36,7 @@
  ------------------------------------------------------------------------------
 
 
-File Generation Date & Time: Wed Jan 10 14:51:06 2018
+File Generation Date & Time: Wed Jan 10 17:00:33 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 CHIP  "Rad_Base"  ASSIGNED TO AN: EPF10K30EFC256-3
 
@@ -44,34 +44,34 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 DATA0                        : A1        : input  :                   :         :           :                
 GND*                         : A2        :        :                   :         :           :                
-ERROR_BUFFER[1]              : A3        : input  : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER[15]               : A3        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : A4        :        :                   :         :           :                
 GND*                         : A5        :        :                   :         :           :                
 GND*                         : A6        :        :                   :         :           :                
 GND*                         : A7        :        :                   :         :           :                
-TEST_CODER[6]                : A8        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : A8        :        :                   :         :           :                
 ERROR_WORD[1]                : A9        : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : A10       :        :                   :         :           :                
 GND*                         : A11       :        :                   :         :           :                
-TEST_DECODER[2]              : A12       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_BUFFER_2[2]       : A12       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : A13       :        :                   :         :           :                
-TEST_DECODER_NUMBER_PART[0]  : A14       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_DECODER[7]              : A15       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_DECODER[12]             : A16       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[1]              : A14       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_OUTPUT            : A15       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : A16       :        :                   :         :           :                
 nCE                          : B1        : input  :                   :         :           :                
 DCLK                         : B2        : bidir  :                   :         :           :                
-TEST_CODER_OUTPUT            : B3        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : B3        :        :                   :         :           :                
 GND*                         : B4        :        :                   :         :           :                
-GND*                         : B5        :        :                   :         :           :                
+TEST_CODER[11]               : B5        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : B6        :        :                   :         :           :                
 GND*                         : B7        :        :                   :         :           :                
-TEST_CODER[7]                : B8        : output : LVTTL/LVCMOS      :         :           : N              
-RES_COD                      : B9        : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : B8        :        :                   :         :           :                
+RES_DEC                      : B9        : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : B10       :        :                   :         :           :                
-GND*                         : B11       :        :                   :         :           :                
-TEST_DECODER[10]             : B12       : output : LVTTL/LVCMOS      :         :           : N              
+DECODER_OUT_COUNT[1]         : B11       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[14]             : B12       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : B13       :        :                   :         :           :                
-TEST_DECODER[1]              : B14       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_BUFFER_1[2]       : B14       : output : LVTTL/LVCMOS      :         :           : N              
 TCK                          : B15       : input  :                   :         :           :                
 nCEO                         : B16       : output :                   :         :           :                
 GND*                         : C1        :        :                   :         :           :                
@@ -79,51 +79,51 @@ TDI                          : C2        : input  :                   :         
 GND*                         : C3        :        :                   :         :           :                
 GND*                         : C4        :        :                   :         :           :                
 GND*                         : C5        :        :                   :         :           :                
-TEST_DECODER_NUMBER_PART[2]  : C6        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : C7        :        :                   :         :           :                
-TEST_CODER_WORD[1]           : C8        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : C6        :        :                   :         :           :                
+TEST_CODER[6]                : C7        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : C8        :        :                   :         :           :                
 GND*                         : C9        :        :                   :         :           :                
-TEST_CODER[14]               : C10       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER[2]                : C11       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : C10       :        :                   :         :           :                
+TEST_DECODER[6]              : C11       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : C12       :        :                   :         :           :                
-TEST_DECODER[3]              : C13       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER[8]                : C14       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : C13       :        :                   :         :           :                
+TEST_CODER_BUFFER_1[0]       : C14       : output : LVTTL/LVCMOS      :         :           : N              
 CONF_DONE                    : C15       : bidir  :                   :         :           :                
 TDO                          : C16       : output :                   :         :           :                
 NC                           : D1        :        :                   :         :           :                
-TEST_DECODER_VALUE           : D2        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : D3        :        :                   :         :           :                
-GND*                         : D4        :        :                   :         :           :                
-TEST_DECODER[9]              : D5        : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER[1]                : D6        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[8]              : D2        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER[3]                : D3        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER[0]                : D4        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[13]             : D5        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : D6        :        :                   :         :           :                
 GND*                         : D7        :        :                   :         :           :                
-ERROR_COUNTER[0]             : D8        : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : D8        :        :                   :         :           :                
 GND*                         : D9        :        :                   :         :           :                
 GND*                         : D10       :        :                   :         :           :                
 GND*                         : D11       :        :                   :         :           :                
 VCC_IO                       : D12       : power  :                   : 3.3V    :           :                
-TEST_DECODER_NUMBER_PART[1]  : D13       : output : LVTTL/LVCMOS      :         :           : N              
-DECODER_OUT_COUNT[0]         : D14       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : D13       :        :                   :         :           :                
+TEST_CODER_BUFFER_2[1]       : D14       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : D15       :        :                   :         :           :                
 GND*                         : D16       :        :                   :         :           :                
 GND*                         : E1        :        :                   :         :           :                
-DECODER_INPUT_WORD[2]        : E2        : output : LVTTL/LVCMOS      :         :           : N              
+DECODER_INPUT_WORD[1]        : E2        : output : LVTTL/LVCMOS      :         :           : N              
 NC                           : E3        :        :                   :         :           :                
 GND*                         : E4        :        :                   :         :           :                
 GND_INT                      : E5        : gnd    :                   :         :           :                
 VCC_IO                       : E6        : power  :                   : 3.3V    :           :                
-GND*                         : E7        :        :                   :         :           :                
-RES_DEC                      : E8        : input  : LVTTL/LVCMOS      :         :           : N              
-GND*                         : E9        :        :                   :         :           :                
+TEST_DECODER[7]              : E7        : output : LVTTL/LVCMOS      :         :           : N              
+RES_COD                      : E8        : input  : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[9]              : E9        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : E10       :        :                   :         :           :                
 VCC_INT                      : E11       : power  :                   : 2.5V    :           :                
 GND_INT                      : E12       : gnd    :                   :         :           :                
 GND*                         : E13       :        :                   :         :           :                
 GND*                         : E14       :        :                   :         :           :                
-GND*                         : E15       :        :                   :         :           :                
+TEST_DECODER[2]              : E15       : output : LVTTL/LVCMOS      :         :           : N              
 NC                           : E16       :        :                   :         :           :                
-TEST_DECODER[8]              : F1        : output : LVTTL/LVCMOS      :         :           : N              
-DECODER_INPUT_WORD[1]        : F2        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_WORD[0]           : F1        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_WORD[2]           : F2        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : F3        :        :                   :         :           :                
 GND*                         : F4        :        :                   :         :           :                
 VCC_INT                      : F5        : power  :                   : 2.5V    :           :                
@@ -135,30 +135,30 @@ VCC_IO                       : F10       : power  :                   : 3.3V    
 GND_INT                      : F11       : gnd    :                   :         :           :                
 VCC_INT                      : F12       : power  :                   : 2.5V    :           :                
 GND*                         : F13       :        :                   :         :           :                
-GND*                         : F14       :        :                   :         :           :                
-GND*                         : F15       :        :                   :         :           :                
-TEST_CODER[3]                : F16       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_DECODER[13]             : G1        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_NUMBER_BUFFER     : F14       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER_NUMBER_PART[2]  : F15       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER_NUMBER_PART[1]  : F16       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : G1        :        :                   :         :           :                
 GND*                         : G2        :        :                   :         :           :                
 NC                           : G3        :        :                   :         :           :                
-TEST_CODER[15]               : G4        : output : LVTTL/LVCMOS      :         :           : N              
-DECODER_INPUT_WORD[0]        : G5        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : G4        :        :                   :         :           :                
+TEST_DECODER_SYNC            : G5        : output : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : G6        : power  :                   : 3.3V    :           :                
 GND_INT                      : G7        : gnd    :                   :         :           :                
 VCC_IO                       : G8        : power  :                   : 3.3V    :           :                
 GND                          : G9        : gnd    :                   :         :           :                
 GND_INT                      : G10       : gnd    :                   :         :           :                
 VCC_IO                       : G11       : power  :                   : 3.3V    :           :                
-GND*                         : G12       :        :                   :         :           :                
-TEST_DECODER_SYNC            : G13       : output : LVTTL/LVCMOS      :         :           : N              
+DECODER_INPUT_WORD[0]        : G12       : output : LVTTL/LVCMOS      :         :           : N              
+DECODER_INPUT_WORD[2]        : G13       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : G14       :        :                   :         :           :                
 GND*                         : G15       :        :                   :         :           :                
 GND*                         : G16       :        :                   :         :           :                
 NC                           : H1        :        :                   :         :           :                
 GND*                         : H2        :        :                   :         :           :                
-GND*                         : H3        :        :                   :         :           :                
-GND*                         : H4        :        :                   :         :           :                
-GND*                         : H5        :        :                   :         :           :                
+TEST_CODER[5]                : H3        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[15]             : H4        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_WORD[1]           : H5        : output : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : H6        : power  :                   : 2.5V    :           :                
 VCC_INT                      : H7        : power  :                   : 2.5V    :           :                
 GND                          : H8        : gnd    :                   :         :           :                
@@ -167,13 +167,13 @@ VCC_INT                      : H10       : power  :                   : 2.5V    
 VCC_IO                       : H11       : power  :                   : 3.3V    :           :                
 GND*                         : H12       :        :                   :         :           :                
 GND*                         : H13       :        :                   :         :           :                
-GND*                         : H14       :        :                   :         :           :                
+TEST_CODER[8]                : H14       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : H15       :        :                   :         :           :                
 NC                           : H16       :        :                   :         :           :                
 NC                           : J1        :        :                   :         :           :                
 GND*                         : J2        :        :                   :         :           :                
 GND*                         : J3        :        :                   :         :           :                
-GND*                         : J4        :        :                   :         :           :                
+TEST_DECODER_VALUE           : J4        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : J5        :        :                   :         :           :                
 VCC_IO                       : J6        : power  :                   : 3.3V    :           :                
 VCC_INT                      : J7        : power  :                   : 2.5V    :           :                
@@ -182,29 +182,29 @@ GND_INT                      : J9        : gnd    :                   :         
 VCC_INT                      : J10       : power  :                   : 2.5V    :           :                
 VCC_INT                      : J11       : power  :                   : 2.5V    :           :                
 GND*                         : J12       :        :                   :         :           :                
-GND*                         : J13       :        :                   :         :           :                
+TEST_DECODER[3]              : J13       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : J14       :        :                   :         :           :                
 GND*                         : J15       :        :                   :         :           :                
 TEST_CODER[4]                : J16       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : K1        :        :                   :         :           :                
-TEST_CODER_STEP[1]           : K2        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : K2        :        :                   :         :           :                
 NC                           : K3        :        :                   :         :           :                
 GND*                         : K4        :        :                   :         :           :                
-TEST_CODER_BUFFER_2[0]       : K5        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : K5        :        :                   :         :           :                
 VCC_IO                       : K6        : power  :                   : 3.3V    :           :                
 GND_INT                      : K7        : gnd    :                   :         :           :                
 VCC_IO                       : K8        : power  :                   : 3.3V    :           :                
 VCC_INT                      : K9        : power  :                   : 2.5V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCC_IO                       : K11       : power  :                   : 3.3V    :           :                
-TEST_CODER[11]               : K12       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER_WORD[0]           : K13       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : K12       :        :                   :         :           :                
+GND*                         : K13       :        :                   :         :           :                
 NC                           : K14       :        :                   :         :           :                
-GND*                         : K15       :        :                   :         :           :                
+TEST_CODER_STEP[1]           : K15       : output : LVTTL/LVCMOS      :         :           : N              
 NC                           : K16       :        :                   :         :           :                
-TEST_CODER_BUFFER_1[1]       : L1        : output : LVTTL/LVCMOS      :         :           : N              
+ERROR_COUNTER[0]             : L1        : input  : LVTTL/LVCMOS      :         :           : N              
 NC                           : L2        :        :                   :         :           :                
-TEST_CODER_STEP[2]           : L3        : output : LVTTL/LVCMOS      :         :           : N              
+ERROR_BUFFER[0]              : L3        : input  : LVTTL/LVCMOS      :         :           : N              
 NC                           : L4        :        :                   :         :           :                
 VCC_INT                      : L5        : power  :                   : 2.5V    :           :                
 GND_INT                      : L6        : gnd    :                   :         :           :                
@@ -214,13 +214,13 @@ VCC_CKLK                     : L9        : power  :                   : 2.5V    
 VCC_IO                       : L10       : power  :                   : 3.3V    :           :                
 GND_INT                      : L11       : gnd    :                   :         :           :                
 VCC_INT                      : L12       : power  :                   : 2.5V    :           :                
-TEST_CODER_STEP[0]           : L13       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER_BUFFER_1[0]       : L14       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER_BUFFER_2[2]       : L15       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER_BUFFER_1[2]       : L16       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_STEP[2]           : L13       : output : LVTTL/LVCMOS      :         :           : N              
+ERROR_BUFFER[1]              : L14       : input  : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER_STEP[0]           : L15       : output : LVTTL/LVCMOS      :         :           : N              
+ERROR_COUNTER[1]             : L16       : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : M1        :        :                   :         :           :                
-TEST_CODER_NUMBER_BUFFER     : M2        : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER[9]                : M3        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : M2        :        :                   :         :           :                
+GND*                         : M3        :        :                   :         :           :                
 GND*                         : M4        :        :                   :         :           :                
 GND                          : M5        : gnd    :                   :         :           :                
 VCC_IO                       : M6        : power  :                   : 3.3V    :           :                
@@ -235,66 +235,66 @@ NC                           : M14       :        :                   :         
 GND*                         : M15       :        :                   :         :           :                
 NC                           : M16       :        :                   :         :           :                
 GND*                         : N1        :        :                   :         :           :                
-GND*                         : N2        :        :                   :         :           :                
-TEST_CODER[13]               : N3        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[0]              : N2        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_CODER[14]               : N3        : output : LVTTL/LVCMOS      :         :           : N              
 nCONFIG                      : N4        : input  :                   :         :           :                
-TEST_CODER_BUFFER_2[1]       : N5        : output : LVTTL/LVCMOS      :         :           : N              
-TEST_DECODER[4]              : N6        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : N7        :        :                   :         :           :                
-TEST_CODER_WORD[2]           : N8        : output : LVTTL/LVCMOS      :         :           : N              
-TEST_CODER[12]               : N9        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : N5        :        :                   :         :           :                
+GND*                         : N6        :        :                   :         :           :                
+TEST_CODER[7]                : N7        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : N8        :        :                   :         :           :                
+TEST_CODER[13]               : N9        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : N10       :        :                   :         :           :                
-GND*                         : N11       :        :                   :         :           :                
+TEST_CODER[1]                : N11       : output : LVTTL/LVCMOS      :         :           : N              
 VCC_IO                       : N12       : power  :                   : 3.3V    :           :                
 GND*                         : N13       :        :                   :         :           :                
-TEST_DECODER[6]              : N14       : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[12]             : N14       : output : LVTTL/LVCMOS      :         :           : N              
 NC                           : N15       :        :                   :         :           :                
-TEST_DECODER[14]             : N16       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : N16       :        :                   :         :           :                
 MSEL0                        : P1        : input  :                   :         :           :                
 GND*                         : P2        :        :                   :         :           :                
 GND*                         : P3        :        :                   :         :           :                
 GND*                         : P4        :        :                   :         :           :                
-TEST_CODER[0]                : P5        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : P6        :        :                   :         :           :                
-TEST_DECODER[0]              : P7        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : P5        :        :                   :         :           :                
+TEST_DECODER[11]             : P6        : output : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[4]              : P7        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : P8        :        :                   :         :           :                
-GND*                         : P9        :        :                   :         :           :                
+TEST_DECODER[5]              : P9        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : P10       :        :                   :         :           :                
 GND*                         : P11       :        :                   :         :           :                
-GND*                         : P12       :        :                   :         :           :                
+TEST_CODER[9]                : P12       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : P13       :        :                   :         :           :                
 GND*                         : P14       :        :                   :         :           :                
 TMS                          : P15       : input  :                   :         :           :                
-TEST_CODER[5]                : P16       : output : LVTTL/LVCMOS      :         :           : N              
+DECODER_OUT_COUNT[0]         : P16       : output : LVTTL/LVCMOS      :         :           : N              
 MSEL1                        : R1        : input  :                   :         :           :                
 VCC_INT                      : R2        : power  :                   : 2.5V    :           :                
-ERROR_BUFFER[0]              : R3        : input  : LVTTL/LVCMOS      :         :           : N              
+GND*                         : R3        :        :                   :         :           :                
 GND*                         : R4        :        :                   :         :           :                
-TEST_DECODER[15]             : R5        : output : LVTTL/LVCMOS      :         :           : N              
-GND*                         : R6        :        :                   :         :           :                
+GND*                         : R5        :        :                   :         :           :                
+TEST_CODER[12]               : R6        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : R7        :        :                   :         :           :                
 ERROR_WORD[0]                : R8        : input  : LVTTL/LVCMOS      :         :           : N              
 GND*                         : R9        :        :                   :         :           :                
 GND*                         : R10       :        :                   :         :           :                
-GND*                         : R11       :        :                   :         :           :                
+TEST_CODER[2]                : R11       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : R12       :        :                   :         :           :                
-TEST_DECODER[5]              : R13       : output : LVTTL/LVCMOS      :         :           : N              
-TEST_DECODER[11]             : R14       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : R13       :        :                   :         :           :                
+TEST_CODER_BUFFER_1[1]       : R14       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : R15       :        :                   :         :           :                
 NTRST                        : R16       :        :                   :         :           :                
-TEST_CODER_F2M               : T1        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : T1        :        :                   :         :           :                
 GND*                         : T2        :        :                   :         :           :                
 GND*                         : T3        :        :                   :         :           :                
 GND*                         : T4        :        :                   :         :           :                
-ERROR_COUNTER[1]             : T5        : input  : LVTTL/LVCMOS      :         :           : N              
+TEST_DECODER[10]             : T5        : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : T6        :        :                   :         :           :                
-DECODER_OUT_COUNT[1]         : T7        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : T7        :        :                   :         :           :                
 GND_CKLK                     : T8        : gnd    :                   :         :           :                
 GND*                         : T9        :        :                   :         :           :                
-GND*                         : T10       :        :                   :         :           :                
+TEST_DECODER_NUMBER_PART[0]  : T10       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : T11       :        :                   :         :           :                
 GND*                         : T12       :        :                   :         :           :                
-GND*                         : T13       :        :                   :         :           :                
+TEST_CODER_BUFFER_2[0]       : T13       : output : LVTTL/LVCMOS      :         :           : N              
 GND*                         : T14       :        :                   :         :           :                
-GND*                         : T15       :        :                   :         :           :                
+TEST_CODER_F2M               : T15       : output : LVTTL/LVCMOS      :         :           : N              
 nSTATUS                      : T16       : bidir  :                   :         :           :                

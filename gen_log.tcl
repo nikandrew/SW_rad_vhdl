@@ -5,4 +5,4 @@ view signals
 
 add log -r /*
 
-run 5 ms
+run 8 us
