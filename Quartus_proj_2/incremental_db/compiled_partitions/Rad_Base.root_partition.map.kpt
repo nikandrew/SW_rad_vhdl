@@ -69,12 +69,12 @@
     <transformation>
       <kp_set type="reference">
         <kp_state index="0">
-          <kp id="4" type="proxy"></kp>
+          <kp id="2" type="proxy"></kp>
         </kp_state>
       </kp_set>
       <kp_set type="transformed">
         <kp_state index="0">
-          <kp id="14" type="proxy"></kp>
+          <kp id="13" type="proxy"></kp>
         </kp_state>
       </kp_set>
     <state_table type="virtual" num_cols="1">
@@ -129,32 +129,12 @@
   <transformation>
     <kp_set type="reference">
       <kp_state index="0">
-        <kp id="6" type="proxy"></kp>
+        <kp id="3" type="proxy"></kp>
       </kp_state>
     </kp_set>
     <kp_set type="transformed">
       <kp_state index="0">
-        <kp id="19" type="proxy"></kp>
-      </kp_state>
-    </kp_set>
-  <state_table type="virtual" num_cols="1">
-    <reference>
-      <column index="0">1      </column>
-    </reference>
-    <transformed>
-      <column index="0">-1      </column>
-    </transformed>
-  </state_table>
-</transformation>
-  <transformation>
-    <kp_set type="reference">
-      <kp_state index="0">
-        <kp id="5" type="proxy"></kp>
-      </kp_state>
-    </kp_set>
-    <kp_set type="transformed">
-      <kp_state index="0">
-        <kp id="11" type="proxy"></kp>
+        <kp id="12" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">
@@ -175,46 +155,6 @@
     <kp_set type="transformed">
       <kp_state index="0">
         <kp id="20" type="proxy"></kp>
-      </kp_state>
-    </kp_set>
-  <state_table type="virtual" num_cols="1">
-    <reference>
-      <column index="0">1      </column>
-    </reference>
-    <transformed>
-      <column index="0">-1      </column>
-    </transformed>
-  </state_table>
-</transformation>
-  <transformation>
-    <kp_set type="reference">
-      <kp_state index="0">
-        <kp id="2" type="proxy"></kp>
-      </kp_state>
-    </kp_set>
-    <kp_set type="transformed">
-      <kp_state index="0">
-        <kp id="13" type="proxy"></kp>
-      </kp_state>
-    </kp_set>
-  <state_table type="virtual" num_cols="1">
-    <reference>
-      <column index="0">1      </column>
-    </reference>
-    <transformed>
-      <column index="0">-1      </column>
-    </transformed>
-  </state_table>
-</transformation>
-  <transformation>
-    <kp_set type="reference">
-      <kp_state index="0">
-        <kp id="3" type="proxy"></kp>
-      </kp_state>
-    </kp_set>
-    <kp_set type="transformed">
-      <kp_state index="0">
-        <kp id="12" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">
@@ -255,6 +195,66 @@
     <kp_set type="transformed">
       <kp_state index="0">
         <kp id="18" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+  <state_table type="virtual" num_cols="1">
+    <reference>
+      <column index="0">1      </column>
+    </reference>
+    <transformed>
+      <column index="0">-1      </column>
+    </transformed>
+  </state_table>
+</transformation>
+  <transformation>
+    <kp_set type="reference">
+      <kp_state index="0">
+        <kp id="6" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+    <kp_set type="transformed">
+      <kp_state index="0">
+        <kp id="19" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+  <state_table type="virtual" num_cols="1">
+    <reference>
+      <column index="0">1      </column>
+    </reference>
+    <transformed>
+      <column index="0">-1      </column>
+    </transformed>
+  </state_table>
+</transformation>
+  <transformation>
+    <kp_set type="reference">
+      <kp_state index="0">
+        <kp id="5" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+    <kp_set type="transformed">
+      <kp_state index="0">
+        <kp id="11" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+  <state_table type="virtual" num_cols="1">
+    <reference>
+      <column index="0">1      </column>
+    </reference>
+    <transformed>
+      <column index="0">-1      </column>
+    </transformed>
+  </state_table>
+</transformation>
+  <transformation>
+    <kp_set type="reference">
+      <kp_state index="0">
+        <kp id="4" type="proxy"></kp>
+      </kp_state>
+    </kp_set>
+    <kp_set type="transformed">
+      <kp_state index="0">
+        <kp id="14" type="proxy"></kp>
       </kp_state>
     </kp_set>
   <state_table type="virtual" num_cols="1">

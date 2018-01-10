@@ -12,7 +12,7 @@ end Decoder_Reader;
 
 architecture Decoder_Reader_arch of Decoder_Reader is 
 signal count, count_status : std_logic_vector(2 downto 0);
-signal word_inner, status : std_logic_vector(2 downto 0);
+signal word_inner : std_logic_vector(2 downto 0);
 signal sync_inner : std_logic; 
 
 begin	 
@@ -37,7 +37,6 @@ begin
     process (RES, CLK, sync_inner)
     begin
         if(RES = '1') then           
-            status <= "000";
             count_status <= "000"; 
             OUT_WORD <= "000";
             SYNC <= '0';
@@ -64,7 +63,6 @@ begin
         			SYNC <= '0';	
         		end if;        	
         	else
-        		status  <= "000";  	
         		OUT_WORD <= "000";		
         	end if;	
         end if;

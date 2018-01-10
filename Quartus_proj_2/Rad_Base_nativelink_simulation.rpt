@@ -1,8 +1,9 @@
 Info: Start Nativelink Simulation process
+Info: NativeLink has detected VHDL design -- VHDL simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
-Sim Mode              :  Gate
+Sim Mode              :  RTL
 Family                :  flex10ke
 Quartus root          :  d:/program files/altera/quartus/bin/
 Quartus sim root      :  d:/program files/altera/quartus/eda/sim_lib
@@ -11,12 +12,12 @@ Simulation Language   :  vhdl
 Version               :  93
 Simulation Mode       :  GUI
 Sim Output File       :  Rad_Base.vho
-Sim SDF File       :  Rad_Base_vhd.sdo
+Sim SDF file          :  Rad_Base__vhdl.sdo
 Sim dir               :  simulation\modelsim
 
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script d:/program files/altera/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File Rad_Base_run_msim_gate_vhdl.do already exists - backing up current file as Rad_Base_run_msim_gate_vhdl.do.bak11
+Warning: File Rad_Base_run_msim_rtl_vhdl.do already exists - backing up current file as Rad_Base_run_msim_rtl_vhdl.do.bak11
 Info: Spawning ModelSim-Altera Simulation software 

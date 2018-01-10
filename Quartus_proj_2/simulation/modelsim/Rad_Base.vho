@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II"
 -- VERSION "Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition"
 
--- DATE "01/09/2018 16:50:44"
+-- DATE "01/10/2018 14:51:09"
 
 -- 
 -- Device: Altera EPF10K30EFC256-3 Package FBGA256
@@ -38,7 +38,8 @@ ENTITY 	Base_SW_Rad IS
 	ERROR_BUFFER : IN std_logic_vector(1 DOWNTO 0);
 	ERROR_COUNTER : IN std_logic_vector(1 DOWNTO 0);
 	ERROR_WORD : IN std_logic_vector(1 DOWNTO 0);
-	OUT_COUNT : OUT std_logic_vector(2 DOWNTO 0);
+	DECODER_INPUT_WORD : OUT std_logic_vector(2 DOWNTO 0);
+	DECODER_OUT_COUNT : OUT std_logic_vector(1 DOWNTO 0);
 	TEST_CODER_STEP : OUT std_logic_vector(2 DOWNTO 0);
 	TEST_CODER_F2M : OUT std_logic;
 	TEST_CODER_BUFFER_1 : OUT std_logic_vector(2 DOWNTO 0);
@@ -47,6 +48,9 @@ ENTITY 	Base_SW_Rad IS
 	TEST_CODER_OUTPUT : OUT std_logic;
 	TEST_CODER_WORD : OUT std_logic_vector(2 DOWNTO 0);
 	TEST_CODER : OUT std_logic_vector(15 DOWNTO 0);
+	TEST_DECODER_VALUE : OUT std_logic;
+	TEST_DECODER_NUMBER_PART : OUT std_logic_vector(2 DOWNTO 0);
+	TEST_DECODER_SYNC : OUT std_logic;
 	TEST_DECODER : OUT std_logic_vector(15 DOWNTO 0)
 	);
 END Base_SW_Rad;
@@ -66,7 +70,8 @@ SIGNAL ww_RES_DEC : std_logic;
 SIGNAL ww_ERROR_BUFFER : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_ERROR_COUNTER : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_ERROR_WORD : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_OUT_COUNT : std_logic_vector(2 DOWNTO 0);
+SIGNAL ww_DECODER_INPUT_WORD : std_logic_vector(2 DOWNTO 0);
+SIGNAL ww_DECODER_OUT_COUNT : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_TEST_CODER_STEP : std_logic_vector(2 DOWNTO 0);
 SIGNAL ww_TEST_CODER_F2M : std_logic;
 SIGNAL ww_TEST_CODER_BUFFER_1 : std_logic_vector(2 DOWNTO 0);
@@ -75,6 +80,9 @@ SIGNAL ww_TEST_CODER_NUMBER_BUFFER : std_logic;
 SIGNAL ww_TEST_CODER_OUTPUT : std_logic;
 SIGNAL ww_TEST_CODER_WORD : std_logic_vector(2 DOWNTO 0);
 SIGNAL ww_TEST_CODER : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_TEST_DECODER_VALUE : std_logic;
+SIGNAL ww_TEST_DECODER_NUMBER_PART : std_logic_vector(2 DOWNTO 0);
+SIGNAL ww_TEST_DECODER_SYNC : std_logic;
 SIGNAL ww_TEST_DECODER : std_logic_vector(15 DOWNTO 0);
 SIGNAL \Coder|Form_word|OUT_WORD~28_combout\ : std_logic;
 SIGNAL \DEecoder|READ_WORD|word_inner[2]~12_combout\ : std_logic;
@@ -120,8 +128,8 @@ SIGNAL \Coder|Form_word|OUT_WORD~3_combout\ : std_logic;
 SIGNAL \Coder|Word_test|OUT_WORD~22_combout\ : std_logic;
 SIGNAL \Coder|Form_word|OUT_WORD~8_combout\ : std_logic;
 SIGNAL \Coder|Word_test|OUT_WORD~24_combout\ : std_logic;
-SIGNAL \DEecoder|DIV|F2M~regout\ : std_logic;
 SIGNAL \DEecoder|READ_WORD|SYNC~regout\ : std_logic;
+SIGNAL \DEecoder|DIV|F2M~regout\ : std_logic;
 SIGNAL \DEecoder|READ_WORD|OUT_WORD\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \DEecoder|READ_WORD|count\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \DEecoder|READ_WORD|count_status\ : std_logic_vector(2 DOWNTO 0);
@@ -151,7 +159,8 @@ ww_RES_DEC <= RES_DEC;
 ww_ERROR_BUFFER <= ERROR_BUFFER;
 ww_ERROR_COUNTER <= ERROR_COUNTER;
 ww_ERROR_WORD <= ERROR_WORD;
-OUT_COUNT <= ww_OUT_COUNT;
+DECODER_INPUT_WORD <= ww_DECODER_INPUT_WORD;
+DECODER_OUT_COUNT <= ww_DECODER_OUT_COUNT;
 TEST_CODER_STEP <= ww_TEST_CODER_STEP;
 TEST_CODER_F2M <= ww_TEST_CODER_F2M;
 TEST_CODER_BUFFER_1 <= ww_TEST_CODER_BUFFER_1;
@@ -160,6 +169,9 @@ TEST_CODER_NUMBER_BUFFER <= ww_TEST_CODER_NUMBER_BUFFER;
 TEST_CODER_OUTPUT <= ww_TEST_CODER_OUTPUT;
 TEST_CODER_WORD <= ww_TEST_CODER_WORD;
 TEST_CODER <= ww_TEST_CODER;
+TEST_DECODER_VALUE <= ww_TEST_DECODER_VALUE;
+TEST_DECODER_NUMBER_PART <= ww_TEST_DECODER_NUMBER_PART;
+TEST_DECODER_SYNC <= ww_TEST_DECODER_SYNC;
 TEST_DECODER <= ww_TEST_DECODER;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
@@ -1747,6 +1759,29 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \Coder|Word_test|OUT_WORD\(2));
 
+\DEecoder|READ_WORD|SYNC\ : flex10ke_lcell
+-- Equation(s):
+-- \DEecoder|READ_WORD|SYNC~regout\ = DFFEA(\DEecoder|READ_WORD|count_status\(0) & \DEecoder|READ_WORD|count_status\(1) & \DEecoder|READ_WORD|count_status\(2), GLOBAL(\CLK~dataout\), !GLOBAL(\RES_DEC~dataout\), , \DEecoder|READ_WORD|sync_inner~regout\, , )
+
+-- pragma translate_off
+GENERIC MAP (
+	clock_enable_mode => "true",
+	lut_mask => "c000",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	packed_mode => "false")
+-- pragma translate_on
+PORT MAP (
+	dataa => \DEecoder|READ_WORD|sync_inner~regout\,
+	datab => \DEecoder|READ_WORD|count_status\(0),
+	datac => \DEecoder|READ_WORD|count_status\(1),
+	datad => \DEecoder|READ_WORD|count_status\(2),
+	aclr => \RES_DEC~dataout\,
+	clk => \CLK~dataout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \DEecoder|READ_WORD|SYNC~regout\);
+
 \DEecoder|DIV|counter[0]\ : flex10ke_lcell
 -- Equation(s):
 -- \DEecoder|DIV|counter\(0) = DFFEA(!\DEecoder|DIV|counter\(0), GLOBAL(\CLK~dataout\), !GLOBAL(\RES_DEC~dataout\), , , , )
@@ -1834,30 +1869,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \DEecoder|DIV|F2M~regout\);
 
-\DEecoder|READ_WORD|SYNC\ : flex10ke_lcell
--- Equation(s):
--- \DEecoder|READ_WORD|SYNC~regout\ = DFFEA(\DEecoder|READ_WORD|count_status\(0) & \DEecoder|READ_WORD|count_status\(1) & \DEecoder|READ_WORD|count_status\(2), GLOBAL(\CLK~dataout\), !GLOBAL(\RES_DEC~dataout\), , \DEecoder|READ_WORD|sync_inner~regout\, , )
-
--- pragma translate_off
-GENERIC MAP (
-	clock_enable_mode => "true",
-	lut_mask => "c000",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	packed_mode => "false")
--- pragma translate_on
-PORT MAP (
-	dataa => \DEecoder|READ_WORD|sync_inner~regout\,
-	datab => \DEecoder|READ_WORD|count_status\(0),
-	datac => \DEecoder|READ_WORD|count_status\(1),
-	datad => \DEecoder|READ_WORD|count_status\(2),
-	aclr => \RES_DEC~dataout\,
-	clk => \CLK~dataout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \DEecoder|READ_WORD|SYNC~regout\);
-
-\OUT_COUNT[0]~I\ : flex10ke_io
+\DECODER_INPUT_WORD[0]~I\ : flex10ke_io
 -- pragma translate_off
 GENERIC MAP (
 	feedback_mode => "none",
@@ -1871,9 +1883,9 @@ PORT MAP (
 	devoe => ww_devoe,
 	oe => VCC,
 	ena => VCC,
-	padio => ww_OUT_COUNT(0));
+	padio => ww_DECODER_INPUT_WORD(0));
 
-\OUT_COUNT[1]~I\ : flex10ke_io
+\DECODER_INPUT_WORD[1]~I\ : flex10ke_io
 -- pragma translate_off
 GENERIC MAP (
 	feedback_mode => "none",
@@ -1887,9 +1899,9 @@ PORT MAP (
 	devoe => ww_devoe,
 	oe => VCC,
 	ena => VCC,
-	padio => ww_OUT_COUNT(1));
+	padio => ww_DECODER_INPUT_WORD(1));
 
-\OUT_COUNT[2]~I\ : flex10ke_io
+\DECODER_INPUT_WORD[2]~I\ : flex10ke_io
 -- pragma translate_off
 GENERIC MAP (
 	feedback_mode => "none",
@@ -1903,7 +1915,39 @@ PORT MAP (
 	devoe => ww_devoe,
 	oe => VCC,
 	ena => VCC,
-	padio => ww_OUT_COUNT(2));
+	padio => ww_DECODER_INPUT_WORD(2));
+
+\DECODER_OUT_COUNT[0]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_DECODER_OUT_COUNT(0));
+
+\DECODER_OUT_COUNT[1]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_DECODER_OUT_COUNT(1));
 
 \TEST_CODER_STEP[0]~I\ : flex10ke_io
 -- pragma translate_off
@@ -2401,6 +2445,86 @@ PORT MAP (
 	ena => VCC,
 	padio => ww_TEST_CODER(15));
 
+\TEST_DECODER_VALUE~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_TEST_DECODER_VALUE);
+
+\TEST_DECODER_NUMBER_PART[0]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_TEST_DECODER_NUMBER_PART(0));
+
+\TEST_DECODER_NUMBER_PART[1]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_TEST_DECODER_NUMBER_PART(1));
+
+\TEST_DECODER_NUMBER_PART[2]~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_TEST_DECODER_NUMBER_PART(2));
+
+\TEST_DECODER_SYNC~I\ : flex10ke_io
+-- pragma translate_off
+GENERIC MAP (
+	feedback_mode => "none",
+	operation_mode => "output",
+	reg_source_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	datain => \DEecoder|READ_WORD|SYNC~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => VCC,
+	ena => VCC,
+	padio => ww_TEST_DECODER_SYNC);
+
 \TEST_DECODER[0]~I\ : flex10ke_io
 -- pragma translate_off
 GENERIC MAP (
@@ -2409,7 +2533,7 @@ GENERIC MAP (
 	reg_source_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \DEecoder|DIV|F2M~regout\,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -2425,7 +2549,7 @@ GENERIC MAP (
 	reg_source_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \DEecoder|READ_WORD|SYNC~regout\,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -2537,7 +2661,7 @@ GENERIC MAP (
 	reg_source_mode => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \DEecoder|DIV|F2M~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,

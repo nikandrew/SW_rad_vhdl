@@ -9,31 +9,44 @@ ARCHITECTURE Base_SW_Rad_arch OF Base_SW_Rad_vhd_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLK : STD_LOGIC;
-SIGNAL ERROR_BUFFER : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL ERROR_COUNTER : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL ERROR_WORD : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL OUT_COUNT : STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL RES_COD : STD_LOGIC;
-SIGNAL RES_DEC : STD_LOGIC;
+SIGNAL ERROR_BUFFER 				: STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL ERROR_COUNTER 				: STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL ERROR_WORD 					: STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL RES_COD 						: STD_LOGIC;
+SIGNAL RES_DEC 						: STD_LOGIC;
+
+SIGNAL DECODER_INPUT_WORD			: std_logic_vector(2 downto 0);					
+SIGNAL DECODER_OUT_COUNT			: std_logic_vector(1 downto 0);
+
 SIGNAL TEST_CODER_STEP				: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_F2M				: std_logic;
 SIGNAL TEST_CODER_BUFFER_1 			: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_BUFFER_2 			: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_NUMBER_BUFFER 	: std_logic;
 SIGNAL TEST_CODER_OUTPUT			: std_logic;
-SIGNAL TEST_CODER_WORD 			: std_logic_vector(2 downto 0);		
-SIGNAL TEST_CODER : STD_LOGIC_VECTOR(15 DOWNTO 0);
-SIGNAL TEST_DECODER : STD_LOGIC_VECTOR(15 DOWNTO 0);
+SIGNAL TEST_CODER_WORD 				: std_logic_vector(2 downto 0);		
+SIGNAL TEST_CODER 					: STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+SIGNAL TEST_DECODER_VALUE			: std_logic;	
+SIGNAL TEST_DECODER_NUMBER_PART		: std_logic_vector(2 downto 0);
+SIGNAL TEST_DECODER_SYNC			: std_logic;	
+SIGNAL TEST_DECODER 				: STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+SIGNAL TEMP							: integer range 0 to 2;
 
 COMPONENT Base_SW_Rad
 	PORT (
-	CLK : IN STD_LOGIC;
-	ERROR_BUFFER : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	ERROR_COUNTER : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	ERROR_WORD : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	OUT_COUNT : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	RES_COD : IN STD_LOGIC;
-	RES_DEC : IN STD_LOGIC;
+	CLK 			: IN STD_LOGIC;
+	ERROR_BUFFER 	: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	ERROR_COUNTER 	: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	ERROR_WORD 		: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	
+	RES_COD 		: IN STD_LOGIC;
+	RES_DEC 		: IN STD_LOGIC;
+	
+	DECODER_INPUT_WORD			: out std_logic_vector(2 downto 0);
+	DECODER_OUT_COUNT			: out std_logic_vector(1 downto 0);
+		
 	
 	TEST_CODER_STEP				: out std_logic_vector(2 downto 0);
 	TEST_CODER_F2M				: out std_logic;
@@ -44,7 +57,10 @@ COMPONENT Base_SW_Rad
 	TEST_CODER_WORD 			: out std_logic_vector(2 downto 0);
 	TEST_CODER 					: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 	
-	TEST_DECODER : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	TEST_DECODER_VALUE			: out std_logic;	
+    TEST_DECODER_NUMBER_PART	: out std_logic_vector(2 downto 0);
+    TEST_DECODER_SYNC			: out std_logic;			
+	TEST_DECODER 				: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -53,12 +69,16 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	CLK => CLK,
+	
 	ERROR_BUFFER => ERROR_BUFFER,
 	ERROR_COUNTER => ERROR_COUNTER,
 	ERROR_WORD => ERROR_WORD,
-	OUT_COUNT => OUT_COUNT,
+	
 	RES_COD => RES_COD,	
 	RES_DEC => RES_DEC,
+	
+	DECODER_INPUT_WORD => DECODER_INPUT_WORD,
+	DECODER_OUT_COUNT => DECODER_OUT_COUNT,
 	
 	TEST_CODER_STEP		=> TEST_CODER_STEP,
 	TEST_CODER_F2M		=> TEST_CODER_F2M,
@@ -67,6 +87,10 @@ BEGIN
 	TEST_CODER_NUMBER_BUFFER => TEST_CODER_NUMBER_BUFFER,
 	TEST_CODER_OUTPUT		=> TEST_CODER_OUTPUT,
 	TEST_CODER_WORD			=> TEST_CODER_WORD,
+	
+	TEST_DECODER_VALUE		=> TEST_DECODER_VALUE,	
+    TEST_DECODER_NUMBER_PART => TEST_DECODER_NUMBER_PART,
+    TEST_DECODER_SYNC	=> 	TEST_DECODER_SYNC,				
 			
 	TEST_CODER => TEST_CODER,
 	TEST_DECODER => TEST_DECODER
@@ -93,7 +117,8 @@ END PROCESS init_COD;
 	
 PROCESS                                              
 BEGIN                                                         
-    CLK <= '0';
+	CLK <= '0';
+
     wait for 31.25 ns;
     CLK <= '1';
     wait for 31.25 ns;                                                       

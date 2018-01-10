@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Rad_Base
-Tue Jan 09 16:50:39 2018
+Wed Jan 10 14:51:05 2018
 Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
 
 
@@ -42,13 +42,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Jan 09 16:50:39 2018        ;
+; Analysis & Synthesis Status ; Successful - Wed Jan 10 14:51:05 2018        ;
 ; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
 ; Revision Name               ; Rad_Base                                     ;
 ; Top-level Entity Name       ; Base_SW_Rad                                  ;
 ; Family                      ; FLEX10KE                                     ;
 ; Total logic elements        ; 73                                           ;
-; Total pins                  ; 59                                           ;
+; Total pins                  ; 66                                           ;
 ; Total memory bits           ; 0                                            ;
 ; Total PLLs                  ; 0                                            ;
 +-----------------------------+----------------------------------------------+
@@ -124,6 +124,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+
+; ../Decoder_Main_Error.vhd        ; yes             ; User VHDL File  ; E:/Project/SWork/SW_rad_vhdl/Decoder_Main_Error.vhd               ;
 ; ../Word_test.vhd                 ; yes             ; User VHDL File  ; E:/Project/SWork/SW_rad_vhdl/Word_test.vhd                        ;
 ; Decoder_Read_Word.vhd            ; yes             ; User VHDL File  ; E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Decoder_Read_Word.vhd ;
 ; ../Base_step_count.vhd           ; yes             ; User VHDL File  ; E:/Project/SWork/SW_rad_vhdl/Base_step_count.vhd                  ;
@@ -149,11 +150,11 @@ applicable agreement for further details.
 ;     -- Total 1-input functions ; 7          ;
 ;     -- Total 0-input functions ; 1          ;
 ; Total registers                ; 38         ;
-; I/O pins                       ; 59         ;
+; I/O pins                       ; 66         ;
 ; Maximum fan-out node           ; CLK        ;
 ; Maximum fan-out                ; 26         ;
 ; Total fan-out                  ; 303        ;
-; Average fan-out                ; 2.30       ;
+; Average fan-out                ; 2.18       ;
 +--------------------------------+------------+
 
 
@@ -162,7 +163,7 @@ applicable agreement for further details.
 +----------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                             ; Library Name ;
 +----------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------+--------------+
-; |Base_SW_Rad                     ; 73 (0)      ; 38           ; 0           ; 59   ; 35 (0)       ; 10 (0)            ; 28 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad                                                    ; work         ;
+; |Base_SW_Rad                     ; 73 (0)      ; 38           ; 0           ; 66   ; 35 (0)       ; 10 (0)            ; 28 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad                                                    ; work         ;
 ;    |SW_Count_Coder:Coder|        ; 49 (0)      ; 20           ; 0           ; 0    ; 29 (0)       ; 7 (0)             ; 13 (0)           ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder                               ; work         ;
 ;       |DIV_F2M:DIV|              ; 7 (7)       ; 5            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 5 (5)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|DIV_F2M:DIV                   ; work         ;
 ;       |Form_buffer:Form_buffer|  ; 12 (12)     ; 6            ; 0           ; 0    ; 6 (6)        ; 4 (4)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |Base_SW_Rad|SW_Count_Coder:Coder|Form_buffer:Form_buffer       ; work         ;
@@ -237,8 +238,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Jan 09 16:50:38 2018
+    Info: Processing started: Wed Jan 10 14:51:04 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Rad_Base -c Rad_Base
+Info: Found 2 design units, including 1 entities, in source file ../Decoder_Main_Error.vhd
+    Info: Found design unit 1: Decoder_Main_Error-Decoder_Main_Error_arch
+    Info: Found entity 1: Decoder_Main_Error
 Info: Found 2 design units, including 1 entities, in source file ../Word_test.vhd
     Info: Found design unit 1: Word_test-Word_test_arch
     Info: Found entity 1: Word_test
@@ -294,26 +298,41 @@ Warning (10631): VHDL Process Statement warning at Form_word.vhd(50): inferring 
 Info (10041): Inferred latch for "OUT_WORD" at Form_word.vhd(50)
 Info: Elaborating entity "Word_test" for hierarchy "SW_Count_Coder:Coder|Word_test:Word_test"
 Info: Elaborating entity "SW_Count_Decoder" for hierarchy "SW_Count_Decoder:DEecoder"
-Warning (10036): Verilog HDL or VHDL warning at SW_Count_Decoder.vhd(18): object "status" assigned a value but never read
-Warning (10873): Using initial value X (don't care) for net "TEST[15]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[14]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[13]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[12]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[11]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[10]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[9]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[8]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[7]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[6]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[5]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[4]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[3]" at SW_Count_Decoder.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "TEST[2]" at SW_Count_Decoder.vhd(13)
+Warning (10036): Verilog HDL or VHDL warning at SW_Count_Decoder.vhd(23): object "status" assigned a value but never read
+Warning (10873): Using initial value X (don't care) for net "TEST[15]" at SW_Count_Decoder.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "TEST[14]" at SW_Count_Decoder.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "TEST[13]" at SW_Count_Decoder.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "TEST[12]" at SW_Count_Decoder.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "TEST[11]" at SW_Count_Decoder.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "TEST[10]" at SW_Count_Decoder.vhd(18)
+Warning (10873): Using initial value X (don't care) for net "TEST[9]" at SW_Count_Decoder.vhd(18)
 Info: Elaborating entity "Decoder_Reader" for hierarchy "SW_Count_Decoder:DEecoder|Decoder_Reader:READ_WORD"
-Warning (10036): Verilog HDL or VHDL warning at Decoder_Read_Word.vhd(15): object "status" assigned a value but never read
+Info: Elaborating entity "Decoder_Main_Error" for hierarchy "SW_Count_Decoder:DEecoder|Decoder_Main_Error:MAIN_ERROR"
+Warning (10541): VHDL Signal Declaration warning at Decoder_Main_Error.vhd(13): used implicit default value for signal "TEST" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at Decoder_Main_Error.vhd(20): object "buffer_2_0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Decoder_Main_Error.vhd(20): object "buffer_3_0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Decoder_Main_Error.vhd(21): object "number_2_0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Decoder_Main_Error.vhd(21): object "number_3_0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Decoder_Main_Error.vhd(22): object "value_2_0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Decoder_Main_Error.vhd(22): object "value_3_0" assigned a value but never read
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "OUT_COUNT", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "TEST_VALUE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "TEST_NUMBER_PART", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "value_old", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "number_old", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "buffer_old", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Decoder_Main_Error.vhd(25): inferring latch(es) for signal or variable "word_old", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "TEST_NUMBER_PART[0]" at Decoder_Main_Error.vhd(25)
+Info (10041): Inferred latch for "TEST_NUMBER_PART[1]" at Decoder_Main_Error.vhd(25)
+Info (10041): Inferred latch for "TEST_NUMBER_PART[2]" at Decoder_Main_Error.vhd(25)
+Info (10041): Inferred latch for "TEST_VALUE" at Decoder_Main_Error.vhd(25)
+Info (10041): Inferred latch for "OUT_COUNT[0]" at Decoder_Main_Error.vhd(25)
+Info (10041): Inferred latch for "OUT_COUNT[1]" at Decoder_Main_Error.vhd(25)
 Warning: Latch SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal SW_Count_Coder:Coder|DIV_F2M:DIV|counter[2]
 Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DECODER_OUT_COUNT[0]" is stuck at GND
+    Warning (13410): Pin "DECODER_OUT_COUNT[1]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[1]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[2]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[3]" is stuck at GND
@@ -329,13 +348,18 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "TEST_CODER[13]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[14]" is stuck at GND
     Warning (13410): Pin "TEST_CODER[15]" is stuck at GND
+    Warning (13410): Pin "TEST_DECODER_VALUE" is stuck at VCC
+    Warning (13410): Pin "TEST_DECODER_NUMBER_PART[0]" is stuck at GND
+    Warning (13410): Pin "TEST_DECODER_NUMBER_PART[1]" is stuck at GND
+    Warning (13410): Pin "TEST_DECODER_NUMBER_PART[2]" is stuck at GND
+    Warning (13410): Pin "TEST_DECODER[0]" is stuck at GND
+    Warning (13410): Pin "TEST_DECODER[1]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[2]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[3]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[4]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[5]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[6]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[7]" is stuck at GND
-    Warning (13410): Pin "TEST_DECODER[8]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[9]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[10]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[11]" is stuck at GND
@@ -344,13 +368,13 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "TEST_DECODER[14]" is stuck at GND
     Warning (13410): Pin "TEST_DECODER[15]" is stuck at GND
 Info: Registers with preset signals will power-up high
-Info: Implemented 132 device resources after synthesis - the final resource count might be different
+Info: Implemented 139 device resources after synthesis - the final resource count might be different
     Info: Implemented 9 input pins
-    Info: Implemented 50 output pins
+    Info: Implemented 57 output pins
     Info: Implemented 73 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 64 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 77 warnings
     Info: Peak virtual memory: 240 megabytes
-    Info: Processing ended: Tue Jan 09 16:50:39 2018
+    Info: Processing ended: Wed Jan 10 14:51:05 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

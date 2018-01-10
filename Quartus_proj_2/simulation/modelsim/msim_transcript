@@ -1,25 +1,105 @@
 # Reading C:/altera/90/modelsim_ase/tcl/vsim/pref.tcl 
-# do Rad_Base_run_msim_gate_vhdl.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
+# do Rad_Base_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
 # }
-# vlib gate_work
-# vmap work gate_work
+# vlib rtl_work
+# vmap work rtl_work
 # Copying C:\altera\90\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied C:\altera\90\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {Rad_Base.vho}
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Decoder_Main_Error.vhd}
 # Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
 # -- Loading package standard
 # -- Loading package std_logic_1164
-# -- Loading package vital_timing
-# -- Loading package vital_primitives
-# -- Loading package flex10ke_atom_pack
-# -- Loading package flex10ke_components
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity decoder_main_error
+# -- Compiling architecture decoder_main_error_arch of decoder_main_error
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Word_test.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity word_test
+# -- Compiling architecture word_test_arch of word_test
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Decoder_Read_Word.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity decoder_reader
+# -- Compiling architecture decoder_reader_arch of decoder_reader
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Base_step_count.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity step_count
+# -- Compiling architecture step_count_arch of step_count
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Div_F2M.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity div_f2m
+# -- Compiling architecture div_f2m_arch of div_f2m
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Form_buffer.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity form_buffer
+# -- Compiling architecture form_buffer_arch of form_buffer
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Form_word.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity form_word
+# -- Compiling architecture form_word_arch of form_word
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/SW_Count_Coder.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity sw_count_coder
+# -- Compiling architecture main_arch_count_coder of sw_count_coder
+# -- Loading entity div_f2m
+# -- Loading entity step_count
+# -- Loading entity form_buffer
+# -- Loading entity form_word
+# -- Loading entity word_test
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/SW_Count_Decoder.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity sw_count_decoder
+# -- Compiling architecture main_arch_sw_count_decoder of sw_count_decoder
+# -- Loading entity div_f2m
+# -- Loading entity decoder_reader
+# -- Loading entity decoder_main_error
+# vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Base_SW_Rad.vhd}
+# Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
 # -- Compiling entity base_sw_rad
-# -- Compiling architecture structure of base_sw_rad
+# -- Compiling architecture main_arch_base_sw_rad of base_sw_rad
+# -- Loading entity sw_count_coder
+# -- Loading entity sw_count_decoder
 # 
 # vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vhd}
 # Model Technology ModelSim ALTERA vcom 6.4a Compiler 2008.08 Oct 22 2008
@@ -28,44 +108,199 @@
 # -- Compiling entity base_sw_rad_vhd_tst
 # -- Compiling architecture base_sw_rad_arch of base_sw_rad_vhd_tst
 # 
-# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=Rad_Base_vhd.sdo -L flex10ke -L gate_work -L work -voptargs="+acc" Base_SW_Rad_vhd_tst
-# vsim +transport_int_delays +transport_path_delays -L flex10ke -L gate_work -L work -voptargs=\"+acc\" -sdftyp /i1=Rad_Base_vhd.sdo -t 1ps Base_SW_Rad_vhd_tst 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L flex10ke -L rtl_work -L work -voptargs="+acc" Base_SW_Rad_vhd_tst
+# vsim -L altera -L lpm -L sgate -L altera_mf -L flex10ke -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Base_SW_Rad_vhd_tst 
 # Loading std.standard
 # Loading ieee.std_logic_1164(body)
 # Loading work.base_sw_rad_vhd_tst(base_sw_rad_arch)
-# SDF 6.4a Compiler 2008.08 Oct 22 2008
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.base_sw_rad(main_arch_base_sw_rad)
+# Loading work.sw_count_coder(main_arch_count_coder)
+# Loading work.div_f2m(div_f2m_arch)
+# Loading work.step_count(step_count_arch)
+# Loading work.form_buffer(form_buffer_arch)
+# Loading work.form_word(form_word_arch)
+# Loading work.word_test(word_test_arch)
+# Loading work.sw_count_decoder(main_arch_sw_count_decoder)
+# Loading work.decoder_reader(decoder_reader_arch)
+# Loading work.decoder_main_error(decoder_main_error_arch)
 # 
-# Loading std.textio(body)
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading flex10ke.flex10ke_atom_pack(body)
-# Loading flex10ke.flex10ke_components
-# Loading work.base_sw_rad(structure)
-# Loading flex10ke.flex10ke_lcell(vital_le_atom)
-# Loading flex10ke.flex10ke_asynch_lcell(vital_le)
-# Loading flex10ke.flex10ke_lcell_register(vital_le_reg)
-# Loading flex10ke.flex10ke_io(arch)
-# Loading flex10ke.flex10ke_asynch_io(vital_asynch_io)
-# Loading flex10ke.dffe_io(behave)
-# Loading instances from Rad_Base_vhd.sdo
-# Loading timing data from Rad_Base_vhd.sdo
+# do E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/../gen_log.tcl
+# add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Andrew  Hostname: ANDREW-PC  ProcessID: 8144
-#           Attempting to use alternate WLF file "./wlft2vhcvh".
+#           Attempting to use alternate WLF file "./wlftc2m569".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft2vhcvh
-# ** Note: ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft2vhcvh
-# SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Region: /base_sw_rad_vhd_tst  File: E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/simulation/modelsim/Base_SW_Rad.vhd
-# 
-# add wave *
+#           Using alternate file: ./wlftc2m569
 # view structure
 # .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# 
 # view signals
 # .main_pane.signals.interior.cs
-# run 100 ms
-# Break key hit 
-# Simulation stop requested.
-# Simulation Breakpoint: Simulation stop requested.
-# MACRO ./Rad_Base_run_msim_gate_vhdl.do PAUSED at line 17
+# 
+# add log -r /*
+# 
+# run 5 ms
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 3  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 3  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 31250 ps  Iteration: 3  Instance: /base_sw_rad_vhd_tst/i1/coder/form_word
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 93750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 93750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 93750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 93750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 93750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 93750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 156250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 156250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 156250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 156250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 156250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 156250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 218750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 218750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 218750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 218750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 218750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 218750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 281250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 281250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 281250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 281250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 281250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 281250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 343750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 343750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 343750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 343750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 343750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 343750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 406250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 406250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 406250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 406250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 406250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 406250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 468750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 468750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 468750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 468750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 468750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 468750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/deecoder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 531250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 531250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 531250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 593750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 593750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 593750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 656250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 656250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 656250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 718750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 718750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 718750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 781250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 781250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 781250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 843750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 843750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 843750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 906250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 906250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 906250 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 968750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 968750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 968750 ps  Iteration: 1  Instance: /base_sw_rad_vhd_tst/i1/coder/div

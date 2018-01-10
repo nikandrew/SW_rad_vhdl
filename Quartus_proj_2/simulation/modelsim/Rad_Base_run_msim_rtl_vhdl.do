@@ -5,6 +5,8 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Decoder_Main_Error.vhd}
+vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Word_test.vhd}
 vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/Decoder_Read_Word.vhd}
 vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Base_step_count.vhd}
 vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Div_F2M.vhd}
@@ -18,7 +20,4 @@ vcom -93 -work work {E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/simulation/mode
 
 vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L flex10ke -L rtl_work -L work -voptargs="+acc" Base_SW_Rad_vhd_tst
 
-add wave *
-view structure
-view signals
-run 100 ms
+do E:/Project/SWork/SW_rad_vhdl/Quartus_proj_2/../gen_log.tcl
