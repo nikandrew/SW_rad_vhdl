@@ -5,7 +5,7 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 8.300 ns
+Actual Time    : 13.500 ns
 From           : ERROR_WORD[1]
 To             : SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD
 From Clock     : --
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 15.900 ns
-From           : SW_Count_Coder:Coder|Step_count:COUNT|counter[0]
-To             : TEST_CODER_STEP[0]
+Actual Time    : 21.700 ns
+From           : SW_Count_Decoder:DEecoder|Decoder_Main_Error:MAIN_ERROR|buffer_temp_1[0]
+To             : TEST_DECODER[1]
 From Clock     : CLK
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 3.800 ns
-From           : ERROR_WORD[0]
-To             : SW_Count_Coder:Coder|Word_test:Word_test|OUT_WORD[2]
+Actual Time    : 3.500 ns
+From           : ERROR_COUNTER[0]
+To             : SW_Count_Coder:Coder|Step_count:COUNT|counter[2]
 From Clock     : --
 To Clock       : CLK
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'CLK'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 47.17 MHz ( period = 21.200 ns )
-From           : SW_Count_Coder:Coder|DIV_F2M:DIV|counter[2]
-To             : SW_Count_Coder:Coder|Form_word:Form_word|OUT_WORD
+Actual Time    : 42.74 MHz ( period = 23.400 ns )
+From           : SW_Count_Decoder:DEecoder|Decoder_Main_Error:MAIN_ERROR|buffer_temp_1[0]
+To             : SW_Count_Decoder:DEecoder|Decoder_Main_Error:MAIN_ERROR|word_old[1]
 From Clock     : CLK
 To Clock       : CLK
 Failed Paths   : 0
@@ -46,11 +46,11 @@ Type           : Clock Hold: 'CLK'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : SW_Count_Coder:Coder|DIV_F2M:DIV|number
-To             : SW_Count_Coder:Coder|Word_test:Word_test|OUT_WORD[0]
+From           : SW_Count_Decoder:DEecoder|Decoder_Reader:READ_WORD|OUT_WORD[1]
+To             : SW_Count_Decoder:DEecoder|Decoder_Main_Error:MAIN_ERROR|TEST_NUMBER_PART[0]
 From Clock     : CLK
 To Clock       : CLK
-Failed Paths   : 7
+Failed Paths   : 22
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 7
+Failed Paths   : 22
 
 --------------------------------------------------------------------------------------
 

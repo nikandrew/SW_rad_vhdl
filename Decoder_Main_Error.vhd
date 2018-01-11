@@ -46,30 +46,21 @@ begin
         end if; 
 	end process;
 		
-	 
+	TEST(0) <=  hemming_out_0;
+	TEST(1) <=  hemming_out_1;
+	TEST(4 downto 2) <= buffer_temp_1;
+	TEST(7 downto 5) <= buffer_temp_2;
 	process (RES, SYNC )
-		variable hemming_0, hemming_1 : integer;
     begin
-        if(RES = '1') then            
-			error <= 0;
-			OUT_COUNT <= "00";
+        if(RES = '1') then   			
 			TEST_VALUE <= '1';
 			TEST_NUMBER_PART <= "111";
-			
-			value_old <= '1';
-			number_old <= 0;
-			buffer_old <= "111";
-			word_old <= "000";
-			hemming_1 := 0;
-			hemming_0 := 0;
-			
-			
-			
+			buffer_temp_1 <= "000";
+			buffer_temp_2 <= "100";
         elsif(rising_edge(SYNC)) then
         	if(error = 0) then
         		if(word_old = WORD) then
         			TEST_NUMBER_PART <= "001";
-        			error <= 3;
         				--решение по доп.2
         			buffer_2_0 <= buffer_old;
         			buffer_2_0(number_old) <= not buffer_old(number_old);
@@ -109,5 +100,75 @@ begin
         end if;
     end process;
     
+    process (RES, SYNC )		
+    begin
+        if(RES = '1') then            
+			error <= 0;	
+			OUT_COUNT <= "11";
+			
+			buffer_old <= "111";
+			value_old <= '1';
+			number_old <= 0;			
+			word_old <= "000";
+        elsif(falling_edge(SYNC)) then
+        	if(error = 0) then
+        		if(word_old = WORD) then
+        			error <= 3;
+        		else
+        			if(hemming_out_0 ='0') then
+        				error <= 0;
+        				if(number_old = 0) then
+        					OUT_COUNT <= "00";
+        				elsif(number_old = 1) then
+        					OUT_COUNT <= "01";
+        				elsif(number_old = 2) then
+        					OUT_COUNT <= "10";
+        				else
+        					OUT_COUNT <= "11";
+        				end if;
+        				if(number_old = 2) then
+	        				number_old <= 0;	        				
+	        			else
+	        				number_old <=  number_old + 1;	        				
+	        			end if;  
+	        			value_old <= '0';     
+	        			buffer_old <= buffer_temp_2; 
+	        			word_old <= word_temp_2;		
+        			elsif(hemming_out_1 ='0') then
+        				error <= 0;
+        				if(number_old = 0) then
+        					OUT_COUNT <= "00";
+        				elsif(number_old = 1) then
+        					OUT_COUNT <= "01";
+        				elsif(number_old = 2) then
+        					OUT_COUNT <= "10";
+        				else
+        					OUT_COUNT <= "11";
+        				end if;
+        				if(number_old = 2) then
+	        				number_old <= 0;	        				
+	        			else
+	        				number_old <=  number_old + 1;	        				
+	        			end if;  
+	        			value_old <= '1'; 
+	        			buffer_old <= buffer_temp_1;
+	        			word_old <= word_temp_1;
+        			else
+        				error <= 1;
+        			end if;
+        		end if;
+        	elsif(error = 1) then
+        		
+        	elsif(error = 2) then
+        		
+        	elsif(error = 3) then
+        		
+        	elsif(error = 4) then
+        		
+        	else
+        		
+        	end if;        		
+        end if;
+    end process;
     
 end Decoder_Main_Error_arch;
