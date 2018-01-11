@@ -77,13 +77,13 @@ begin
 					OUT_WORD <= inner_buffer_2(0) XOR inner_buffer_2(1);
 				end if;
 			elsif(STATUS = "011") then
-				if(ERROR_WORD = "01") then
+				if(ERROR_WORD = "10") then
 					OUT_WORD <= NOT (inner_buffer_2(0) XOR inner_buffer_1(2));  
 				else
 					OUT_WORD <= inner_buffer_2(0) XOR inner_buffer_2(2);
 				end if;
 			elsif(STATUS = "101") then
-				if(ERROR_WORD = "01") then
+				if(ERROR_WORD = "11") then
 					OUT_WORD <= NOT (inner_buffer_2(1) XOR inner_buffer_1(2));  
 				else
 					OUT_WORD <= inner_buffer_2(1) XOR inner_buffer_2(2);

@@ -15,17 +15,19 @@ SIGNAL ERROR_WORD 					: STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL RES_COD 						: STD_LOGIC;
 SIGNAL RES_DEC 						: STD_LOGIC;
 
-SIGNAL DECODER_INPUT_WORD			: std_logic_vector(2 downto 0);					
-SIGNAL DECODER_OUT_COUNT			: std_logic_vector(1 downto 0);
+
 
 SIGNAL TEST_CODER_STEP				: std_logic_vector(2 downto 0);
 --SIGNAL TEST_CODER_F2M				: std_logic;
---SIGNAL TEST_CODER_BUFFER_1 			: std_logic_vector(2 downto 0);
---SIGNAL TEST_CODER_BUFFER_2 			: std_logic_vector(2 downto 0);
---SIGNAL TEST_CODER_NUMBER_BUFFER 	: std_logic;
+SIGNAL TEST_CODER_BUFFER_1 			: std_logic_vector(2 downto 0);
+SIGNAL TEST_CODER_BUFFER_2 			: std_logic_vector(2 downto 0);
+SIGNAL TEST_CODER_NUMBER_BUFFER 	: std_logic;
 SIGNAL TEST_CODER_OUTPUT			: std_logic;
 SIGNAL TEST_CODER_WORD 				: std_logic_vector(2 downto 0);		
 --SIGNAL TEST_CODER 					: STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+SIGNAL DECODER_INPUT_WORD			: std_logic_vector(2 downto 0);					
+SIGNAL DECODER_OUT_COUNT			: std_logic_vector(1 downto 0);
 
 SIGNAL TEST_DECODER_VALUE			: std_logic;	
 SIGNAL TEST_DECODER_NUMBER_PART		: std_logic_vector(2 downto 0);
@@ -82,9 +84,9 @@ BEGIN
 	
 	TEST_CODER_STEP		=> TEST_CODER_STEP,
 	TEST_CODER_F2M		=> open,--TEST_CODER_F2M,
-	TEST_CODER_BUFFER_1 	=> open,--TEST_CODER_BUFFER_1,
-	TEST_CODER_BUFFER_2 	=> open,--TEST_CODER_BUFFER_2,
-	TEST_CODER_NUMBER_BUFFER => open,--TEST_CODER_NUMBER_BUFFER,
+	TEST_CODER_BUFFER_1 	=> TEST_CODER_BUFFER_1,
+	TEST_CODER_BUFFER_2 	=> TEST_CODER_BUFFER_2,
+	TEST_CODER_NUMBER_BUFFER => TEST_CODER_NUMBER_BUFFER,
 	TEST_CODER_OUTPUT		=> TEST_CODER_OUTPUT,
 	TEST_CODER_WORD			=> TEST_CODER_WORD,
 	
@@ -125,30 +127,30 @@ BEGIN
 END PROCESS;                                          
 
 
- PROCESS                                              
- BEGIN                                                         
-
- 	ERROR_BUFFER <= "00";
- 	ERROR_COUNTER <= "00";
- 	ERROR_WORD <= "00";
-    
-     wait for 6 us;
- 
-     ERROR_BUFFER <= "10";
-     wait for 0.5 us; 
-     ERROR_BUFFER <= "00";    
-     wait for 5 us;
-     
-     ERROR_BUFFER <= "11";
-     wait for 0.5 us; 
-     ERROR_BUFFER <= "00";    
-     wait for 5 us;
-     
-     ERROR_BUFFER <= "01";
-     wait for 0.5 us; 
-     ERROR_BUFFER <= "00";  
-     wait for 10000 us;                                                   
- END PROCESS;      
+-- PROCESS                                              
+-- BEGIN                                                         
+--
+-- 	ERROR_BUFFER <= "00";
+-- 	ERROR_COUNTER <= "00";
+-- 	ERROR_WORD <= "00";
+--    
+--     wait for 6 us;
+-- 
+--     ERROR_BUFFER <= "10";
+--     wait for 0.5 us; 
+--     ERROR_BUFFER <= "00";    
+--     wait for 5 us;
+--     
+--     ERROR_BUFFER <= "11";
+--     wait for 0.5 us; 
+--     ERROR_BUFFER <= "00";    
+--     wait for 5 us;
+--     
+--     ERROR_BUFFER <= "01";
+--     wait for 0.5 us; 
+--     ERROR_BUFFER <= "00";  
+--     wait for 10000 us;                                                   
+-- END PROCESS;      
 
 -- PROCESS                                              
 -- BEGIN                                                         
@@ -173,27 +175,27 @@ END PROCESS;
 --     wait for 10000 us;                                                   
 --  END PROCESS;  
 
--- PROCESS                                              
---BEGIN                                                         
---    ERROR_COUNTER <= "00";
---	ERROR_BUFFER <= "00";
---	ERROR_WORD <= "00";
---    
---    wait for 6 us;
---    ERROR_WORD <= "10";
---    wait for 0.5 us; 
---    ERROR_WORD <= "00";
---    
---    wait for 5 us;
---    ERROR_WORD <= "01";
---    wait for 0.5 us; 
---    ERROR_WORD <= "00";
---    
---    wait for 5 us;
---    ERROR_WORD <= "11";
---    wait for 0.5 us; 
---    ERROR_WORD <= "00";  
---    wait for 10000 us;                                                   
--- END PROCESS;  
+ PROCESS                                              
+BEGIN                                                         
+    ERROR_COUNTER <= "00";
+	ERROR_BUFFER <= "00";
+	ERROR_WORD <= "00";
+    
+    wait for 5.5 us;
+    ERROR_WORD <= "10";
+    wait for 0.5 us; 
+    ERROR_WORD <= "00";
+    
+    wait for 5 us;
+    ERROR_WORD <= "01";
+    wait for 0.5 us; 
+    ERROR_WORD <= "00";
+    
+    wait for 5 us;
+    ERROR_WORD <= "11";
+    wait for 0.5 us; 
+    ERROR_WORD <= "00";  
+    wait for 10000 us;                                                   
+ END PROCESS;  
                                        
 END Base_SW_Rad_arch;

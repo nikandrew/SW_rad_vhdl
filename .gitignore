@@ -41,3 +41,16 @@ Quartus_proj/incremental_db/README
 Quartus_proj_2/incremental_db/compiled_partitions/Rad_Base.root_partition.map.kpt
 Quartus_proj_2/incremental_db/README
 *.qws
+Quartus_proj_2/Rad_Base.asm.rpt
+Quartus_proj_2/Rad_Base.done
+Quartus_proj_2/Rad_Base.eda.rpt
+Quartus_proj_2/Rad_Base.fit.rpt
+Quartus_proj_2/Rad_Base.fit.summary
+Quartus_proj_2/Rad_Base.flow.rpt
+Quartus_proj_2/Rad_Base.map.rpt
+Quartus_proj_2/Rad_Base.map.summary
+Quartus_proj_2/Rad_Base.pin
+Quartus_proj_2/Rad_Base.pof
+Quartus_proj_2/Rad_Base.sof
+Quartus_proj_2/Rad_Base.tan.rpt
+Quartus_proj_2/Rad_Base.tan.summary
