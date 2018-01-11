@@ -77,12 +77,34 @@ begin
         			buffer_3_0 <= buffer_old;
         		else
         			TEST_NUMBER_PART <= "000";
-        			buffer_temp_1 <= buffer_old;
-        			buffer_temp_1(number_old) <= '1';        			       			       				
+        			if(number_old = 0) then
+        				buffer_temp_1(0) <= '1';
+        				buffer_temp_1(1) <= buffer_old(1);
+        				buffer_temp_1(2) <= buffer_old(2);
+        			elsif(number_old = 1) then
+        				buffer_temp_1(0) <= buffer_old(0);
+        				buffer_temp_1(1) <= '1';
+        				buffer_temp_1(2) <= buffer_old(2);
+        			elsif(number_old = 2) then
+        				buffer_temp_1(0) <= buffer_old(0);
+        				buffer_temp_1(1) <= buffer_old(1);
+        				buffer_temp_1(2) <= '1';
+        			end if;        			       			       				
         			-- комбинаторика      			
         			
-        			buffer_temp_2 <= buffer_old;        			
-        			buffer_temp_2(number_old) <= '0';
+        			if(number_old = 0) then
+        				buffer_temp_2(0) <= '0';
+        				buffer_temp_2(1) <= buffer_old(1);
+        				buffer_temp_2(2) <= buffer_old(2);
+        			elsif(number_old = 1) then
+        				buffer_temp_2(0) <= buffer_old(0);
+        				buffer_temp_2(1) <= '0';
+        				buffer_temp_2(2) <= buffer_old(2);
+        			elsif(number_old = 2) then
+        				buffer_temp_2(0) <= buffer_old(0);
+        				buffer_temp_2(1) <= buffer_old(1);
+        				buffer_temp_2(2) <= '0';
+        			end if;
         			-- комбинаторика
         			       			
         		end if;
