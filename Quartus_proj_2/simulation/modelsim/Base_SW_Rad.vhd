@@ -152,50 +152,50 @@ END PROCESS;
 --     wait for 10000 us;                                                   
 -- END PROCESS;      
 
--- PROCESS                                              
--- BEGIN                                                         
---     ERROR_COUNTER <= "00";
---	 ERROR_BUFFER <= "00";
---	 ERROR_WORD <= "00";
---    
---     wait for 6 us;
---     ERROR_COUNTER <= "10";
---     wait for 0.5 us; 
---     ERROR_COUNTER <= "00";
---    
---     wait for 5 us;
---     ERROR_COUNTER <= "01";
---     wait for 0.5 us; 
---     ERROR_COUNTER <= "00";
---    
---     wait for 5 us;
---     ERROR_COUNTER <= "10";
---     wait for 0.5 us; 
---     ERROR_COUNTER <= "00";  
---     wait for 10000 us;                                                   
---  END PROCESS;  
-
  PROCESS                                              
-BEGIN                                                         
-    ERROR_COUNTER <= "00";
-	ERROR_BUFFER <= "00";
-	ERROR_WORD <= "00";
+ BEGIN                                                         
+     ERROR_COUNTER <= "00";
+	 ERROR_BUFFER <= "00";
+	 ERROR_WORD <= "00";
     
-    wait for 5.5 us;
-    ERROR_WORD <= "10";
-    wait for 0.5 us; 
-    ERROR_WORD <= "00";
+     wait for 5.5 us;
+     ERROR_COUNTER <= "01";
+     wait for 0.5 us; 
+     ERROR_COUNTER <= "00";
     
-    wait for 5 us;
-    ERROR_WORD <= "01";
-    wait for 0.5 us; 
-    ERROR_WORD <= "00";
+     wait for 5 us;
+     ERROR_COUNTER <= "01";
+     wait for 0.5 us; 
+     ERROR_COUNTER <= "00";
     
-    wait for 5 us;
-    ERROR_WORD <= "11";
-    wait for 0.5 us; 
-    ERROR_WORD <= "00";  
-    wait for 10000 us;                                                   
- END PROCESS;  
+     wait for 5 us;
+     ERROR_COUNTER <= "10";
+     wait for 0.5 us; 
+     ERROR_COUNTER <= "00";  
+     wait for 10000 us;                                                   
+  END PROCESS;  
+
+-- PROCESS                                              
+--BEGIN                                                         
+--    ERROR_COUNTER <= "00";
+--	ERROR_BUFFER <= "00";
+--	ERROR_WORD <= "00";
+--    
+--    wait for 5.5 us;
+--    ERROR_WORD <= "10";
+--    wait for 0.5 us; 
+--    ERROR_WORD <= "00";
+--    
+--    wait for 5 us;
+--    ERROR_WORD <= "01";
+--    wait for 0.5 us; 
+--    ERROR_WORD <= "00";
+--    
+--    wait for 5 us;
+--    ERROR_WORD <= "11";
+--    wait for 0.5 us; 
+--    ERROR_WORD <= "00";  
+--    wait for 10000 us;                                                   
+-- END PROCESS;  
                                        
 END Base_SW_Rad_arch;
