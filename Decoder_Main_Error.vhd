@@ -384,9 +384,15 @@ begin
         	if(error = 0) then
         		if(word_old = WORD) then
         			error <= 3;
-        			--TEST_NUMBER_PART <= "001";
-        		else
-        			--TEST_NUMBER_PART <= "000";
+        			-- решение по Доп.2
+        			
+        			
+        			-- решение по Доп 3 
+        			
+        			
+        			
+        			
+        		else        			
         			if(hemming_out_0 ='0') then
         				error <= 0;
         				temp_save_1 <= temp_save_2;
@@ -432,7 +438,6 @@ begin
         			else
         				error <= 1;
         				-- Решение для 4 значений (без дополнений)
-        				--TEST_NUMBER_PART <= "010";
         				temp_save_1 <= temp_save_2;
 	        			temp_save_0 <= temp_save_1;
         				if(number_old = 2) then
@@ -450,37 +455,31 @@ begin
         				-- Решение по доп. 1
         				if(hemming_dop1_0_1 = '0') then
         					error <= 1;
-        					TEST_NUMBER_PART <= "001";
         					buffer_dop1_0 <= buffer_dop1_0_1;
         					number_dop1_0 <= 1;
         					value_dop1_0 <= '1';
         				elsif(hemming_dop1_0_2 ='0') then 
         					error <= 1;
-        					TEST_NUMBER_PART <= "001"; 				
         					buffer_dop1_0 <= buffer_dop1_0_2;  
         					number_dop1_0 <= 1;
         					value_dop1_0 <= '0';
         				elsif(hemming_dop1_0_3 ='0') then 
         					error <= 1; 
-        					TEST_NUMBER_PART <= "001";
         					buffer_dop1_0 <= buffer_dop1_0_3;
         					number_dop1_0 <= 2;
         					value_dop1_0 <= '1';	
         				elsif(hemming_dop1_0_4 ='0') then  
         					error <= 1;
-        					TEST_NUMBER_PART <= "001";
         					buffer_dop1_0 <= buffer_dop1_0_4;
         					number_dop1_0 <= 2;
         					value_dop1_0 <= '0';	
         				elsif(hemming_dop1_0_5 ='0') then 
         					error <= 1;
-        					TEST_NUMBER_PART <= "001";
         					buffer_dop1_0 <= buffer_dop1_0_5;
         					number_dop1_0 <= 0;
         					value_dop1_0 <= '1';	
         				elsif(hemming_dop1_0_6 ='0') then 
         					error <= 1;
-        					TEST_NUMBER_PART <= "001";
         					buffer_dop1_0 <= buffer_dop1_0_6;
         					number_dop1_0 <= 0;
         					value_dop1_0 <= '0';
@@ -493,8 +492,6 @@ begin
         		-- Решение по доп. 1
         		temp_save_0 <= temp_save_1;
         		if(hemming_dop1_1_1 ='0') then  
-        			TEST_NUMBER_PART <= "010";      			       			
-        			
         			if(number_dop1_0 = 2) then
 	        			number_dop1_0 <= 0;	        				
 	        		else
@@ -504,7 +501,6 @@ begin
 	        		buffer_dop1_0 <= word_dop1_1_1; 
 	        				
         		elsif(hemming_dop1_1_2 ='0') then        			
-        			TEST_NUMBER_PART <= "010";
         			if(number_dop1_0 = 2) then
 	        			number_dop1_0 <= 0;	        				
 	        		else
@@ -513,7 +509,6 @@ begin
 	        		value_dop1_0 <= '0';     
 	        		buffer_dop1_0 <= word_dop1_1_2; 
 	        	end if;
-        		--TEST_NUMBER_PART <= "011";
         		-- поиск решений без дополнений
         		if(hemming_out_1_1 ='0') then        			
         			if(number_0 = 2) then
@@ -572,26 +567,8 @@ begin
 	        				temp_save_1 <= "11";
 	        				temp_save_0 <= "11";
 	        			end if;
-        			--TEST_NUMBER_PART <= "100";
         			if(hemming_out_0 ='0') then
         				error <= 0;
---        				if(number_0 = 0) then
---        					temp_save_2 <= "00";
---	        				temp_save_1 <= "10";
---	        				temp_save_0 <= "01";
---	        			elsif(number_0 = 1) then
---	        				temp_save_2 <= "01";
---	        				temp_save_1 <= "00";
---	        				temp_save_0 <= "10";
---	        			elsif(number_0 = 2) then
---	        				temp_save_2 <= "10";
---	        				temp_save_1 <= "01";
---	        				temp_save_0 <= "00";
---	        			else
---	        				temp_save_2 <= "11";
---	        				temp_save_1 <= "11";
---	        				temp_save_0 <= "11";
---	        			end if;
         				if(number_old = 2) then
 	        				number_old <= 0;	        				
 	        			else
@@ -602,24 +579,7 @@ begin
 	        			word_old <= word_temp_2;		
         			elsif(hemming_out_1 ='0') then
         				error <= 0;
---        				if(number_0 = 0) then
---        					temp_save_2 <= "00";
---	        				temp_save_1 <= "10";
---	        				temp_save_0 <= "01";
---	        			elsif(number_0 = 1) then
---	        				temp_save_2 <= "01";
---	        				temp_save_1 <= "00";
---	        				temp_save_0 <= "10";
---	        			elsif(number_0 = 2) then
---	        				temp_save_2 <= "10";
---	        				temp_save_1 <= "01";
---	        				temp_save_0 <= "00";
---	        			else
---	        				temp_save_2 <= "11";
---	        				temp_save_1 <= "11";
---	        				temp_save_0 <= "11";
---	        			end if;
-        				if(number_old = 2) then
+						if(number_old = 2) then
 	        				number_old <= 0;	        				
 	        			else
 	        				number_old <=  number_old + 1;	        				
