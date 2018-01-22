@@ -25,7 +25,7 @@ signal temp_save_0, temp_save_1, temp_save_2, temp_save_3 : std_logic_vector(1 d
 signal buffer_dop1_1_1, buffer_dop1_1_2, buffer_dop1_0_1, buffer_dop1_0_2, buffer_dop1_0_3, buffer_dop1_0_4, buffer_dop1_0_5, buffer_dop1_0_6 : std_logic_vector(2 downto 0); 
 signal word_dop1_1_1,  word_dop1_1_2, word_dop1_0_1, word_dop1_0_2, word_dop1_0_3, word_dop1_0_4, word_dop1_0_5, word_dop1_0_6 : std_logic_vector(2 downto 0); 
 signal hemming_dop1_1_1, hemming_dop1_1_2, hemming_dop1_0_1, hemming_dop1_0_2, hemming_dop1_0_3, hemming_dop1_0_4, hemming_dop1_0_5, hemming_dop1_0_6 : std_logic; 
-
+signal error_dop2, error_dop3 : std_logic;
 begin
 	
 	TEST(2 downto 0) <= buffer_temp_1_1;
@@ -379,17 +379,49 @@ begin
 			number_old <= 0;			
 			word_old <= "000";
 			
+			error_dop3 <= '0';
+			error_dop2 <= '0';
+			
 			TEST_NUMBER_PART <= "111";
         elsif(falling_edge(SYNC)) then
         	if(error = 0) then
+        		error_dop3 <= '0';
+        		error_dop2 <= '0';
         		if(word_old = WORD) then
         			error <= 3;
+        			temp_save_0 <= temp_save_1;
         			-- решение по Доп.2
-        			
+        			if(number_old = 0) then
+        				TEST_NUMBER_PART <= "001";
+        				buffer_0_1(0) <= not buffer_old(0);
+        				buffer_0_1(1) <= buffer_old(1);
+        				buffer_0_1(2) <= buffer_old(2);
+        				number_0 <= 1;
+        				value_0_1 <= value_old; 
+        			elsif(number_old = 1) then
+        				TEST_NUMBER_PART <= "010";
+        				buffer_0_1(0) <= buffer_old(0);
+        				buffer_0_1(1) <= not buffer_old(1);
+        				buffer_0_1(2) <= buffer_old(2);
+        				number_0 <= 2;
+        				value_0_1 <= value_old; 
+        			elsif(number_old = 2) then
+        				TEST_NUMBER_PART <= "011";
+        				buffer_0_1(0) <= buffer_old(0);
+        				buffer_0_1(1) <= buffer_old(1);
+        				buffer_0_1(2) <= not buffer_old(2);
+        				value_0_1 <= not value_old; 
+        				number_0 <= 0;
+        			end if;
+        			            			
+        			word_0_1 <= WORD;        			
         			
         			-- решение по Доп 3 
-        			
-        			
+        			--TEST_NUMBER_PART <= "010";
+        			buffer_dop1_0 <= buffer_old;
+        			value_dop1_0 <= value_old; 
+        			number_dop1_0 <= 2;            			
+        			--word_dop1_0 <= WORD;         			
         			
         			
         		else        			
@@ -498,7 +530,7 @@ begin
 	        			number_dop1_0 <=  number_dop1_0 + 1;	        				
 	        		end if;  
 	        		value_dop1_0 <= '1';     
-	        		buffer_dop1_0 <= word_dop1_1_1; 
+	        		buffer_dop1_0 <= buffer_dop1_1_1;   -- !!!
 	        				
         		elsif(hemming_dop1_1_2 ='0') then        			
         			if(number_dop1_0 = 2) then
@@ -507,7 +539,7 @@ begin
 	        			number_dop1_0 <=  number_dop1_0 + 1;	        				
 	        		end if;    
 	        		value_dop1_0 <= '0';     
-	        		buffer_dop1_0 <= word_dop1_1_2; 
+	        		buffer_dop1_0 <= buffer_dop1_1_2; -- !!!!!!!!! Обратить внимание если будуд ошибки
 	        	end if;
         		-- поиск решений без дополнений
         		if(hemming_out_1_1 ='0') then        			
@@ -548,6 +580,7 @@ begin
         				-- дописать полный сброс если нет дополнений
         		end if;
         	elsif(error = 2) then
+        		temp_save_0 <= temp_save_1;
         		if(word_old /= WORD ) then -- если одно из 4 решений без дополнений не равно Word 
         			error <= 0;
         				if(number_old = 0) then
@@ -593,7 +626,7 @@ begin
         			end if;
         		else  --если решение по доп.1 равно Word
         			error <= 0;
-        			TEST_NUMBER_PART <= "100";
+        			
         			if(number_dop1_0 = 0) then
         				temp_save_2 <= "00";
 	        			temp_save_1 <= "10";
@@ -633,9 +666,126 @@ begin
 		        	end if;
         		end if;	
         	elsif(error = 3) then
-        		
+        		temp_save_0 <= temp_save_1;
+        		error <= 4; 		
+        		-- Решение по доп. 3        		
+        		if(hemming_dop1_1_1 ='0') then  
+        			if(number_dop1_0 = 2) then
+	        			number_dop1_0 <= 0;	        				
+	        		else
+	        			number_dop1_0 <=  number_dop1_0 + 1;	        				
+	        		end if;  
+	        		value_dop1_0 <= '1';     
+	        		buffer_dop1_0 <= buffer_dop1_1_1; 
+	        		TEST_NUMBER_PART <= "100";		
+        		elsif(hemming_dop1_1_2 ='0') then        			
+        			if(number_dop1_0 = 2) then
+	        			number_dop1_0 <= 0;	        				
+	        		else
+	        			number_dop1_0 <=  number_dop1_0 + 1;	        				
+	        		end if;    
+	        		value_dop1_0 <= '0';     
+	        		buffer_dop1_0 <= buffer_dop1_1_2; 
+	        		TEST_NUMBER_PART <= "101";
+	        	else
+	        		error_dop3 <= '1';
+	        	end if;
+        		-- Решение по доп. 2
+        		if(hemming_out_1_1 ='0') then        			
+        			if(number_0 = 2) then
+	        			number_0 <= 0;	        				
+	        		else
+	        			number_0 <=  number_0 + 1;	        				
+	        		end if;  
+	        		value_0_1 <= '1';     
+	        		buffer_0_1  <= buffer_temp_1_1; 	
+	        		--TEST_NUMBER_PART <= "110";
+        		elsif(hemming_out_1_2 ='0') then
+        			if(number_0 = 2) then
+	        			number_0 <= 0;	        				
+	        		else
+	        			number_0 <=  number_0 + 1;	        				
+	        		end if;  
+	        		value_0_1  <= '0';     
+	        		buffer_0_1  <= buffer_temp_1_2;
+	        		--TEST_NUMBER_PART <= "111"; 
+	        	else
+	        		error_dop2 <= '1';
+        		end if;   
         	elsif(error = 4) then
-        		
+        		error <= 0;
+        		if(error_dop3 = '1') then
+        			--по доп. 2
+        			if(hemming_out_1_1 ='0') then        			
+	        			if(number_0 = 2) then
+		        			number_old <= 0;	        				
+		        		else
+		        			number_old <=  number_old + 1;	        				
+		        		end if;  
+		        		value_old <= '1';     
+		        		buffer_old  <= buffer_temp_1_1; 
+		        		word_old <= WORD;	
+		        		--TEST_NUMBER_PART <= "110";
+	        		elsif(hemming_out_1_2 ='0') then
+	        			if(number_old = 2) then
+		        			number_old <= 0;	        				
+		        		else
+		        			number_old <=  number_0 + 1;	        				
+		        		end if;  
+		        		value_old  <= '0';     
+		        		buffer_old  <= buffer_temp_1_2;
+		        		--TEST_NUMBER_PART <= "111"; 
+		        		word_old <= WORD;		        	
+	        		end if; 
+	        		
+	        			temp_save_2 <= "00";
+	        			temp_save_1 <= "10";
+	        			temp_save_0 <= "01";
+	        		
+        		else
+        			-- по доп. 3
+        			if(hemming_dop1_1_1 ='0') then  
+	        			if(number_dop1_0 = 2) then
+		        			number_old <= 0;	        				
+		        		else
+		        			number_old <=  number_dop1_0 + 1;	        				
+		        		end if;  
+		        		value_old <= '1';     
+		        		buffer_old <= buffer_dop1_1_1; 
+		        		word_old <= WORD;
+		        		TEST_NUMBER_PART <= "110";		
+	        		elsif(hemming_dop1_1_2 ='0') then        			
+	        			if(number_dop1_0 = 2) then
+		        			number_old <= 0;	        				
+		        		else
+		        			number_old <=  number_dop1_0 + 1;	        				
+		        		end if;    
+		        		value_old <= '0';     
+		        		buffer_old <= buffer_dop1_1_2; 
+		        		word_old <= WORD;
+		        		TEST_NUMBER_PART <= "111";
+		        	else
+		        		error_dop3 <= '1';
+		        	end if;
+		      -- Проверить  	
+		        	if(number_dop1_0 = 0) then
+        				temp_save_2 <= "00";
+	        			temp_save_1 <= "10";
+	        			temp_save_0 <= "01";
+	        		elsif(number_dop1_0 = 1) then
+	        			temp_save_2 <= "01";
+	        			temp_save_1 <= "00";
+	        			temp_save_0 <= "10";
+	        		elsif(number_dop1_0 = 2) then
+	        			temp_save_2 <= "10";
+	        			temp_save_1 <= "01";
+	        			temp_save_0 <= "00";
+	        		else
+	        			temp_save_2 <= "11";
+	        			temp_save_1 <= "11";
+	        			temp_save_0 <= "11";
+	        		end if;
+        		end if;
         	else
         		
         	end if;        		
