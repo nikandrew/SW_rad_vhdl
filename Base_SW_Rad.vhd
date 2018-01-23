@@ -15,6 +15,7 @@ port(		CLK				: in std_logic;
         				
 			DECODER_INPUT_WORD			: out std_logic_vector(2 downto 0);
 			DECODER_OUT_COUNT			: out std_logic_vector(1 downto 0);
+			DECODER_SYNC_SEND			: out std_logic;
 			
 			TEST_CODER_STEP				: out std_logic_vector(2 downto 0);
 			TEST_CODER_F2M				: out std_logic;
@@ -62,6 +63,7 @@ begin
 			IN_WORD   => out_word_line,
 			
 			OUT_COUNT => DECODER_OUT_COUNT,
+			SYNC_SEND => DECODER_SYNC_SEND,
 			INPUT_WORD => DECODER_INPUT_WORD,
 			
 			TEST_VALUE => TEST_DECODER_VALUE,

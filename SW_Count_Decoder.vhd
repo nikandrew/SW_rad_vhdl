@@ -10,6 +10,7 @@ port(		CLK				: in std_logic;
 			IN_WORD			: in std_logic;
 			
 			OUT_COUNT		: out std_logic_vector(1 downto 0);
+			SYNC_SEND		: out std_logic;
 			INPUT_WORD		: out std_logic_vector(2 downto 0);
 			
 			TEST_VALUE			: out std_logic;	
@@ -39,6 +40,7 @@ begin
 					CLK        => CLK,
 					IN_WORD    => IN_WORD,
 					SYNC       => sync,
+					SYNC_SEND  => SYNC_SEND,
 					OUT_WORD => input_wort_inner);
 					
 	MAIN_ERROR: entity work.Decoder_Main_Error

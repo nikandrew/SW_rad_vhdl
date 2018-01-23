@@ -312,67 +312,15 @@ begin
 --	TEST(7 downto 6) <= temp_save_2;
 	OUT_COUNT <= temp_save_0;
 	--TEST(7 downto 5) <= buffer_temp_1;
-	process (RES, SYNC)
-    begin
-        if(RES = '1') then   			
-			TEST_VALUE <= '1';
-			--OUT_COUNT <= "11";
-			--buffer_temp_1 <= "000";
-			--buffer_temp_2 <= "100";
-        elsif(rising_edge(SYNC)) then
-        	--OUT_COUNT <= temp_save_0;
-        	if(error = 0) then
-        		
-        		if(word_old = WORD) then
-        			
-        				--решение по доп.2
-        			buffer_2_0 <= buffer_old;
-        			buffer_2_0(number_old) <= not buffer_old(number_old);
-        			if(number_old = 2) then
-        				number_2_0 <= 0;
-        				value_2_0 <= not value_old;
-        			else
-        				number_2_0 <=  number_old + 1;
-        				value_2_0 <=  value_old;
-        			end if;        				
-        				--решение по доп.3	
-        			number_3_0 <= number_old;
-        			value_3_0 <= value_old;
-        			buffer_3_0 <= buffer_old;
-        		else
-        			
-        			       			       			       				
-        			-- комбинаторика      			
-        			
-        			
-        			-- комбинаторика
-        			       			
-        		end if;
-        	elsif(error = 1) then
-        		
-        	elsif(error = 2) then
-        		if(word_old = WORD ) then -- если одно из 4 решений без дополнений равно Word 
-        			
-        		else  --если решение по доп.1 равно Word
-
-        		end if;	
-        	elsif(error = 3) then
-        		
-        	elsif(error = 4) then
-        		
-        	else
-        		
-        	end if;        		
-        end if;
-    end process;
+	
     
     process (RES, SYNC )		
     begin
         if(RES = '1') then            
 			error <= 0;	
-			temp_save_2 <= "11";
-			temp_save_1 <= "11";
-			temp_save_0 <= "11";
+			temp_save_2 <= "10";
+			temp_save_1 <= "01";
+			temp_save_0 <= "00";
 			
 			buffer_old <= "111";
 			value_old <= '1';

@@ -28,6 +28,7 @@ SIGNAL TEST_CODER_WORD 				: std_logic_vector(2 downto 0);
 
 SIGNAL DECODER_INPUT_WORD			: std_logic_vector(2 downto 0);					
 SIGNAL DECODER_OUT_COUNT			: std_logic_vector(1 downto 0);
+SIGNAL DECODER_SYNC_SEND			: std_logic;
 
 SIGNAL TEST_DECODER_VALUE			: std_logic;	
 SIGNAL TEST_DECODER_NUMBER_PART		: std_logic_vector(2 downto 0);
@@ -48,6 +49,7 @@ COMPONENT Base_SW_Rad
 	
 	DECODER_INPUT_WORD			: out std_logic_vector(2 downto 0);
 	DECODER_OUT_COUNT			: out std_logic_vector(1 downto 0);
+	DECODER_SYNC_SEND			: out std_logic;
 		
 	
 	TEST_CODER_STEP				: out std_logic_vector(2 downto 0);
@@ -81,6 +83,7 @@ BEGIN
 	
 	DECODER_INPUT_WORD => DECODER_INPUT_WORD,
 	DECODER_OUT_COUNT => DECODER_OUT_COUNT,
+	DECODER_SYNC_SEND => DECODER_SYNC_SEND,
 	
 	TEST_CODER_STEP		=> TEST_CODER_STEP,
 	TEST_CODER_F2M		=> open,--TEST_CODER_F2M,
