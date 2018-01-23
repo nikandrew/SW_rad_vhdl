@@ -158,8 +158,8 @@ END PROCESS;
 	 ERROR_BUFFER <= "00";
 	 ERROR_WORD <= "00";
     
-     wait for 6 us;
-     ERROR_COUNTER <= "01";
+     wait for 5 us;
+     ERROR_COUNTER <= "10";
      wait for 0.5 us; 
      ERROR_COUNTER <= "00";
     
