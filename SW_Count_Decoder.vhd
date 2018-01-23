@@ -13,15 +13,14 @@ port(		CLK				: in std_logic;
 			SYNC_SEND		: out std_logic;
 			INPUT_WORD		: out std_logic_vector(2 downto 0);
 			
-			TEST_VALUE			: out std_logic;	
-       		TEST_NUMBER_PART	: out std_logic_vector(2 downto 0);
+			TEST_NUMBER_PART	: out std_logic_vector(2 downto 0);
        		TEST_SYNC			: out std_logic;
 			TEST				: out std_logic_vector(15 downto 0));
 end SW_Count_Decoder;
 
 architecture Main_ARCH_SW_Count_Decoder of SW_Count_Decoder is 
 signal f2m, sync	: std_logic;
-signal status, input_wort_inner : std_logic_vector(2 downto 0); 
+signal  input_wort_inner : std_logic_vector(2 downto 0); 
 begin
 	TEST(8) <= f2m;
 	TEST_SYNC <= sync;
@@ -30,7 +29,7 @@ begin
 	DIV: entity work.DIV_F2M
 		port map(  	RES			=> RES,
 					CLK			=> CLK,
-					STATUS		=> status,
+					STATUS		=> open,
 					NUMBER_BUFFER => open,
 					F2M			=> f2m);
 					
@@ -46,11 +45,9 @@ begin
 	MAIN_ERROR: entity work.Decoder_Main_Error
 		port map(
 			RES              => RES,
-			CLK              => CLK,
 			WORD             => input_wort_inner,
 			SYNC             => sync,
 			OUT_COUNT        => OUT_COUNT,
-			TEST_VALUE       => TEST_VALUE,
 			TEST_NUMBER_PART => TEST_NUMBER_PART,
 			TEST             => TEST(7 downto 0));
 	

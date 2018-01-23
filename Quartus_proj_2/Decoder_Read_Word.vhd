@@ -35,7 +35,7 @@ begin
         end if;
     end process;
     
-    process (RES, CLK, sync_inner)
+    process (RES, CLK)
     begin
         if(RES = '1') then           
             count_status <= "000"; 
