@@ -733,9 +733,23 @@ begin
 		        		word_old <= WORD;		        	
 	        		end if; 
 	        		
-	        			temp_save_2 <= "00";
+	        		if(number_0 = 0) then
+        				temp_save_2 <= "00";
 	        			temp_save_1 <= "10";
-	        			temp_save_0 <= "01";	        		
+	        			temp_save_0 <= "01";
+	        		elsif(number_0 = 1) then
+	        			temp_save_2 <= "01";
+	        			temp_save_1 <= "00";
+	        			temp_save_0 <= "10";
+	        		elsif(number_0 = 2) then
+	        			temp_save_2 <= "10";
+	        			temp_save_1 <= "01";
+	        			temp_save_0 <= "00";
+	        		else
+	        			temp_save_2 <= "11";
+	        			temp_save_1 <= "11";
+	        			temp_save_0 <= "11";
+	        		end if;	        		
         		else
         			-- по доп. 3
         			TEST_NUMBER_PART <= "011";
