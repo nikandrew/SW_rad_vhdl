@@ -9,16 +9,15 @@ ARCHITECTURE Base_SW_Rad_arch OF Base_SW_Rad_vhd_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLK : STD_LOGIC;
-SIGNAL ERROR_BUFFER 				: STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL ERROR_COUNTER 				: STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL ERROR_WORD 					: STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL ERROR_BUFFER_COUNT 				: STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL ERROR_COUNTER_COUNT 				: STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL ERROR_WORD_COUNT 					: STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL RES_COD 						: STD_LOGIC;
 SIGNAL RES_DEC 						: STD_LOGIC;
 
 
 
 SIGNAL TEST_CODER_STEP				: std_logic_vector(2 downto 0);
---SIGNAL TEST_CODER_F2M				: std_logic;
 SIGNAL TEST_CODER_BUFFER_1 			: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_BUFFER_2 			: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_NUMBER_BUFFER 	: std_logic;
@@ -31,7 +30,6 @@ SIGNAL ERROR_WORD_CHANNEL_1 		: std_logic_vector(2 downto 0);
         	
 SIGNAL INPUT_DATA					: std_logic;
        	
-SIGNAL TEST_CODER_CHANNEL_F2M		: std_logic;
 SIGNAL TEST_CODER_CHANNEL_BUFFER_1 		: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_CHANNEL_BUFFER_2 		: std_logic_vector(2 downto 0);
 SIGNAL TEST_CODER_CHANNEL_NUMBER_BUFFER 	: std_logic;
@@ -50,14 +48,18 @@ SIGNAL TEST_DECODER_NUMBER_PART		: std_logic_vector(2 downto 0);
 SIGNAL TEST_DECODER_SYNC			: std_logic;	
 SIGNAL TEST_DECODER 				: STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-SIGNAL TEMP							: integer range 0 to 2;
+SIGNAL DECODER_INPUT_WORD_CHANNEL_1	: std_logic_vector(3 downto 0);
+SIGNAL DECODER_OUT_COUNT_CHANNEL_1		:  std_logic_vector(1 downto 0);
+SIGNAL TEST_DECODER_NUMBER_PART_CHANNEL_1 : std_logic_vector(2 downto 0);
+SIGNAL TEST_DECODER_CHANNEL_1			:  std_logic_vector(15 downto 0);
 
+SIGNAL TEMP							: integer range 0 to 2;
 COMPONENT Base_SW_Rad
 	PORT (
 	CLK 			: IN STD_LOGIC;
-	ERROR_BUFFER 	: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	ERROR_COUNTER 	: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	ERROR_WORD 		: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	ERROR_BUFFER_COUNT 	: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	ERROR_COUNTER_COUNT 	: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	ERROR_WORD_COUNT		: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 	
 	RES_COD 		: IN STD_LOGIC;
 	RES_DEC 		: IN STD_LOGIC;
@@ -91,7 +93,12 @@ COMPONENT Base_SW_Rad
 	
 	TEST_DECODER_NUMBER_PART	: out std_logic_vector(2 downto 0);
     TEST_DECODER_SYNC			: out std_logic;			
-	TEST_DECODER 				: OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	TEST_DECODER 				: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+	
+	DECODER_INPUT_WORD_CHANNEL_1	: out std_logic_vector(3 downto 0);
+	DECODER_OUT_COUNT_CHANNEL_1		: out std_logic_vector(1 downto 0);
+	TEST_DECODER_NUMBER_PART_CHANNEL_1 : out std_logic_vector(2 downto 0);
+	TEST_DECODER_CHANNEL_1			: out std_logic_vector(15 downto 0)
 	);
 END COMPONENT;
 
@@ -102,9 +109,9 @@ BEGIN
 	
 	CLK => CLK,
 	
-	ERROR_BUFFER => ERROR_BUFFER,
-	ERROR_COUNTER => ERROR_COUNTER,
-	ERROR_WORD => ERROR_WORD,
+	ERROR_BUFFER_COUNT => ERROR_BUFFER_COUNT,
+	ERROR_COUNTER_COUNT => ERROR_COUNTER_COUNT,
+	ERROR_WORD_COUNT => ERROR_WORD_COUNT,
 	
 	ERROR_BUFFER_CHANNEL_1 => ERROR_BUFFER_CHANNEL_1,
 	ERROR_WORD_CHANNEL_1 => ERROR_WORD_CHANNEL_1,
@@ -138,7 +145,12 @@ BEGIN
     TEST_DECODER_SYNC	=> 	TEST_DECODER_SYNC,				
 			
 	TEST_CODER => open,--TEST_CODER,
-	TEST_DECODER => TEST_DECODER
+	TEST_DECODER => TEST_DECODER,
+	
+	DECODER_INPUT_WORD_CHANNEL_1	=> DECODER_INPUT_WORD_CHANNEL_1,
+	DECODER_OUT_COUNT_CHANNEL_1		=> DECODER_OUT_COUNT_CHANNEL_1,
+	TEST_DECODER_NUMBER_PART_CHANNEL_1 => TEST_DECODER_NUMBER_PART_CHANNEL_1,
+	TEST_DECODER_CHANNEL_1		=> TEST_DECODER_CHANNEL_1
 	);
 init_DEC : PROCESS                                 
 BEGIN                                                        
@@ -169,22 +181,54 @@ BEGIN
     wait for 31.25 ns;                                                       
 END PROCESS;                                          
 
-PROCESS  
-                                            
+PROCESS                                              
 variable DATA : std_logic_vector( 50 downto 1);
 BEGIN  
 	DATA := "11010010101101001010110100101011010010101101001010";                                                      
 	INPUT_DATA <= '0';
- 	wait for 1 us;
+ 	wait for 1.3 us;
  	for i in 1 to 50 loop	
     	INPUT_DATA <= DATA(i);
-    wait for 31.25 ns; 
+    	wait for 0.5 us; 
 		
 	end loop ;
                                                           
 END PROCESS;   
  
---  PROCESS                                              
+  PROCESS                                              
+ BEGIN                                                         
+
+	ERROR_BUFFER_COUNT <= "00";
+ 	ERROR_COUNTER_COUNT <= "00";
+ 	ERROR_WORD_COUNT <= "00";
+	
+ 	ERROR_BUFFER_CHANNEL_1 <= "00";
+ 	ERROR_WORD_CHANNEL_1 <= "000";
+    
+     wait for 4 us;
+ 
+     ERROR_WORD_CHANNEL_1 <= "010";
+     wait for 0.5 us; 
+     ERROR_WORD_CHANNEL_1 <= "000";    
+     wait for 5 us;
+     
+     ERROR_WORD_CHANNEL_1 <= "011";
+     wait for 0.5 us; 
+     ERROR_WORD_CHANNEL_1 <= "000";    
+     wait for 5 us;
+     
+     ERROR_WORD_CHANNEL_1 <= "001";
+     wait for 0.5 us; 
+     ERROR_WORD_CHANNEL_1 <= "000";
+	wait for 5 us;
+     
+     ERROR_WORD_CHANNEL_1 <= "100";
+     wait for 0.5 us; 
+     ERROR_WORD_CHANNEL_1 <= "000"; 
+     wait for 10000 us;                                                   
+ END PROCESS;
+ 
+-- PROCESS                                              
 -- BEGIN                                                         
 --
 -- 	ERROR_BUFFER_CHANNEL_1 <= "00";
@@ -192,50 +236,21 @@ END PROCESS;
 --    
 --     wait for 4 us;
 -- 
---     ERROR_WORD_CHANNEL_1 <= "010";
+--     ERROR_BUFFER_CHANNEL_1 <= "10";
 --     wait for 0.5 us; 
---     ERROR_WORD_CHANNEL_1 <= "000";    
+--     ERROR_BUFFER_CHANNEL_1 <= "00";    
 --     wait for 5 us;
 --     
---     ERROR_WORD_CHANNEL_1 <= "011";
+--     ERROR_BUFFER_CHANNEL_1 <= "11";
 --     wait for 0.5 us; 
---     ERROR_WORD_CHANNEL_1 <= "000";    
+--     ERROR_BUFFER_CHANNEL_1 <= "00";    
 --     wait for 5 us;
 --     
---     ERROR_WORD_CHANNEL_1 <= "001";
+--     ERROR_BUFFER_CHANNEL_1 <= "01";
 --     wait for 0.5 us; 
---     ERROR_WORD_CHANNEL_1 <= "000";
---	wait for 5 us;
---     
---     ERROR_WORD_CHANNEL_1 <= "100";
---     wait for 0.5 us; 
---     ERROR_WORD_CHANNEL_1 <= "000"; 
+--     ERROR_BUFFER_CHANNEL_1 <= "00";  
 --     wait for 10000 us;                                                   
--- END PROCESS;
- 
- PROCESS                                              
- BEGIN                                                         
-
- 	ERROR_BUFFER_CHANNEL_1 <= "00";
- 	ERROR_WORD_CHANNEL_1 <= "000";
-    
-     wait for 4 us;
- 
-     ERROR_BUFFER_CHANNEL_1 <= "10";
-     wait for 0.5 us; 
-     ERROR_BUFFER_CHANNEL_1 <= "00";    
-     wait for 5 us;
-     
-     ERROR_BUFFER_CHANNEL_1 <= "11";
-     wait for 0.5 us; 
-     ERROR_BUFFER_CHANNEL_1 <= "00";    
-     wait for 5 us;
-     
-     ERROR_BUFFER_CHANNEL_1 <= "01";
-     wait for 0.5 us; 
-     ERROR_BUFFER_CHANNEL_1 <= "00";  
-     wait for 10000 us;                                                   
- END PROCESS; 
+-- END PROCESS; 
 
 -- PROCESS                                              
 -- BEGIN                                                         

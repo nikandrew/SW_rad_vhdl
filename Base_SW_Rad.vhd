@@ -43,17 +43,24 @@ port(		CLK				: in std_logic;
 			
 			TEST_DECODER_NUMBER_PART	: out std_logic_vector(2 downto 0);
        		TEST_DECODER_SYNC			: out std_logic;
-			TEST_DECODER	: out std_logic_vector(15 downto 0));
+			TEST_DECODER	: out std_logic_vector(15 downto 0);
+			
+			DECODER_INPUT_WORD_CHANNEL_1	: out std_logic_vector(3 downto 0);
+			DECODER_OUT_COUNT_CHANNEL_1		: out std_logic_vector(1 downto 0);
+			TEST_DECODER_NUMBER_PART_CHANNEL_1 : out std_logic_vector(2 downto 0);
+			TEST_DECODER_CHANNEL_1			: out std_logic_vector(15 downto 0)
+			);
 end Base_SW_Rad;
 
 architecture Main_ARCH_Base_SW_Rad of Base_SW_Rad is 
 
-signal out_word_line, out_word_channel_1, value_count : std_logic;
+signal out_word_line, out_word_channel_1, value_count, sync_dec : std_logic;
 signal step_count : std_logic_vector(1 downto 0);
 
 begin
 	TEST_CODER_STEP(0) <= value_count;
 	TEST_CODER_STEP(2 downto 1) <= step_count;
+	TEST_DECODER_SYNC <= sync_dec;
 	Coder_Count: entity work.SW_Count_Coder
 		port map(
 			CLK           => CLK,
@@ -63,8 +70,8 @@ begin
 			ERROR_WORD    => ERROR_WORD_COUNT,
 			OUT_WORD      => out_word_line,
 			
-			TEST_STEP(2 downto 1)	=> step_count,
-			TEST_STEP(0)	=> value_count, 		
+			TEST_STEP(1 downto 0)	=> step_count,
+			TEST_STEP(2)	=> value_count, 		
 			TEST_F2M		=> TEST_CODER_F2M,
 			TEST_BUFFER_1 	=> TEST_CODER_BUFFER_1,
 			TEST_BUFFER_2 	=> TEST_CODER_BUFFER_2,
@@ -84,7 +91,7 @@ begin
 			INPUT_WORD => DECODER_INPUT_WORD,
 			
 			TEST_NUMBER_PART => TEST_DECODER_NUMBER_PART,
-			TEST_SYNC	=> TEST_DECODER_SYNC,
+			TEST_SYNC	=> sync_dec,
 			TEST      => TEST_DECODER);		
 			
 	Coder_channel_1: entity work.SW_Channel_Coder
@@ -104,5 +111,18 @@ begin
 			TEST_WORD		=> TEST_CODER_CHANNEL_WORD,
 			TEST          	=> TEST_CODER_CHANNEL
 		);
+	Decoder_channel_1: entity work.SW_Channel_Decoder
+		port map(
+			CLK       => CLK,
+			RES       => RES_DEC,
+			
+			IN_WORD   => out_word_channel_1,	
+			SYNC => sync_dec,
+					
+			OUT_COUNT => DECODER_OUT_COUNT_CHANNEL_1,			
+			INPUT_WORD => DECODER_INPUT_WORD_CHANNEL_1,
+			
+			TEST_NUMBER_PART => TEST_DECODER_NUMBER_PART_CHANNEL_1,
+			TEST      => TEST_DECODER_CHANNEL_1);	
 							
 end Main_ARCH_Base_SW_Rad; 

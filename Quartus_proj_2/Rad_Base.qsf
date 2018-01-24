@@ -58,6 +58,8 @@ set_global_assignment -name EDA_NATIVELINK_GENERATE_SCRIPT_ONLY OFF -section_id 
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT ../gen_log.tcl -section_id eda_simulation
 set_global_assignment -name EDA_SIMULATION_RUN_SCRIPT ../gen_log.tcl -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/Base_SW_Rad.vhd -section_id Base_test
+set_global_assignment -name VHDL_FILE ../Decoder_reader_channel.vhd
+set_global_assignment -name VHDL_FILE ../SW_Channel_Decoder.vhd
 set_global_assignment -name VHDL_FILE ../SW_Channel_Coder.vhd
 set_global_assignment -name VHDL_FILE ../Form_buffer_channel.vhd
 set_global_assignment -name VHDL_FILE ../Form_word_channel.vhd

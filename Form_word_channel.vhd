@@ -14,6 +14,7 @@ end Form_word_channel;
 
 architecture Form_word_channel_arch of Form_word_channel is  
 signal inner_buffer_1, inner_buffer_2 : std_logic_vector(2 downto 0);
+signal temp_data	: std_logic;
 begin 
 
 		inner_buffer_1 <= IN_BUFFER_1;
@@ -22,55 +23,57 @@ begin
 	process(ERROR_WORD, STATUS, inner_buffer_1, inner_buffer_2, NUMBER_BUFFER, INPUT_DATA)
 	begin
 		if(NUMBER_BUFFER = '0') then
-			if(STATUS = "001") then
+			if(STATUS = "000") then
+				temp_data <= INPUT_DATA;
 				if(ERROR_WORD = "001") then
 					OUT_WORD <= NOT (inner_buffer_1(0) XOR inner_buffer_1(1));  
 				else
 					OUT_WORD <= inner_buffer_1(0) XOR inner_buffer_1(1);
 				end if;
-			elsif(STATUS = "011") then
+			elsif(STATUS = "010") then
 				if(ERROR_WORD = "010") then
 					OUT_WORD <= NOT (inner_buffer_1(0) XOR inner_buffer_1(2));  
 				else
 					OUT_WORD <= inner_buffer_1(0) XOR inner_buffer_1(2);
 				end if;
-			elsif(STATUS = "101") then
+			elsif(STATUS = "100") then
 				if(ERROR_WORD = "011") then
 					OUT_WORD <= NOT (inner_buffer_1(1) XOR inner_buffer_1(2));  
 				else
 					OUT_WORD <= inner_buffer_1(1) XOR inner_buffer_1(2);
 				end if;     
-			elsif(STATUS = "111") then
+			elsif(STATUS = "110") then
 				if(ERROR_WORD = "100") then
-					OUT_WORD <= NOT INPUT_DATA;  
+					OUT_WORD <= NOT temp_data;  
 				else
-					OUT_WORD <= INPUT_DATA;
+					OUT_WORD <= temp_data;
 				end if;  
 	        end if;
 	    else
-	    	if(STATUS = "001") then
+	    	if(STATUS = "000") then
+	    		temp_data <= INPUT_DATA;
 	    		if(ERROR_WORD = "001") then
-					OUT_WORD <= NOT (inner_buffer_2(0) XOR inner_buffer_1(1));  
+					OUT_WORD <= NOT (inner_buffer_2(0) XOR inner_buffer_2(1));  
 				else
 					OUT_WORD <= inner_buffer_2(0) XOR inner_buffer_2(1);
 				end if;
-			elsif(STATUS = "011") then
+			elsif(STATUS = "010") then
 				if(ERROR_WORD = "010") then
-					OUT_WORD <= NOT (inner_buffer_2(0) XOR inner_buffer_1(2));  
+					OUT_WORD <= NOT (inner_buffer_2(0) XOR inner_buffer_2(2));  
 				else
 					OUT_WORD <= inner_buffer_2(0) XOR inner_buffer_2(2);
 				end if;
-			elsif(STATUS = "101") then
+			elsif(STATUS = "100") then
 				if(ERROR_WORD = "011") then
-					OUT_WORD <= NOT (inner_buffer_2(1) XOR inner_buffer_1(2));  
+					OUT_WORD <= NOT (inner_buffer_2(1) XOR inner_buffer_2(2));  
 				else
 					OUT_WORD <= inner_buffer_2(1) XOR inner_buffer_2(2);
 				end if;	 
-			elsif(STATUS = "111") then
+			elsif(STATUS = "110") then
 				if(ERROR_WORD = "100") then
-					OUT_WORD <= NOT INPUT_DATA;  
+					OUT_WORD <= NOT temp_data;  
 				else
-					OUT_WORD <= INPUT_DATA;
+					OUT_WORD <= temp_data;
 				end if;         	     
 	        end if;
 	    end if;
