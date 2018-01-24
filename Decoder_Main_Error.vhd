@@ -315,9 +315,9 @@ begin
     begin
         if(RES = '1') then            
 			error <= 0;	
-			temp_save_2 <= "10";
-			temp_save_1 <= "01";
-			temp_save_0 <= "00";
+			temp_save_2 <= "11";
+			temp_save_1 <= "11";
+			temp_save_0 <= "11";
 			
 			buffer_old <= "111";
 			number_old <= 0;			

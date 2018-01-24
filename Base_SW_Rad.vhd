@@ -46,6 +46,7 @@ port(		CLK				: in std_logic;
 			TEST_DECODER	: out std_logic_vector(15 downto 0);
 			
 			DECODER_INPUT_WORD_CHANNEL_1	: out std_logic_vector(3 downto 0);
+			DECODER_INPUT_WORD_CHANNEL_1_DEL	: out std_logic_vector(3 downto 0);
 			DECODER_OUT_COUNT_CHANNEL_1		: out std_logic_vector(1 downto 0);
 			TEST_DECODER_NUMBER_PART_CHANNEL_1 : out std_logic_vector(2 downto 0);
 			TEST_DECODER_CHANNEL_1			: out std_logic_vector(15 downto 0)
@@ -121,6 +122,7 @@ begin
 					
 			OUT_COUNT => DECODER_OUT_COUNT_CHANNEL_1,			
 			INPUT_WORD => DECODER_INPUT_WORD_CHANNEL_1,
+			INPUT_WORD_DEL => DECODER_INPUT_WORD_CHANNEL_1_DEL,
 			
 			TEST_NUMBER_PART => TEST_DECODER_NUMBER_PART_CHANNEL_1,
 			TEST      => TEST_DECODER_CHANNEL_1);	

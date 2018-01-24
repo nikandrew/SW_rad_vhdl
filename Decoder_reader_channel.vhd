@@ -7,12 +7,14 @@ port(   RES     	: in std_logic;
 		CLK			: in std_logic;
         IN_WORD		: in std_logic;
         SYNC		: in std_logic;
-        OUT_WORD 	: out std_logic_vector(3 downto 0)); 
+        OUT_WORD 	: out std_logic_vector(3 downto 0);
+        OUT_WORD_DEL 	: out std_logic_vector(3 downto 0)
+        ); 
 end Decoder_Reader_channel;
 
 architecture Decoder_Reader_channel_arch of Decoder_Reader_channel is 
 signal count_status : std_logic_vector(2 downto 0);
-signal word_inner : std_logic_vector(3 downto 0);
+signal word_inner, temp1, temp2, temp3 : std_logic_vector(3 downto 0);
 signal sync_inner : std_logic; 
 
 begin	 
@@ -21,9 +23,14 @@ begin
         if(RES = '1') then
             sync_inner <= '0';
             OUT_WORD <= "0000"; 
+            OUT_WORD_DEL <= "0000"; 
+            temp1 <= "0000";
+            
         elsif(rising_edge(SYNC)) then
         	sync_inner <= '1';
         	OUT_WORD <= word_inner;
+        	OUT_WORD_DEL <= temp2;
+        			
         end if;
     end process;
     
@@ -31,7 +38,9 @@ begin
     begin
         if(RES = '1') then           
             count_status <= "000";  
-            word_inner <= "0000";           
+            word_inner <= "0000";
+            temp2 <= "0000";
+            temp3 <= "0000";        
         elsif(rising_edge(CLK)) then
         	if(sync_inner = '1') then
         		if(count_status = "001") then
@@ -46,6 +55,9 @@ begin
         		elsif(count_status = "111") then
         			count_status <= "000";	
         			word_inner(3) <= IN_WORD;
+        			temp2 <= temp3;
+        			temp3(2 downto 0) <= word_inner( 2 downto 0);
+        			temp3(3) <= IN_WORD;
         		else
         			count_status <= count_status + '1';	
         		end if;        	
@@ -55,4 +67,6 @@ begin
         	end if;	
         end if;
     end process;
+    
+     
 end Decoder_Reader_channel_arch;

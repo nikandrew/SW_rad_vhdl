@@ -12,6 +12,7 @@ port(		CLK				: in std_logic;
 			
 			OUT_COUNT		: out std_logic_vector(1 downto 0);
 			INPUT_WORD		: out std_logic_vector(3 downto 0);
+			INPUT_WORD_DEL	: out std_logic_vector(3 downto 0);
 			
 			TEST_NUMBER_PART	: out std_logic_vector(2 downto 0);
        		TEST				: out std_logic_vector(15 downto 0));
@@ -19,10 +20,11 @@ end SW_Channel_Decoder;
 
 architecture Main_ARCH_SW_Channel_Decoder of SW_Channel_Decoder is 
 signal f2m	: std_logic;
-signal  input_wort_inner : std_logic_vector(3 downto 0); 
+signal  input_wort_inner, input_wort_inner_del : std_logic_vector(3 downto 0); 
 begin
 	TEST(8) <= f2m;
 	INPUT_WORD <= input_wort_inner;
+	INPUT_WORD_DEL <= input_wort_inner_del;
 	
 	DIV: entity work.DIV_F2M
 		port map(  	RES			=> RES,
@@ -37,7 +39,8 @@ begin
 					CLK        => CLK,
 					IN_WORD    => IN_WORD,
 					SYNC       => SYNC,
-					OUT_WORD => input_wort_inner);
+					OUT_WORD => input_wort_inner,
+					OUT_WORD_DEL	=> input_wort_inner_del);
 					
 --	MAIN_ERROR: entity work.Decoder_Main_Error
 --		port map(
